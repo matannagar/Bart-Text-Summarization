@@ -1,0 +1,29 @@
+/*body {*/
+/*    background-color: lightblue;*/
+/*}*/
+
+h1 {
+    color: white;
+    background-color: navy;
+    text-align: center;
+    margin-left: 20px;
+}
+
+h2 {
+    color: white;
+    background-color: navy;
+    text-align: center;
+    margin-left: 20px;
+}
+
+p {
+    text-align: center;
+    line-height: 30px;
+
+}
+
+div {
+    background-color: lightgray;
+    text-align: center;
+    line-height: 30px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{{ url_for('static', filename='css/mystyle.css') }}" rel="stylesheet">
+    <!--    <link rel="stylesheet" href="css/mystyle.css" type="text/css"/>-->
+    <!--    </link>-->
+    <link rel="icon"
+          href="https://pbs.twimg.com/profile_images/500679949/t5-logo_400x400.png">
+    <title>NLP Summarization</title>
+</head>
+
+<body>
+<h1>
+    Text Summarization T5
+</h1>
+<p><strong>{{error}}</strong></p>
+
+<form action="/success" method="post" enctype="multipart/form-data">
+    <p>
+        <input type="file" name="file"/>
+    </p>
+    <p>
+        <input type="submit" value="Upload">
+    </p>
+    <p>
+        <label for="num_words" id="label_num_words"># words in summary:</label>
+        <input id="num_words" type="number" value="50" max="520" name="num_words">
+    </p>
+    <p>
+        <label for="num_beams" id="label_num_beams"># beam search: </label>
+        <input type="number" min="1" max="20" value="4" id="num_beams" name="num_beams">
+    </p>
+</form>
+<h2>
+    Summary
+</h2>
+<div>
+    <p>{{status}}</p>
+    <p>{{summary}}</p>
+    <p>{{name}}</p>
+    <p>{{ content }}</p>
+</div>
+
+
+</body>
+</html>
