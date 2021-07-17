@@ -18,6 +18,7 @@ def summarize(filename, num_beam=4, num_words=50):
 
     outputs = model.generate(inputs, max_length=num_words, min_length=80, length_penalty=5., num_beams=num_beam)
     summary = tokenizer.decode(outputs[0])
+    summary = summary[5:-4]
     return summary
 
 

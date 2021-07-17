@@ -15,8 +15,8 @@ def upload():
     return render_template("index.html")
 
 
-@app.route('/success', methods=['POST'])
-def success():
+@app.route('/index', methods=['POST'])
+def index():
     if request.method == 'POST':
         num_words = int(request.form['num_words'])
         num_beams = int(request.form['num_beams'])

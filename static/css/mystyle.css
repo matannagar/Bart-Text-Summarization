@@ -17,13 +17,20 @@ h2 {
 }
 
 p {
+
     text-align: center;
     line-height: 30px;
 
 }
 
 div {
+    margin: auto;
     background-color: lightgray;
     text-align: center;
     line-height: 30px;
+}
+
+div#loading {
+    background-color: white;
+    text-align: center;
 }
