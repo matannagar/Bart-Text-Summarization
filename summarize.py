@@ -3,8 +3,8 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 
 def summarize(filename, num_beam=4, num_words=50):
-    tokenizer = AutoTokenizer.from_pretrained('t5-base')
-    model = AutoModelForSeq2SeqLM.from_pretrained('t5-base', return_dict=True)
+    tokenizer = AutoTokenizer.from_pretrained('./t5-base')
+    model = AutoModelForSeq2SeqLM.from_pretrained('./t5-base', return_dict=True)
 
     if filename[-4:] == "docx":
         text = docx2txt.process(filename)

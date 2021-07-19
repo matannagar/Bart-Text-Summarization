@@ -9,10 +9,13 @@ from werkzeug.utils import secure_filename
 from summarize import summarize
 
 app = Flask(__name__)
+# enter here the path of the server
 app.config['UPLOAD_PATH'] = 'C:/Users/public'
+# allowed types
 app.config['UPLOAD_EXTENSIONS'] = ['.docx', '.txt']
 
 
+# homepage
 @app.route('/')
 def upload():
     return render_template("index.html")
@@ -24,6 +27,7 @@ def index():
         num_words = int(request.form['num_words'])
         num_beams = int(request.form['num_beams'])
         f = request.files['file']
+        # possible method of reading file directly : input_data = f.stream.read().decode("utf-8"), not working with docx
         filename = secure_filename(f.filename)
         if filename != '':
             file_ext = os.path.splitext(filename)[1]
@@ -38,5 +42,6 @@ def index():
         return render_template("index.html", name=f.filename, summary=summary, status="file_uploaded successfully", )
 
 
+# need to be erased
 if __name__ == '__main__':
     app.run(debug=True)
