@@ -1,0 +1,1493 @@
+/* left nav new */
+BODY { 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   background-color: #FFFFFF; 
+   font-size : 86%; 
+   font-weight : normal; 
+   margin:0px;
+}
+
+B  {
+   font-weight : bold; 
+}
+
+
+TABLE
+{
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+FONT
+{
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+TD   {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+P {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+
+/* main */
+
+A:link 	{
+   text-decoration : none; 
+   color : #333366; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   }
+
+A:visited {
+   text-decoration : none; 
+   color : #666699; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+A:active  {
+   text-decoration : none; 
+   color : #CC3300; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+A:hover  {
+   text-decoration : none; 
+   color : #CC3300; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}	
+
+A.index:link  {
+   font-size : 11px; 
+   color : #333366; 
+}
+
+A.index:visited  {
+   font-size : 11px; 
+   color : #333366; 
+}
+
+A.index:active  {
+   font-size : 11px; 
+   color : #333366; 
+}
+
+A.index:hover  {
+   color : #CC3300; 
+   font-size : 11px; 
+}	
+
+
+A.videobutton:visited  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   text-decoration : none; 
+   text-align : right; 
+   color : #000066; 
+   font-size : 11px; 
+}
+
+
+A.videobutton:link  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   text-decoration : none; 
+   text-align : right; 
+   color : #000066; 
+   font-size : 11px; 
+}
+
+
+A.videobutton:hover  {
+   text-decoration : none; 
+   text-align : right; 
+   color : #000066; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+}
+
+
+A.videobutton:active  {
+   text-decoration : none; 
+   text-align : right; 
+   color : #000066; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+}  
+
+A.videonewsbox:link  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 10px; 
+   line-height : 11px; 
+   font-weight : bold; 
+}  
+
+A.videonewsbox:visited  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 10px; 
+   text-decoration : none; 
+   text-align : right; 
+   color : #333366; 
+   line-height : 11px; 
+   font-weight : bold; 
+}  
+
+A.videonewsbox:hover  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 10px; 
+   text-decoration : none; 
+   text-align : right; 
+   color : #CC3300; 
+   line-height : 11px; 
+   font-weight : bold; 
+}  
+
+.videonewsbox  {
+   font-size : 10px; 
+   line-height : 11px; 
+   font-weight : bold; 
+}  
+
+B.heavy  {
+   font-weight : bold; 
+}
+
+.bodytext {
+   font-weight : normal; 
+   color : #000000; 
+   font-family : Verdana, Arial, Helvetica, Sans-serif;
+}
+
+.bodytextBold {
+   font-weight : bold;
+   color : #000000; 
+   font-family : Verdana, Arial, Helvetica, Sans-serif;
+}
+
+.headlineindexa  {
+   font-weight : bold; 
+   font-size : 130%; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+.headlineindexb  {
+   font-weight : bold; 
+   font-size : 110%; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+.headlineindexc  {
+   font-weight : bold; 
+   font-size : 95%; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+. SHOULD_SHOW_SECTION_LINK="NO" {
+   font-weight : normal; 
+   color : #000000; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+.avindex {
+   font-weight : normal; 
+   font-size : 11px; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   color : #666666; 
+}
+
+.alsoindex  {
+   font-weight : bold; 
+   font-size : 11px; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   color : #666666; 
+}
+
+.relatedstories  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+}
+
+.fromsport {
+   font-size: 10px;
+   color : #999999; 
+   padding-top : 4px;
+   font-weight : bold;
+}
+
+.relatedstoriesbold  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+   font-weight : bold; 
+}
+
+.promotextbold  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   font-weight : bold; 
+   color : #000000; 
+}
+
+.promotext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+}
+
+.date  {
+   font-size : 11px; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   color : #000000; 
+}
+
+.sectiontitle  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 15px; 
+   font-weight : bold; 
+   color : #990000; 
+}
+
+
+.search  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+   font-weight : bold; 
+   color : #000000; 
+}
+
+
+
+.puffheadline  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 92%; 
+   font-weight : 600; 
+}
+
+.puffsummary  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 92%; 
+   color : #333333; 
+}
+
+.toprightnav  {
+   font-size : 12px; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+.sectionsubhead  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 100%; 
+   color : #CC3300; 
+   font-weight : bold; 
+}
+
+.footer  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 12px; 
+   font-weight : bold; 
+}
+
+
+.footerarrow  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 12px; 
+   color : #CC3300; 
+   font-weight : bold; 
+}
+
+.footerpiping  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 100%; 
+   color : #999999; 
+   font-weight : bold; 
+}
+
+.promopuff  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   background-color : #CCCC99; 
+   font-weight : bold; 
+}
+
+.bbcredbanner	{
+   background-color : #990000; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+}
+
+.crumbtraila  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   background-color: #CCCC99; 
+   font-size : 11px; 
+}
+
+
+.otherlanguages {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+   color : #CC6666; 
+}
+
+.topstoriessubhead  {
+   font-weight : bold; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   color : #000000; 
+   font-size : 86%; 
+}
+
+.othertopstoriessubhead  {
+   font-weight : bold; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   color : #000000; 
+   font-size : 90%; 
+}
+
+.otherstorieshead  {
+   font-weight : bold; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   color : #CC3300; 
+   font-size : 12px; 
+}
+
+/* stories */
+
+.bulletheadline  {
+   margin-top : 2px;
+   margin-bottom : 2px;
+   padding-left : 12px;
+   background-image : url("/nol/shared/img/aro_blue.gif");
+   background-repeat:no-repeat;
+}
+
+.bulletheadlineup  {
+   margin-top : 2px;
+   margin-bottom : 2px;
+   padding-left : 12px;
+   background-image : url("/nol/shared/img/bluearrowup.gif");
+   background-repeat:no-repeat;
+}
+
+.bulletheadlinedown  {
+   margin-top : 2px;
+   margin-bottom : 2px;
+   padding-left : 12px;
+   background-image : url("/nol/shared/img/bluearrowdown.gif");
+   background-repeat:no-repeat;
+}
+
+.bulletmediavideo  {
+	padding-left : 15px;
+	padding-right : 2px;
+	padding-bottom : 2px;
+	padding-top : 2px;
+   	background-image : url("/nol/shared/img/inlinevideo.gif");
+   	background-repeat:no-repeat;
+	font-size : 12px;
+}
+
+.bulletmediaaudio  {
+	padding-left : 15px;
+	padding-right : 2px;
+	padding-bottom : 2px;
+	padding-top : 2px;
+   	background-image : url("/nol/shared/img/inlineaudio.gif");
+   	background-repeat:no-repeat;
+	font-size : 12px;
+}
+
+
+
+
+.listindex  {
+   margin-top : 2px;
+   margin-bottom : 2px;
+   padding-left : 8px;
+   background-image : url("/nol/shared/img/aro_blue_bullet.gif");
+   background-repeat: no-repeat;
+   font-weight : normal;
+}
+
+.headlinestory  {
+   font-size : 130%; 
+   font-weight : bold; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   padding-bottom : 8px;
+}
+
+.breakingnews  {
+   font-size : 130%; 
+   font-weight : bold; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   color : #CC3300; 
+}
+
+.inlineimage {
+   padding-bottom : 6px;
+}
+
+.piccaption  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+   color : #333333; 
+}
+
+.otherstories  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 100%; 
+}
+
+.siteSpecifier {
+   font-size: 10px;
+   color : #999999; 
+   padding-top : 4px;
+   font-weight : bold;
+	 text-align : left;
+}
+
+/* story rhs */
+
+.disclaimer  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+   color : #000000; 
+}
+
+.subsection  {
+   font-size : 100%; 
+   font-weight : bold; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   color : #CC3300; 
+}
+
+.subsubsection  {
+   font-size : 100%; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   color : #CC3300; 
+}
+
+.seealso  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 100%; 
+   font-weight : bold; 
+   color : #CC3300; 
+}
+
+.seealsodate  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+}
+
+.seealsohead  {
+   font-size : 90%; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+.archive  {
+   font-size : 100%; 
+   font-weight : bold; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   color : #CC3300; 
+}
+
+.archivedate  {
+   font-size : 90%; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+.archivehead  {
+   font-size : 90%; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-weight : bold; 
+}
+
+.internetlinkshead  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 100%; 
+   font-weight : bold; 
+   color : #CC3300; 
+}
+
+.internetlinks {
+   font-size : 90%; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+/* audiovideo */
+
+.avbground  {
+   background-color: #FFFFCC; 
+}
+
+.avtext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+   color : #000000;
+}
+
+.avnames  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+   font-weight : bold; 
+   color : #000000; 
+}
+
+/* audiovideo index */
+
+.avindexhead  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 110%; 
+   font-weight : bold; 
+   color : #000000; 
+}
+
+/* audiovideo index RHS */
+
+.avlivenow  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+   font-weight : bold; 
+   color : #CC3300; 
+}
+
+.avrhstext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+}
+
+.avcomingupgmthead  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+   font-weight : bold; 
+   color : #CC3300; 
+}
+
+.avcomingupgmtlink  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+}
+
+.avcurrenttimehead  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+   color : #000000; 
+}
+
+.avcurrenttime  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   font-weight : bold; 
+   color : #000000; 
+}
+
+.avprog  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+   color : #000000; 
+}
+
+.avprogonnow  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   font-weight : bold; 
+   color : #CC3300; 
+}
+
+.avprogonnowtext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+}
+
+.avprogonnext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   font-weight : bold; 
+   color : #CC3300; 
+}
+
+.avprogonnexttext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+}
+
+.avfeatured  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   font-weight : bold; 
+   color : #CC3300; 
+}
+
+.avprognamea  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   font-weight : bold; 
+   color : #000000; 
+}
+
+.avprognameb  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+   color : #000000; 
+}
+
+.avselect  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   font-weight : bold; 
+   color : #666633; 
+}
+
+.avchoice  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   font-weight : bold; 
+   color : #000000; 
+}
+
+.avchoicetitle  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+   font-weight : bold; 
+   color : #000000; 
+}
+
+.avchoicetext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+   color : #000000; 
+}
+
+.avbox {
+   background-color : #FFFFCC; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+   font-weight : normal; 
+   margin-right : 2px; 
+   margin-left : 2px; 
+   width : 95px; 
+}
+
+
+
+.avtightgrey { 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+   color : #666666; 
+}
+
+.avgrey { 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+   color : #666666; 
+	}
+
+.searchbox {
+   background-color : #FFFFCC; 
+   line-height : 106%; 
+}
+
+	
+/* programmes */
+
+.progclicktext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   font-weight : bold; 
+   color : #000000; 
+}
+
+.progindex  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   font-weight : bold; 
+}
+
+.progsubhead  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 86%; 
+   font-weight : bold; 
+   color : #CC3300; 
+}
+
+.progtitle  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 120%; 
+   font-weight : bold; 
+}
+
+.progtext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   color : #333333; 
+}
+
+.proglatest  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 72%; 
+   color : #666666; 
+}
+
+.progbacktotop  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 72%; 
+   color : #CC3300; 
+}
+
+.progexptext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 90%; 
+   color : #CC3300; 
+}
+
+
+
+/* left nav */
+
+ .mapChild {
+   background-color: #CCCCCC;
+   text-align : center; 
+ }
+.lhsNavSeparator {
+   color: #CCCCCC;
+   font-size : 13px;
+   text-align : center; 
+ }
+
+.lhsNavSeparatorChild {
+   color: #333366;
+   font-size : 13px;
+   background-color: #CCCCCC;
+   text-align : center; 	
+ }
+
+.cc3300 {
+   background-color: #CC3300;
+ }
+
+.sectionStyle
+{
+   line-height : 15px; 
+   letter-spacing : 0px;
+   font-weight : 600;
+}
+.sectionStyleTightNarrow
+{
+   line-height : 12px; 
+   letter-spacing : -1px;
+   font-weight : 600;
+   padding-right : 1px;
+}
+.sectionStyleTight
+{
+   line-height : 15px; 
+   letter-spacing : -1px;
+   font-weight : 600;
+   padding-right : 1px;
+}
+.sectionStyleTighter
+{
+   line-height : 15px; 
+   letter-spacing : -2px;
+   font-weight : 600;
+   padding-right : 2px;
+}
+
+
+
+
+
+/* special report puff box */
+
+.specialreportpuff	{
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 86%;
+	color: #990000;
+}
+
+.specialreportpuffheadline	{
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 90%;
+	color: #990000;
+}
+
+/* extras */
+
+
+.wsbottombox { 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size: 90%;
+   font-weight: bold;
+   color: #003366;
+   background-color : #CCCC99; 
+}
+
+
+
+.scorecard {
+   font-weight : bold; 
+   font-size : 100%; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   background-color : #990000; 
+}
+
+
+
+.quoteboxhead {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";  
+   font-weight : bold;  
+   font-size : 87%;  
+   color : #333300; 
+   background-color : #cccc99; 
+}
+
+
+.quoteBox {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 87%; 
+   color : #990000; 
+   background-color : #FFFFCC; 
+   font-weight : bold; 
+   letter-spacing : -0.5pt; 
+}
+
+.tighterB { 
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 11px;
+	letter-spacing: -1pt;
+	font-weight : 700; 
+}
+
+.tighter { 
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 11px;
+	letter-spacing: -1pt;
+}
+
+
+/*for inlineTpyoursay.html*/
+
+.headline2 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+   font-size: 100%;  
+	font-weight: 700;
+	line-height: 136%;
+	}
+	
+.headline1 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+ 	font-size: 90%; 
+	font-weight: 700;
+	text-decoration: none;
+	}
+
+.headline1red { 
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+ 	font-size: 90%; 
+	font-weight: 700;
+	text-decoration: none;
+	color: #cc3300;
+	}
+
+.brightRedHeader {
+   font-weight : bold; 
+   color : #CC3333; 
+   line-height : 12px;
+   font-size : 12px;
+   margin-top : 2px;	
+   margin-bottom : 2px;
+}
+
+.darkRedHeader {
+   font-weight : bold; 
+   color : #990000; 
+   line-height : 12px;
+   font-size : 12px;
+   margin-top : 2px;
+   margin-bottom : 2px;
+}
+
+.sportDarkRedHeader {
+   font-weight : bold; 
+   color : #CC3333; 
+   line-height : 12px;
+   font-size : 12px;
+   margin-top : 2px;	
+   margin-bottom : 2px;
+   margin-left : 2px;
+}
+
+/* DARK GREY WITH WHITE TEXT - for NOLAudioVideoBody*/
+.loc {	
+	background-color: #999999;
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 86%;
+	color: #FFFFFF;
+	font-weight: 600;
+	text-align: right;
+	letter-spacing: -0.5pt;
+	}
+
+.puff01 {
+	background-color: #CCCCCC;
+	layer-background-color: #CCCCCC;
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 86%;
+	color: #000000;
+	}
+
+
+/* for NOLSpecialReportIndexBody */
+.sprptheadline1 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+ 	font-size: 90%; 
+	font-weight: 700;
+	text-decoration: none;
+	line-height: 180%;
+	}
+
+.puffboxhead {
+	background-color: #CCCC99;
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 12px;
+	color: #333300;
+	font-weight: 600;
+	}
+	
+.dropdown	{
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 11px;	
+	
+}
+
+.livecomingpuffbox	{
+	background-color:  #CC3300;
+	color: #FFFFFF;
+	font-weight: 800;
+	font-size: 86%;
+}
+
+.redtitletext {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 10px;
+	color: #CC0000;
+	font-weight : bold;
+}
+
+.blacktitletext {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 10px;
+	color: #000000;
+	font-weight : bold;
+}
+
+.bluetitletext {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 10px;
+	color: #003366;
+	font-weight : bold;
+}
+
+/* preparing for corenews.css */
+.box {
+   width : 150px;
+   clear : right;
+   float : right;
+   text-align : left;
+}
+
+.itemsm  {
+   padding-left : 8px;
+   background : #FFFFCC  url("/nol/shared/img/aro_red_sm2.gif") 2px 1px no-repeat;
+}
+
+@import url(/stylesheets/nonnetscape.css);
+
+.h1 {
+   font-size : 124%; 
+   font-weight : bold;
+}
+
+.h2  {
+   font-size : 112%;
+   font-weight : bold;
+}
+
+.h3  {
+   font-size : 100%; 
+   font-weight : bold;
+}
+
+
+.boxhead {
+   padding-left : 8px;
+   color : #333300; 
+   font-family : Verdana, Arial, Helvetica, "Sans-serif";
+   font-weight : bold;
+   font-size : 12px; 
+}
+
+.boxbody {
+   color : #990000; 
+   font-family : Verdana, Arial, Helvetica, "Sans-serif";
+   font-weight : bold;
+   font-size : 12px; 
+}
+
+.aitem  {
+   margin-top : 1px;
+   padding-left : 12px;
+   background : #FFFFFF url("/nol/shared/img/aro_blue.gif") no-repeat;
+}
+
+.megaitem  {
+   margin-top : 1px;
+   padding-left : 12px;
+   background : #FFFFCC url("/nol/shared/img/in_depth/mp_aro.gif") no-repeat;
+}
+
+.meganolink {
+   padding-left : 2px;
+   color: #999966;
+}
+
+.megawhite  {
+   color: #FFFFFF;
+   font-weight : bold;
+}
+
+.megaheader {
+   font-family: Verdana, Arial, Helvetica;
+   padding-left : 2px;
+   color: #990000; 
+   background: #FFFFCC;
+   font-weight: bold;
+}
+
+.newsinvideo  {
+   margin-top : 1px;
+   padding-left : 15px;
+   background : #FFFFFF url("/nol/shared/img/video_icon.gif") no-repeat;
+}
+
+.newsindepth  {
+   margin-top : 1px;
+   padding-left : 15px;
+   background : #FFFFFF url("/nol/shared/img/indepth_icon.gif") no-repeat;
+}
+
+.newsinaudio  {
+   margin-top : 1px;
+   padding-left : 15px;
+   background : #FFFFFF url("/nol/shared/img/audio_icon.gif") no-repeat;
+}
+
+.newsintalkingpoint  {
+   margin-top : 1px;
+   padding-left : 15px;
+   background : #FFFFFF url("/nol/shared/img/talkingpoint_icon.gif") no-repeat;
+}
+
+.alsolist  {
+   clear : both;
+}
+
+.alsohead {
+   margin-top : 2px;
+   margin-bottom : 2px;
+   color : #666666; 
+   font-weight : bold; 
+   font-size : 11px;
+}
+
+.alsoitem {
+   margin-bottom : 1px;
+   padding-left : 10px;
+   color : #666666; 
+   font-size : 10px;
+   background-image : url("/nol/shared/img/also_aro_blue.gif");
+   background-repeat: no-repeat;
+}
+
+.englandRegions {
+   margin-bottom : 1px;
+   color : #666666; 
+   font-size : 9px;
+}
+
+.separator{
+   font-weight : bold; 
+   color : #CC3300; 
+   line-height : 12px;
+   font-size : 12px; 
+}
+
+.head{
+   font-weight : bold; 
+   color : #CC3300; 
+   line-height : 12px;
+   font-size : 12px; 
+}
+
+.rhshead {
+   padding-top : 4px;
+   color : #CC3300; 
+   line-height : 110%;
+   font-weight : bold;
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+}
+
+.rhslist {
+   padding-bottom : 4px;
+   font-size : 90%; 
+}
+
+.rhsdate  {
+   font-size : 11px; 
+}
+
+.puffbox {
+   padding-top: 0px;	
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+}
+
+.avbutton {
+   width : 170px;
+   background : #FFFFCC;
+   font-size : 11px; 
+   color : #666666; 
+   text-align : right;
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+
+.chatboxhead {
+	background-color: #CCCC99;
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 12px;
+	color: #333300;
+	font-weight: 600;
+	}
+
+.chatboxtitle {
+	background-color: #CCCC99;
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 12px;
+	color: #cc0000;
+	font-weight: 600;
+	}
+.chat_instructions {
+   font-size: 12px;
+   font-weight : normal; 
+   color : #FFFFCC; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+.byline {
+	font-family : Verdana, Arial, Helvetica, "MS sans serif";
+	color : #666666;
+	font-size : 12px;
+}
+
+/*the following styles added by ade 26.06.01 at the request of Angela pop-up module*/
+
+.instructionsheader {		
+	font-family: verdana,arial;
+	color: #666633;
+	font-size: 11px;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.instructions  {	
+	font-family: verdana,arial;
+	color: #000000;
+	font-size: 11px;
+	text-decoration:none;
+}
+
+/* floatingtable style added by Leo 2/7/01 */
+/*.floatingtable  {	
+	 clear : both;
+}*/
+/* disabled due to printing bug */
+
+.searchtitle  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+   color : #FFFFCC; 
+}
+
+.pipe {
+   color : #333366;
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size:10px;
+} 
+/* links for top nav */
+A.topnav:link  {
+   color : #333366;
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size:10px;
+}
+
+A.topnav:visited  {
+   color : #666699;
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+   font-size:10px; 
+}
+
+A.topnav:active  { 
+   color : #666699;
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size:10px; 
+}
+
+A.topnav:hover  {
+   color : #CC3300; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size:10px; 
+   }
+   
+/* services nav */
+.servicestitle {
+   color : #666666; 
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size:11px;
+}
+.servicesnav {
+   font-size:11px;
+   text-align:right;
+   padding-right:4px;
+   padding-top:2px;
+   padding-bottom:2px;
+}
+.servicesnavtight {
+   font-size:11px;
+   text-align:right;
+   padding-right:4px;
+   padding-top:2px;
+   padding-bottom:2px;
+   letter-spacing: -1pt;
+}
+.servicehead{
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+   font-weight : bold; 
+   color : #FFFFFF; 
+   font-size : 10px; 
+}
+
+/* lhs nav */
+.maptext {
+   color : #333366; 
+   font-family : Verdana, Arial, Helvetica, sans-serif; 
+   font-size:10px;
+}
+
+.languagestitle {
+   color : #000000; 
+   font-family : Verdana, Arial, Helvetica, sans-serif; 
+   font-size:11px;
+   text-align:right;
+   padding-right:4px;
+}
+/*datestamp*/
+.published {
+   color : #999999; 
+   font-family : Verdana, Arial, Helvetica, sans-serif; 
+   font-size:11px;
+   font-weight:800;
+}
+/*av rhs*/
+.avheader {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.avsubheader {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+/* bbci additions*/
+
+.bbcpageShadow { background:#666666 url(/nol/shared/img/global_toolbar/bg.gif); }
+.bbcpageShadowLeft {background:#999999 url(/nol/shared/img/global_toolbar/bg.gif) repeat-y;}
+.bbcpageBar { background:#999999 url(/nol/shared/img/global_toolbar/v.gif) repeat-y; }
+.bbcpageBar2 { background:#999999 url(/nol/shared/img/global_toolbar/v.gif) repeat-y; }
+.bbcpageSearchL { background:#990000 url(/nol/shared/img/global_toolbar/sl.gif) no-repeat;}
+.bbcpageSearch  { background:#990000 url(/nol/shared/img/global_toolbar/st.gif) repeat-x;}
+.bbcpageSearch2  { background:#990000 url(/nol/shared/img/global_toolbar/st.gif) repeat-x;}
+.bbcpageSearchR { background:#999999 url(/nol/shared/img/global_toolbar/sr.gif) no-repeat; }
+.bbcpageBlack {background-color:#000000;}
+.bbcpageGrey {background:#999999;}
+.bbcpageGreyT {background:#999999 url(/nol/shared/img/global_toolbar/t.gif)}
+.bbcpageWhite,a.bbcpageWhite,a.bbcpageWhite:link,a.bbcpageWhite:hover,a.bbcpageWhite:visited {color:#ffffff;text-decoration:none;font-family:tahoma,arial,helvetica,sans-serif;}
+.bbcpageCream {color:#ffffCC;text-decoration:none;font-family:tahoma,arial,helvetica,sans-serif;}
+
+.ultratext  {
+   font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+   font-size : 11px; 
+   color : #000000; 
+}
+
+.ultrasubheader {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	color: #ffffff;
+	font-size: 11px;
+	font-weight: 600;
+	background: #333333;
+}
+
+.sportBlock {
+   background : #FFFFCC url("/shared/img/ffffcc.gif");
+   background-repeat: repeat;
+   padding-left : 2px;
+   padding-right : 2px;
+   font-color : #000000; 
+   font-family : Verdana, Arial, Helvetica, Sans-serif;
+ }
+
+ .blueText {
+   color: #333366;
+}
+
+.blackText {
+   color: #000000;
+} 
+
+.bylineAuthor
+{
+	font-family: Verdana, Ariel, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:600;
+	color:#666633; 
+}
+
+.bylineDescription
+{
+	color:#000000;
+ 	font-family:Verdana, Ariel, Helvetica, sans-serif;
+ 	font-size:11px;
+	font-weight:400;
+}
+
+.bylineSubject
+{
+	color:#666633;
+ 	font-family: Georgia, Times New Roman, Serif;
+	font-size:22px;
+	font-weight:600;
+}
+
+/*search additions*/
+.searchresult {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+  font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; 
+}
+.percentage  {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 11px;
+	font-weight: bold;
+	color: #0066CC;
+}
+.relevance  {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 11px;
+	color: #333333;
+}
+.searchdate  {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 11px;
+	font-weight: bold;
+	color: #000000;
+}
+.searchdaterel  {
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+.text  {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 11px;
+}
+.findmore  {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 11px;
+}
+.resultsnum  {
+	font-family : Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+	font-size: 12px;
+	font-weight: bold;
+	color: #0066CC;
+}
+/*end search additions*/
+
+/* START - NEW INLINE STYLES */
+
+.quote {
+	font-size:11px;
+	color: #000000;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+.name {
+	font-size:11px;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-align:right;
+}
+
+.boxtitle {
+	font-size:10px;
+	color: #333300;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.boxlink{
+	font-size:11px;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.dottedline {
+   background : #FFFFCC 0px 2px url("/furniture/singledot.gif") repeat-x;
+}
+
+.boxtext
+{
+	font-size:11px;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.factbullet{
+margin-top : 1px;
+margin-bottom : 1px;
+padding-left : 8px;
+background-image : url("/furniture/new_bullet.gif");
+background-repeat: no-repeat;
+font-family : Verdana, Arial, Helvetica, sans-serif;
+}
+
+.caption  {
+   color : #333333; 
+   padding-top : 2px;
+   font-size:10px;
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.bylineSubject
+{
+	color:#666633;
+ 	font-family: Georgia, Times New Roman, Serif;
+	font-size:22px;
+	font-weight:600;
+}
+
+.formelement
+{
+	color:#000000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+/* END - NEW INLINE STYLES */
