@@ -6,7 +6,7 @@ from flask import request
 import os
 from werkzeug.utils import secure_filename
 
-from summarize import summarize
+from summarize import summarize, summarize_from_web
 
 app = Flask(__name__)
 # enter here the path of the server
@@ -28,8 +28,9 @@ def index():
         # num_words = int(request.form['max_words'])
         # min_words = int(request.form['min_words'])
         percentage = int(request.form['percentage'])
-
+        url = request.form['url']
         f = request.files['file']
+
         print("rereived data")
         # possible method of reading file directly : input_data = f.stream.read().decode("utf-8"), not working with docx
         filename = secure_filename(f.filename)
@@ -43,9 +44,12 @@ def index():
             f.save(path)
             print("working")
             summary = summarize(path, percentage)
+        elif url != '':
+            summary = summarize_from_web(url)
         else:  # if no file was chosen
             return render_template("index.html", error="You have to pick a file!")
         print("done 2")
+        
         return render_template("index.html", name=f.filename, summary=summary, status="file_uploaded successfully", )
 
 

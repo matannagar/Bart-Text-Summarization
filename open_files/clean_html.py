@@ -4,11 +4,12 @@ import codecs
 
 
 def open_html(filepath, article_text="None"):
-    f = codecs.open(filepath, encoding='utf8')
-
-    ''' possible to read directly from address:
-    url = "http://news.bbc.co.uk/2/hi/health/2284783.stm"
-    html = urlopen(url).read()'''
+    if filepath[-4:] == "html":
+        f = codecs.open(filepath, encoding='utf8')
+    else:
+        ''' possible to read directly from address:'''
+        url = filepath
+        f = urlopen(url).read()
 
     soup = BeautifulSoup(f, features="html.parser")
 

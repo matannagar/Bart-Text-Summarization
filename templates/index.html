@@ -14,6 +14,10 @@
 
 <form action="/index" method="post" enctype="multipart/form-data">
     <p><input type="file" name="file"/></p>
+    <p>
+        <label for="url">Website:</label>
+        <input type="text" id="url" name="url"><br><br>
+    </p>
     <p><input type="submit" value="Upload" onclick="$('#loading').show();"></p>
     <p>
         <label for="percentage" id="label_percentage"><strong>percentage:</strong></label>
