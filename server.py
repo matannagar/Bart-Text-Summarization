@@ -25,8 +25,10 @@ def upload():
 def index():
     if request.method == 'POST':
         print("started flask")
-        num_words = int(request.form['max_words'])
-        min_words = int(request.form['min_words'])
+        # num_words = int(request.form['max_words'])
+        # min_words = int(request.form['min_words'])
+        percentage = int(request.form['percentage'])
+
         f = request.files['file']
         print("rereived data")
         # possible method of reading file directly : input_data = f.stream.read().decode("utf-8"), not working with docx
@@ -40,7 +42,7 @@ def index():
             print("saving file")
             f.save(path)
             print("working")
-            summary = summarize(path)
+            summary = summarize(path, percentage)
         else:  # if no file was chosen
             return render_template("index.html", error="You have to pick a file!")
         print("done 2")

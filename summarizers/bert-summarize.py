@@ -1,12 +1,7 @@
-# from summarizer import Summarizer
 import docx2txt
-from transformers.testing_utils import torch_device
-
 from open_files.clean_html import open_html
 from open_files.clean_pdf import open_pdf
 from open_files.clean_text import clean_text
-# from transformers import BartForConditionalGeneration, BartTokenizer
-from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 

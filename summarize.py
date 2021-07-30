@@ -6,17 +6,16 @@ from open_files.clean_pdf import open_pdf
 from open_files.clean_text import clean_text
 
 
-def word_count(text, percentage, max_words):
+def summary_length(text, percentage=15):
+    # count words in string
     res = len(re.findall(r'\w+', text))
+    # return min words in summary
     res = res * percentage * (1 / 100)
-    if res > max_words:
-        return max_words
-    return res
+
+    return int(res)
 
 
-def summarize(filename, num_beam=2, min_words=50, max_words=500, percentage=50):
-    tokenizer = AutoTokenizer.from_pretrained('./t5-base')
-    model = AutoModelForSeq2SeqLM.from_pretrained('./t5-base', return_dict=True)
+def summarize(filename, percentage):
     if filename[-4:] == "docx":
         text = docx2txt.process(filename)
     elif filename[-4:] == "html":
@@ -26,16 +25,24 @@ def summarize(filename, num_beam=2, min_words=50, max_words=500, percentage=50):
     else:
         with open(filename, 'r') as file:
             text = file.read()
+    # remove links, specials signs, emails...
     text = clean_text(text)
-    inputs = tokenizer.encode("summarize: " + text, return_tensors='pt', truncation=True)
-    # max_words = word_count(text, percentage, max_words)
-    outputs = model.generate(inputs, max_length=240, min_length=200, num_beams=4,
-                             length_penalty=2.0, no_repeat_ngram_size=3)
-    summary = tokenizer.decode(outputs[0])
-    summary = summary[5:-4]
+    # calculate how many words user want's in his summary
+    words_in_summary = summary_length(text, percentage)
 
-    # if we want an output file
-    # with open("Output.txt", "w") as text_file:
-    #     text_file.write("Summary: " % summary)
+    tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-cnn")
+    model = AutoModelForSeq2SeqLM.from_pretrained("facebook/bart-large-cnn")
+
+    article_input_ids = \
+        tokenizer.encode(text, return_tensors='pt', truncation=True)
+    outputs = model.generate(article_input_ids,
+                             num_beams=4,
+                             length_penalty=2.0,
+                             min_length=words_in_summary,
+                             max_length=words_in_summary + 50,
+                             no_repeat_ngram_size=3)
+
+    summary = tokenizer.decode(outputs[0])
+    summary = summary[6:-4]
 
     return summary

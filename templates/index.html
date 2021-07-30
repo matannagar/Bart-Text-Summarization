@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<h1> Text Summarization T5</h1>
+<h1> Text Summarization BART</h1>
 <p style="color:red"><strong>{{error}}</strong></p>
 
 <form action="/index" method="post" enctype="multipart/form-data">
@@ -20,14 +20,14 @@
         <input id="percentage" type="number" value="10" min="10" max="100" name="percentage">
 
     </p>
-    <p>
-        <label for="max_words" id="label_max_words"><strong>Summary's max words:</strong></label>
-        <input id="max_words" type="number" value="500" name="max_words">
-    </p>
-    <p>
-        <label for="min_words" id="label_min_words"><strong>Summary's min words:</strong></label>
-        <input id="min_words" type="number" value="50" name="min_words">
-    </p>
+    <!--    <p>-->
+    <!--        <label for="max_words" id="label_max_words"><strong>Summary's max words:</strong></label>-->
+    <!--        <input id="max_words" type="number" value="500" name="max_words">-->
+    <!--    </p>-->
+    <!--    <p>-->
+    <!--        <label for="min_words" id="label_min_words"><strong>Summary's min words:</strong></label>-->
+    <!--        <input id="min_words" type="number" value="50" name="min_words">-->
+    <!--    </p>-->
     <!--    <p>-->
     <!--        <label for="num_beams" id="label_num_beams"><strong>Summary's max beam search: </strong></label>-->
     <!--        <input type="number" min="1" max="20" value="2" id="num_beams" name="num_beams">-->
