@@ -2,3 +2,6 @@ docx2txt==0.8
 Flask==2.0.1
 transformers==4.8.2
 Werkzeug==2.0.1
+
+tika~=1.24
+beautifulsoup4~=4.8.2
