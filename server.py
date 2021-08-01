@@ -21,7 +21,7 @@ def upload():
     return render_template("index.html")
 
 
-@app.route('/index', methods=['POST'])
+@app.route('/index', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
         print("started flask")
@@ -30,8 +30,6 @@ def index():
         percentage = int(request.form['percentage'])
         url = request.form['url']
         f = request.files['file']
-
-        print("rereived data")
         # possible method of reading file directly : input_data = f.stream.read().decode("utf-8"), not working with docx
         filename = secure_filename(f.filename)
         if filename != '':
@@ -40,17 +38,14 @@ def index():
             if file_ext not in app.config['UPLOAD_EXTENSIONS']:
                 return render_template("index.html", error="Only .docx or .txt allowed!")
             path = os.path.join(app.config['UPLOAD_PATH'], filename)
-            print("saving file")
             f.save(path)
-            print("working")
+
             summary = summarize(path, percentage)
         elif url != '':
             summary = summarize_from_web(url)
         else:  # if no file was chosen
             return render_template("index.html", error="You have to pick a file!")
-        print("done 2")
-        
-        return render_template("index.html", name=f.filename, summary=summary, status="file_uploaded successfully", )
+        return render_template("index.html", name=f.filename, summary=summary, status="file_uploaded successfully")
 
 
 # need to be erased

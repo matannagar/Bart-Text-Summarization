@@ -25,6 +25,7 @@ def summarize(filename, percentage):
     else:
         with open(filename, 'r') as file:
             text = file.read()
+    print("working")
     # remove links, specials signs, emails...
     text = clean_text(text)
     # calculate how many words user want's in his summary
@@ -43,14 +44,13 @@ def summarize(filename, percentage):
                              no_repeat_ngram_size=3)
 
     summary = tokenizer.decode(outputs[0])
-    summary = summary[6:-4]
+    summary = summary[7:-4]
 
     return summary
 
 
 def summarize_from_web(url, percentage=15):
     text = open_html(url)
-
     # remove links, specials signs, emails...
     text = clean_text(text)
     # calculate how many words user want's in his summary

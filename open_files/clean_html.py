@@ -20,7 +20,6 @@ def open_html(filepath, article_text="None"):
     article = soup.find("body").findAll('p')
     for element in article:
         article_text += '\n' + ''.join(element.findAll(text=True))
-
     # break into lines and remove leading and trailing space on each
     lines = (line.strip() for line in article_text.splitlines())
     # break multi-headlines into a line each

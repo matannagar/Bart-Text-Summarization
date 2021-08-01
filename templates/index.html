@@ -12,18 +12,17 @@
 <h1> Text Summarization BART</h1>
 <p style="color:red"><strong>{{error}}</strong></p>
 
-<form action="/index" method="post" enctype="multipart/form-data">
+<form action="/index" method="POST" enctype="multipart/form-data">
     <p><input type="file" name="file"/></p>
     <p>
-        <label for="url">Website:</label>
-        <input type="text" id="url" name="url"><br><br>
-    </p>
-    <p><input type="submit" value="Upload" onclick="$('#loading').show();"></p>
-    <p>
-        <label for="percentage" id="label_percentage"><strong>percentage:</strong></label>
-        <input id="percentage" type="number" value="10" min="10" max="100" name="percentage">
+        <label for="url"><strong>Summarize from URL:</strong></label>
+        <input type="text" id="url" name="url"><br>
+        <label for="percentage" id="label_percentage"><strong>Summary's length in percentage:</strong></label>
+        <input id="percentage" type="number" value="10" min="10" max="100" name="percentage">%
 
     </p>
+    <p><input type="submit" value="Summarize Now" onclick="$('#loading').show();"></p>
+
     <!--    <p>-->
     <!--        <label for="max_words" id="label_max_words"><strong>Summary's max words:</strong></label>-->
     <!--        <input id="max_words" type="number" value="500" name="max_words">-->
@@ -36,18 +35,51 @@
     <!--        <label for="num_beams" id="label_num_beams"><strong>Summary's max beam search: </strong></label>-->
     <!--        <input type="number" min="1" max="20" value="2" id="num_beams" name="num_beams">-->
     <!--    </p>-->
+    <p>
+        Optional:
+        <button onclick="saveTextAsFile()"> Save Text to File</button>
+    </p>
+
 </form>
 
 <h2> Summary</h2>
 
 <div id="loading" style="display:none;"><img src="https://s6.gifyu.com/images/1474a9516f9fbab5e7a3.gif" alt=""/>
-    <p>T5 is now analyzing your text.</p>
+    <p>Bart is now analyzing your text.</p>
 </div>
 <div>
     <p>{{summary}}</p>
     <p>{{name}}</p>
     <p>{{ content }}</p>
 </div>
+
+
+<script type="text/javascript">
+
+    function saveTextAsFile() {
+        var textToSave = document.getElementById("summary").value;
+        console.log(textToSave)
+        var textToSaveAsBlob = new Blob([textToSave], {type: "text/plain"});
+        var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+        var fileNameToSaveAs = document.getElementById("name").value;
+        console.log(fileNameToSaveAs)
+
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        downloadLink.href = textToSaveAsURL;
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+
+        downloadLink.click();
+    }
+
+    function destroyClickedElement(event) {
+        document.body.removeChild(event.target);
+    }
+
+</script>
 
 </body>
 </html>
