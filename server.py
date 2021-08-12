@@ -25,27 +25,36 @@ def upload():
 def index():
     if request.method == 'POST':
         print("started flask")
-        # num_words = int(request.form['max_words'])
-        # min_words = int(request.form['min_words'])
-        percentage = int(request.form['percentage'])
-        url = request.form['url']
-        f = request.files['file']
-        # possible method of reading file directly : input_data = f.stream.read().decode("utf-8"), not working with docx
-        filename = secure_filename(f.filename)
-        if filename != '':
-            file_ext = os.path.splitext(filename)[1]
-            # verify type of file
-            if file_ext not in app.config['UPLOAD_EXTENSIONS']:
-                return render_template("index.html", error="Only .docx or .txt allowed!")
-            path = os.path.join(app.config['UPLOAD_PATH'], filename)
-            f.save(path)
+        min_words = request.form['max-words']
 
-            summary = summarize(path, percentage)
-        elif url != '':
-            summary = summarize_from_web(url)
-        else:  # if no file was chosen
-            return render_template("index.html", error="You have to pick a file!")
-        return render_template("index.html", name=f.filename, summary=summary, status="file_uploaded successfully")
+        if min_words != '':
+            min_words = int(min_words)
+
+        percentage = request.form['percentage']
+        if percentage != '':
+            percentage = int(percentage)
+
+        # if request.files.get('file1', False):
+        #     f = request.files['file2']
+        # else:
+        #     f = request.files['file1']
+    f = request.files['file1']
+    if secure_filename(f.filename) == '':
+        f = request.files['file2']
+    # possible method of reading file directly : input_data = f.stream.read().decode("utf-8"), not working with docx
+    filename = secure_filename(f.filename)
+    if filename != '':
+        file_ext = os.path.splitext(filename)[1]
+        # verify type of file
+        if file_ext not in app.config['UPLOAD_EXTENSIONS']:
+            return render_template("index.html", error="Only .docx or .txt allowed!")
+        path = os.path.join(app.config['UPLOAD_PATH'], filename)
+        f.save(path)
+        summary = summarize(path, percentage)
+    else:  # if no file was chosen
+        print("no file chosen")
+        return render_template("index.html", error="You have to pick a file!")
+    return render_template("index.html", name=f.filename, summary=summary, status="file_uploaded successfully")
 
 
 # need to be erased

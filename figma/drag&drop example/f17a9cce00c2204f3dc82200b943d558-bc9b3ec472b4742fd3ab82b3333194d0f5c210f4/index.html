@@ -1,0 +1,37 @@
+<!-- CHANGE THE ACTION TO THE PHP SCRIPT THAT WILL PROCESS THE FILE VIA AJAX -->
+<form id="file-upload-form" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+	<input id="file-upload" type="file" name="fileUpload" />
+	<label for="file-upload" id="file-drag">
+		Select a file to upload
+		<br />OR
+		<br />Drag a file into this box
+		
+		<br /><br /><span id="file-upload-btn" class="button">Add a file</span>
+	</label>
+	
+	<progress id="file-progress" value="0">
+		<span>0</span>%
+	</progress>
+	
+	<output for="file-upload" id="messages"></output>
+</form>
+
+<?php
+$fn = (isset($_SERVER['HTTP_X_FILE_NAME']) ? $_SERVER['HTTP_X_FILE_NAME'] : false);
+$targetDir = 'tmp/';
+
+if ($fn) {
+          	if (isFileValid($fn)) {
+          		// AJAX call
+          		file_put_contents(
+          			$targetDir . $fn,
+          			file_get_contents('php://input')
+          		);
+          		removeFile($fn);
+          	}
+}
+
+function removeFile($file) {
+	unlink($targetDir . $file);
+}
+?>

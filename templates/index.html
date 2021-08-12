@@ -1,85 +1,420 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html prefix="og: http://ogp.me/ns#" lang="en" style="height: 100%">
+
 <head>
-    <link href="{{ url_for('static', filename='css/mystyle.css') }}" rel="stylesheet">
-    <link rel="icon"
-          href="https://pbs.twimg.com/profile_images/500679949/t5-logo_400x400.png">
-    <title>NLP Summarization</title>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5"/>
+
+    <title>bart summarizer</title>
+    <meta name="description" content="bart summarizer Description">
+    <meta property="og:title" content="bart summarizer">
+    <meta property="og:description" content="bart summarizer Description">
+    <meta name="generator" content="Quest">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,500,600,700,800">
+    <!-- <link rel="stylesheet" href="./index.css" type="text/css"/> -->
+
+    <script type="text/javascript" src="../static/index.js"></script>
+
 </head>
+<body class="websiteBody">
+<div class="Page-outer">
+    <div
+            id="Page"
+            data-name="Artboards"
+            class="Page"
+    >
+        <div class="Frame-outer">
+            <div
+                    id="Frame"
+                    data-name="Matan's - 2"
+                    class="Frame"
+            >
+                <div class="explore---ask-outer">
+                    <div
+                            id="explore---ask"
+                            data-name="explore & ask "
+                            class="explore---ask"
+                    >
+                        <div class="bg-3-outer">
+                            <div
+                                    id="bg-3"
+                                    data-name="bg"
+                                    alt="bg"
+                                    class="bg-3"
+                            >
+                            </div>
+                        </div>
+                        <div class="Frame-1-outer">
+                            <div
+                                    id="Frame-1"
+                                    data-name="Frame"
+                                    class="Frame-1"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pageHeadline-outer">
+                    <div
+                            id="pageHeadline"
+                            data-name="pageHeadline"
+                            class="pageHeadline"
+                    >
+                        <div class="subHeadline-outer">
+                            <div
+                                    id="subHeadline"
+                                    data-name="subHeadline"
+                                    class="subHeadline"
+                            >
+                                <div class="text-1-outer">
+                                    <div
+                                            id="text-1"
+                                            data-name="text"
+                                            class="text-1"
+                                    >
+                                        <div class="HiLo-Summarize-Tool-outer">
+                                            <div
+                                                    id="HiLo-Summarize-Tool"
+                                                    data-name="HiLo Summarize Tool"
+                                                    class="HiLo-Summarize-Tool"
+                                            >
+                                                <div key="0">HiLo Summarize Tool</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-outer">
+                                    <div
+                                            id="text"
+                                            data-name="text"
+                                            class="text"
+                                    ><span class="text-1">Why not</span><span
+                                            class="text-2"> leveraging technology</span><span class="text-3"> to </span><span
+                                            class="text-4">save</span><span class="text-5"> your </span><span
+                                            class="text-6">time</span><span
+                                            class="text-7"> and allow you to </span><span
+                                            class="text-8">utilize</span><span class="text-9"> it for  </span><span
+                                            class="text-10">focusing on what’s really matter</span><span
+                                            class="text-11">?</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form action="/index" method="POST" enctype="multipart/form-data">
+                    <!-- Load File Button -->
+                    <div class="load-button-outer">
+                        <div
+                                id="load-button"
+                                data-name="."
+                                class="load-button"
+                        >
+                            <div class="upload-btn-wrapper">
+                                <button class="btn">Upload a file</button>
+                                <input type="file" name="file1"/>
+                            </div>
+                        </div>
+                    </div>
 
-<body>
-<h1> Text Summarization BART</h1>
-<p style="color:red"><strong>{{error}}</strong></p>
+                    <!-- Drag&Drop Box -->
+                    <div class="drag-drop-outer">
+                        <!-- <div class="drag-drop"></div> -->
+                        <img
+                                id="drag-drop"
+                                data-name="drag&drop"
+                                alt="drag&drop"
+                                class="drag-drop"
+                                
+                        >
+                        <div class="dropzone" id="dropzone">
+                            <input type="file" name="file2" id="fileElem">
+                          <!-- <label class="button" for="fileElem">Select some files</label> -->
+                        </div>  
+                            </div>
+                    <!-- max words box -->
+                    <div class="max-words-outer">
+                        <div
+                                id="max-words-box"
+                                data-name="."
+                                class="max-words-box"
+                        >
+                            <label for="max-words"></label>
+                            <input type="number" id="max-words" name="max-words" defaultValue="100"
+                                   placeholder="Summary's max words...">
+                        </div>
+                    </div>
+                    <!-- percentage box -->
+                    <div class="percentage-box-outer">
+                        <div
+                                id="percentage-box"
+                                data-name="."
+                                class="percentage-box"
+                        >
+                            <label for="percentage"></label>
+                            <input type="number" id="percentage" name="percentage" min="10" max="100"
+                                   placeholder="Summary's length in percentages...">
+                        </div>
+                    </div>
 
-<form action="/index" method="POST" enctype="multipart/form-data">
-    <p><input type="file" name="file"/></p>
-    <p>
-        <label for="url"><strong>Summarize from URL:</strong></label>
-        <input type="text" id="url" name="url"><br>
-        <label for="percentage" id="label_percentage"><strong>Summary's length in percentage:</strong></label>
-        <input id="percentage" type="number" value="10" min="10" max="100" name="percentage">%
+                    <!-- Button summarizer -->
+                    <div class="buttonSummarize-outer">
+                        <div
+                                id="buttonSummarize"
+                                data-name="buttonSummarize"
+                                class="buttonSummarize"
+                        >
+                            <label for="SummarizeButton"></label>
+                            <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!">
+                        </div>
+                    </div>
+                </form>
+                <!-- Text Summary Box -->
+                <div class="textsummary-outer">
+                    <div
+                            id="textsummary"
+                            data-name="textsummary"
+                            alt="textsummary"
+                            class="textsummary"
+                    >
 
-    </p>
-    <p><input type="submit" value="Summarize Now" onclick="$('#loading').show();"></p>
+                        <div name='summary'>{{summary}}</div>
+                        <p>{{error}}</p>
+                        <p>{{name}}</p>
+                        <p>{{ content }}</p>
+                    </div>
+                </div>
+                <!-- Save Summary output -->
+                <div class="download-summary-outer">
+                    <div
+                            id="download-summary"
+                            data-name="download summary"
+                            class="download-summary"
+                    >
+                        <div class="Group-2170-outer">
+                            <div
+                                    id="Group-2170"
+                                    data-name="Group 2170"
+                                    class="Group-2170"
+                            >
+                                <form onsubmit="download(this['name'].value, this['text'].value)" action="POST">
+                                    <label>
+                                        <input type="text" name="name" value="test.txt">
+                                    </label>
+                                    <label>
+                                        <textarea name="text" style="display:none;">{{summary}}</textarea>
+                                    </label>
+                                    <input type="submit" value="Download">
+                                </form>
+                            </div>
+                        </div>
 
-    <!--    <p>-->
-    <!--        <label for="max_words" id="label_max_words"><strong>Summary's max words:</strong></label>-->
-    <!--        <input id="max_words" type="number" value="500" name="max_words">-->
-    <!--    </p>-->
-    <!--    <p>-->
-    <!--        <label for="min_words" id="label_min_words"><strong>Summary's min words:</strong></label>-->
-    <!--        <input id="min_words" type="number" value="50" name="min_words">-->
-    <!--    </p>-->
-    <!--    <p>-->
-    <!--        <label for="num_beams" id="label_num_beams"><strong>Summary's max beam search: </strong></label>-->
-    <!--        <input type="number" min="1" max="20" value="2" id="num_beams" name="num_beams">-->
-    <!--    </p>-->
-    <p>
-        Optional:
-        <button onclick="saveTextAsFile()"> Save Text to File</button>
-    </p>
 
-</form>
+                        <div class="label-2-outer">
+                            <div
+                                    id="label-2"
+                                    data-name="label"
+                                    class="label-2"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shareArticleOption-outer">
+                    <div
+                            id="shareArticleOption"
+                            data-name="shareArticleOption"
+                            class="shareArticleOption"
+                    >
+                        <div class="Group-2169-outer">
+                            <div
+                                    id="Group-2169"
+                                    data-name="Group 2169"
+                                    class="Group-2169"
+                            >
+                                <div class="telegram-outer">
+                                    <div
+                                            id="telegram"
+                                            data-name="telegram"
+                                            class="telegram"
+                                    >
+                                        <div class="telegram-1-outer">
+                                            <img
+                                                    id="telegram-1"
+                                                    data-name="telegram"
+                                                    alt="telegram"
+                                                    class="telegram-1"
+                                            >
+                                        </div>
 
-<h2> Summary</h2>
-
-<div id="loading" style="display:none;"><img src="https://s6.gifyu.com/images/1474a9516f9fbab5e7a3.gif" alt=""/>
-    <p>Bart is now analyzing your text.</p>
+                                        <!-- <div class="bg-outer">
+                                        <img
+                                          id="bg"
+                                          data-name="bg"
+                                          alt="bg"
+                                          class="bg"
+                                        >
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="google-outer">
+                                    <div
+                                            id="google"
+                                            data-name="google"
+                                            class="google"
+                                    >
+                                        <div class="google-1-outer">
+                                            <img
+                                                    id="google-1"
+                                                    data-name="google"
+                                                    alt="google"
+                                                    class="google-1"
+                                            >
+                                        </div>
+                                        <div class="google-2-outer">
+                                            <img
+                                                    id="google-2"
+                                                    data-name="google"
+                                                    alt="google"
+                                                    class="google-2"
+                                            >
+                                        </div>
+                                        <div class="google-3-outer">
+                                            <img
+                                                    id="google-3"
+                                                    data-name="google"
+                                                    alt="google"
+                                                    class="google-3"
+                                            >
+                                        </div>
+                                        <div class="google-4-outer">
+                                            <img
+                                                    id="google-4"
+                                                    data-name="google"
+                                                    alt="google"
+                                                    class="google-4"
+                                            >
+                                        </div>
+                                        <div class="bg-1-outer">
+                                            <img
+                                                    id="bg-1"
+                                                    data-name="bg"
+                                                    alt="bg"
+                                                    class="bg-1"
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slack-outer">
+                                    <div
+                                            id="slack"
+                                            data-name="slack"
+                                            class="slack"
+                                    >
+                                        <div class="slack-1-outer">
+                                            <img
+                                                    id="slack-1"
+                                                    data-name="slack"
+                                                    alt="slack"
+                                                    class="slack-1"
+                                            >
+                                        </div>
+                                        <div class="slack-2-outer">
+                                            <img
+                                                    id="slack-2"
+                                                    data-name="slack"
+                                                    alt="slack"
+                                                    class="slack-2"
+                                            >
+                                        </div>
+                                        <div class="slack-3-outer">
+                                            <img
+                                                    id="slack-3"
+                                                    data-name="slack"
+                                                    alt="slack"
+                                                    class="slack-3"
+                                            >
+                                        </div>
+                                        <div class="slack-4-outer">
+                                            <img
+                                                    id="slack-4"
+                                                    data-name="slack"
+                                                    alt="slack"
+                                                    class="slack-4"
+                                            >
+                                        </div>
+                                        <div class="slack-5-outer">
+                                            <img
+                                                    id="slack-5"
+                                                    data-name="slack"
+                                                    alt="slack"
+                                                    class="slack-5"
+                                            >
+                                        </div>
+                                        <div class="slack-6-outer">
+                                            <img
+                                                    id="slack-6"
+                                                    data-name="slack"
+                                                    alt="slack"
+                                                    class="slack-6"
+                                            >
+                                        </div>
+                                        <div class="slack-7-outer">
+                                            <img
+                                                    id="slack-7"
+                                                    data-name="slack"
+                                                    alt="slack"
+                                                    class="slack-7"
+                                            >
+                                        </div>
+                                        <div class="slack-8-outer">
+                                            <img
+                                                    id="slack-8"
+                                                    data-name="slack"
+                                                    alt="slack"
+                                                    class="slack-8"
+                                            >
+                                        </div>
+                                        <div class="bg-2-outer">
+                                            <img
+                                                    id="bg-2"
+                                                    data-name="bg"
+                                                    alt="bg"
+                                                    class="bg-2"
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Union-outer">
+                            <img
+                                    id="Union"
+                                    data-name="Union"
+                                    alt="Union"
+                                    class="Union"
+                            >
+                        </div>
+                        <div class="label-1-outer">
+                            <div
+                                    id="label-1"
+                                    data-name="label"
+                                    class="label-1"
+                            >
+                                <div key="0">Share Article</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <p>{{summary}}</p>
-    <p>{{name}}</p>
-    <p>{{ content }}</p>
-</div>
 
-
-<script type="text/javascript">
-
-    function saveTextAsFile() {
-        var textToSave = document.getElementById("summary").value;
-        console.log(textToSave)
-        var textToSaveAsBlob = new Blob([textToSave], {type: "text/plain"});
-        var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-        var fileNameToSaveAs = document.getElementById("name").value;
-        console.log(fileNameToSaveAs)
-
-        var downloadLink = document.createElement("a");
-        downloadLink.download = fileNameToSaveAs;
-        downloadLink.innerHTML = "Download File";
-        downloadLink.href = textToSaveAsURL;
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-
-        downloadLink.click();
-    }
-
-    function destroyClickedElement(event) {
-        document.body.removeChild(event.target);
-    }
-
-</script>
 
 </body>
 </html>
+  

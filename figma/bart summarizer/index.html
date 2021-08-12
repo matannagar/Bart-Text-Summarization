@@ -173,7 +173,8 @@
           alt="textsummary"
           class="textsummary"
         >
-          <p>{{summary}}</p>
+        
+          <div name='summary'>{{summary}}</div>
           <p>{{name}}</p>
           <p>{{ content }}</p>
         </div>
@@ -191,14 +192,11 @@
             data-name="Group 2170"
             class="Group-2170"
           >
-            <div class="Rectangle-103-1-outer">
-            <img
-              id="Rectangle-103-1"
-              data-name="Rectangle 103"
-              alt="Rectangle 103"
-              class="Rectangle-103-1"
-            >
-            </div>
+          <form onsubmit="download(this['name'].value, this['text'].value)">
+            <input type="text" name="name" value="test.txt">
+            <textarea name="text" style="display:none;">{{summary}}</textarea> 
+            <input type="submit" value="Download">
+          </form>
           </div>
           </div>
 
@@ -208,7 +206,7 @@
             id="label-2"
             data-name="label"
             class="label-2"
-          ><div key="0">Download</div>
+          >
           </div>
           </div>
         </div>
@@ -403,7 +401,9 @@
     </div>
     </div>
 
-  
+    
+
+
     
     </body>
   </html>
