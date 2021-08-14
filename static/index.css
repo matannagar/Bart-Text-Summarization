@@ -58,10 +58,13 @@ h2 {
 .upldbtn:hover {
   background-color: #45a049;
 }
-
+#file1 {
+  display: none;
+}
 /* DRAG AND DROP */
 .drag-drop-outer {
   text-align: center;
+  background-color: #f7f9ff;
   /* border-style: dotted; */
   width: 500px;
   height: 280px;
@@ -70,17 +73,18 @@ h2 {
 }
 .dropzone {
   text-align: center;
-  display: block;
+  /*display: block; */
   width: 500px;
   height: 280px;
   border: 2px;
   border-style: dashed;
   border-color: #ccc;
   color: #ccc;
+  pointer-events: all;
   /* line-height: 300px; */
 
   margin: 0;
-  background-image: url("../static/assets/images/drag_drop.png");
+  /* background-image: url("../static/assets/images/drag_drop.png"); */
 }
 
 .dropzone.dragover {
@@ -88,15 +92,16 @@ h2 {
   color: #000;
 }
 
-input[type="file"] {
-  height: 500px;
-  width: 300px;
+#fileElem {
+  height: 270px;
+  width: 450px;
   line-height: 300px;
-  margin: 0;
+  /* margin: 0; */
   opacity: 0;
+  border-style: dashed;
 }
 
-.button:hover {
+#btndd:hover {
   background: #ddd;
 }
 
