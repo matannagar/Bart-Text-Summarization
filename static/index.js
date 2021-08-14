@@ -23,6 +23,8 @@ function quest_82391_features () {
     let checkDiv = null;
   
   };
+
+  //DOWNLOAD FILE
   function download(filename, text) {
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -71,6 +73,8 @@ function quest_82391_features () {
       evt.preventDefault();
     };
 
+
+    //LOADING 
     $(document).ready(function(){
       $(".icon-bg").click(function () {
           $(".btn").toggleClass("active");

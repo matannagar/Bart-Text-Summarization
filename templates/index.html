@@ -56,9 +56,10 @@
                 <!-- <p id="textInside"></p>-->
                 <label class="button" id="btndd" for="fileElem">Drag a file here</label>
                 <input type="file" name="file2" id="fileElem">
+
             </div>
         </div>
-
+        <br>
         <!-- max words box -->
         <div class="max-words-outer">
             <div id="max-words-box" class="max-words-box">
@@ -87,13 +88,17 @@
     </form>
     <!-- </div> -->
     <!-- Text Summary Box -->
+    <!-- <div class="outer"> -->
+
+
     <div class="textsummary-outer">
         <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
             <div name='summary'>
-                <br><br>
+                <br>
+                <br>
                 {{summary}}
                 <div id="loading" style="display:none;"><img src="../static/assets/images/loading.gif" alt="" />
-                    <p>Bart is now analyzing your text.</p>
+                    <p>Summarization in process...</p>
                 </div>
                 <p>{{error}}</p>
                 <p>{{name}}</p>
@@ -102,6 +107,24 @@
         </div>
     </div>
 
+    <div class="ShareOptions">
+        <div class="download-summary-outer">
+            <!-- <div id="download-summary" data-name="download summary" class="download-summary"> -->
+            <!-- <form action="/index" method="POST" enctype="multipart/form-data"> -->
+            <form onsubmit="download(this['name'].value, this['text'].value)">
+                <label>
+                    <input type="text" name="name" value="test.txt">
+                </label>
+                <label>
+                    <textarea name="text" style="display:none;">{{summary}}</textarea>
+                </label>
+                <input type="submit" value="Download">
+            </form>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <!-- </div> -->
 
     <!-- <div class="Page-outer"> -->
     <!-- <div id="Page" data-name="Artboards" class="Page"> -->
@@ -206,19 +229,7 @@
         </div>
     </div> -->
     <!-- Save Summary output -->
-    <!-- <div class="download-summary-outer">
-        <div id="download-summary" data-name="download summary" class="download-summary">
-            <form onsubmit="download(this['name'].value, this['text'].value)" action="POST">
-                <label>
-                    <input type="text" name="name" value="test.txt">
-                </label>
-                <label>
-                    <textarea name="text" style="display:none;">{{summary}}</textarea>
-                </label>
-                <input type="submit" value="Download">
-            </form>
-        </div>
-    </div> -->
+
     <!-- </div> -->
     <!-- </div> -->
     <!-- </div> -->
