@@ -22,13 +22,13 @@ def upload():
 
 
 @app.route('/index', methods=['POST', 'GET'])
-def index(glob_var="hey"):
+def index(glob_var=""):
     if request.method == 'POST':
         print("started flask")
         max_words = request.form['max-words']
 
         if max_words != '':
-            min_words = int(max_words)
+            max_words = int(max_words)
 
         percentage = request.form['percentage']
         if percentage != '':
