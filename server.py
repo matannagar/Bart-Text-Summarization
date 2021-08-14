@@ -12,7 +12,7 @@ app = Flask(__name__)
 # enter here the path of the server
 app.config['UPLOAD_PATH'] = 'C:/Users/public'
 # allowed types
-app.config['UPLOAD_EXTENSIONS'] = ['.docx', '.txt', '.pdf', '.html']
+app.config['UPLOAD_EXTENSIONS'] = ['.docx', '.doc', '.txt', '.pdf', '.html']
 
 
 # homepage
@@ -25,10 +25,10 @@ def upload():
 def index():
     if request.method == 'POST':
         print("started flask")
-        min_words = request.form['max-words']
+        max_words = request.form['max-words']
 
-        if min_words != '':
-            min_words = int(min_words)
+        if max_words != '':
+            min_words = int(max_words)
 
         percentage = request.form['percentage']
         if percentage != '':
@@ -50,7 +50,7 @@ def index():
             return render_template("index.html", error="Only .docx or .txt allowed!")
         path = os.path.join(app.config['UPLOAD_PATH'], filename)
         f.save(path)
-        summary = summarize(path, percentage)
+        summary = summarize(path, percentage, max_words)
     else:  # if no file was chosen
         print("no file chosen")
         return render_template("index.html", error="You have to pick a file!")

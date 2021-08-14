@@ -15,7 +15,7 @@ def summary_length(text, percentage=15):
     return int(res)
 
 
-def summarize(filename, percentage):
+def summarize(filename, percentage, min_words):
     if filename[-4:] == "docx":
         text = docx2txt.process(filename)
     elif filename[-4:] == "html":
@@ -29,7 +29,12 @@ def summarize(filename, percentage):
     # remove links, specials signs, emails...
     text = clean_text(text)
     # calculate how many words user want's in his summary
-    words_in_summary = summary_length(text, percentage)
+    if isinstance(percentage, int):
+        words_in_summary = summary_length(text, percentage)
+    elif isinstance(min_words, int):
+        words_in_summary = min_words
+    else:
+        words_in_summary = summary_length(text, 10)
 
     tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-cnn")
     model = AutoModelForSeq2SeqLM.from_pretrained("facebook/bart-large-cnn")

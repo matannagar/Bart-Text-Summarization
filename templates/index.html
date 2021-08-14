@@ -41,8 +41,8 @@
         <!-- <div id="load-button" data-name="." class="load-button"> -->
         <!-- <div class="upload-btn-wrapper"> -->
         <div class="upldbtn-out">
-            <button class="upldbtn">Upload a file</button>
             <input type="file" name="file1" id="file1" />
+            <label class="upldbtn" for="file1">Upload a file</button>
         </div>
 
 
@@ -54,37 +54,53 @@
         <div class="drag-drop-outer">
             <div class="dropzone" id="dropzone">
                 <!-- <p id="textInside"></p>-->
-                <input type="file" name="file2" id="fileElem">
                 <label class="button" id="btndd" for="fileElem">Drag a file here</label>
+                <input type="file" name="file2" id="fileElem">
             </div>
         </div>
+
         <!-- max words box -->
-        <!-- <div class="max-words-outer">
-                <div id="max-words-box" data-name="." class="max-words-box">
-                    <label for="max-words"></label>
-                    <input type="number" id="max-words" name="max-words" defaultValue="100"
-                        placeholder="Summary's max words...">
-                </div>
-            </div> -->
+        <div class="max-words-outer">
+            <div id="max-words-box" class="max-words-box">
+                <label for="max-words"></label>
+                <input type="number" id="max-words" name="max-words" defaultValue="100" min="100" step="10"
+                    placeholder="Summary's max words...">
+            </div>
+        </div>
         <!-- percentage box -->
-        <!-- <div class="percentage-box-outer">
-                <div id="percentage-box" data-name="." class="percentage-box">
-                    <label for="percentage"></label>
-                    <input type="number" id="percentage" name="percentage" min="10" max="100"
-                        placeholder="Summary's length in percentages...">
-                </div>
-            </div> -->
+        <div class="percentage-box-outer">
+            <div id="percentage-box" class="percentage-box">
+                <label for="percentage"></label>
+                <input type="number" id="percentage" name="percentage" min="10" max="100"
+                    placeholder="Summary's length in percentages...">
+            </div>
+        </div>
 
         <!-- Button summarizer -->
-        <!-- <div class="buttonSummarize-outer">
-                <div id="buttonSummarize" data-name="buttonSummarize" class="buttonSummarize">
-                    <label for="SummarizeButton"></label>
-                    <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!">
-                </div>
-            </div> -->
+        <div class="buttonSummarize-outer">
+            <!-- <div id="buttonSummarize" data-name="buttonSummarize" class="buttonSummarize"> -->
+            <label for="SummarizeButton"></label>
+            <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!"
+                onclick="$('#loading').show();">
+            <!-- </div> -->
+        </div>
     </form>
     <!-- </div> -->
-
+    <!-- Text Summary Box -->
+    <div class="textsummary-outer">
+        <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
+            <div name='summary'>
+                <br><br>
+                {{summary}}
+                <div id="loading" style="display:none;"><img src="../static/assets/images/loading.gif" alt="" />
+                    <p>Bart is now analyzing your text.</p>
+                </div>
+                <p>{{error}}</p>
+                <p>{{name}}</p>
+                <p>{{ content }}</p>
+            </div>
+        </div>
+    </div>
 
 
     <!-- <div class="Page-outer"> -->
@@ -210,5 +226,6 @@
 
     <script type="text/javascript" src="../static/index.js"></script>
 </body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
 </html>
