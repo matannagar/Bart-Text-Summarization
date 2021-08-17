@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,500,600,700,800">
     <!-- <link rel="stylesheet" href="./index.css" type="text/css"/> -->
-
-
-
 </head>
 
 <body class="websiteBody">
@@ -33,22 +30,12 @@
         </h2>
     </div>
 
-    <!-- <div class="UploadFiles"> -->
-
     <form action="/index" method="POST" enctype="multipart/form-data">
         <!-- Load File Button -->
-        <!-- <div class="load-button-outer"> -->
-        <!-- <div id="load-button" data-name="." class="load-button"> -->
-        <!-- <div class="upload-btn-wrapper"> -->
         <div class="upldbtn-out">
             <input type="file" name="file1" id="file1" />
             <label class="upldbtn" for="file1">Upload a file</button>
         </div>
-
-
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- </div> -->
 
         <!-- Drag&Drop Box -->
         <div class="drag-drop-outer">
@@ -79,24 +66,19 @@
 
         <!-- Button summarizer -->
         <div class="buttonSummarize-outer">
-            <!-- <div id="buttonSummarize" data-name="buttonSummarize" class="buttonSummarize"> -->
             <label for="SummarizeButton"></label>
             <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!"
                 onclick="$('#loading').show();">
-            <!-- </div> -->
         </div>
     </form>
-    <!-- </div> -->
-    <!-- Text Summary Box -->
-    <!-- <div class="outer"> -->
-
 
     <div class="textsummary-outer">
         <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
             <div name='summary'>
                 <br>
                 <br>
-                {{summary}}
+                <p id="Summary"></p>
+                <p id="temp">{{summary}} </p>
                 <div id="loading" style="display:none;"><img src="../static/assets/images/loading.gif" alt="" />
                     <p>Summarization in process...</p>
                 </div>
@@ -106,137 +88,121 @@
             </div>
         </div>
     </div>
-
-    <div class="ShareOptions">
-        <div class="download-summary-outer">
-            <!-- <div id="download-summary" data-name="download summary" class="download-summary"> -->
-            <!-- <form action="/index" method="POST" enctype="multipart/form-data"> -->
-            <form onsubmit="download(this['name'].value, this['text'].value)">
-                <label>
-                    <input type="text" name="name" value="test.txt">
-                </label>
-                <label>
-                    <textarea name="text" style="display:none;">{{summary}}</textarea>
-                </label>
-                <input type="submit" value="Download">
-            </form>
-            <!-- </div> -->
-        </div>
+    <!-- SAVE FUNCTION -->
+    <div class="download-summary-outer">
+        <form onsubmit="download(this['name'].value, this['text'].value)">
+            <label>
+                <input type="text" name="name" value="test.txt">
+            </label>
+            <label>
+                <textarea name="text" style="display:none;">{{summary}}</textarea>
+            </label>
+            <input type="submit" value="Download">
+        </form>
     </div>
 
-    <!-- </div> -->
 
-    <!-- <div class="Page-outer"> -->
-    <!-- <div id="Page" data-name="Artboards" class="Page"> -->
-    <!-- <div class="Frame-outer"> -->
-    <!-- <div id="Frame" data-name="Matan's - 2" class="Frame"> -->
-    <!-- <div class="explore---ask-outer"> -->
-    <!-- <div id="explore---ask" data-name="explore & ask " class="explore---ask"> -->
-    <!-- <div class="bg-3-outer">
-            <div id="bg-3" data-name="bg" alt="bg" class="bg-3">
-            </div>
-        </div> -->
-    <!-- <div class="Frame-1-outer">
-            <div id="Frame-1" data-name="Frame" class="Frame-1">
-            </div>
-        </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- <div class="pageHeadline-outer">
-        <div id="pageHeadline" data-name="pageHeadline" class="pageHeadline">
-            <div class="subHeadline-outer">
-                <div id="subHeadline" data-name="subHeadline" class="subHeadline">
-                    <div class="text-1-outer">
-                        <div id="text-1" data-name="text" class="text-1">
-                            <div class="HiLo-Summarize-Tool-outer">
-                                <div id="HiLo-Summarize-Tool" data-name="HiLo Summarize Tool"
-                                    class="HiLo-Summarize-Tool">
-                                    <div key="0">HiLo Summarize Tool</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-outer">
-                        <div id="text" data-name="text" class="text"><span class="text-1">Why
-                                not</span><span class="text-2"> leveraging technology</span><span class="text-3"> to
-                            </span><span class="text-4">save</span><span class="text-5">
-                                your </span><span class="text-6">time</span><span class="text-7"> and allow you
-                                to </span><span class="text-8">utilize</span><span class="text-9"> it for
-                            </span><span class="text-10">focusing on what’s really matter</span><span
-                                class="text-11">?</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
-    <!--
-    <div class="UploadFiles">
-        <form action="/index" method="POST" enctype="multipart/form-data">
-            Load File Button
-            <div class="load-button-outer">
-                <div id="load-button" data-name="." class="load-button">
-                    <div class="upload-btn-wrapper">
-                        <button class="btn">Upload a file</button>
-                        <input type="file" name="file1" />
-                    </div>
-                </div>
-            </div>
 
-            Drag&Drop Box
-            <div class="drag-drop-outer">
-                
-                <img id="drag-drop" data-name="drag&drop" alt="drag&drop" class="drag-drop">
-                <div class="dropzone" id="dropzone">
-                    <input type="file" name="file2" id="fileElem">
-                   
-                </div>
-            </div>
-            
-            <div class="max-words-outer">
-                <div id="max-words-box" data-name="." class="max-words-box">
-                    <label for="max-words"></label>
-                    <input type="number" id="max-words" name="max-words" defaultValue="100"
-                        placeholder="Summary's max words...">
-                </div>
-            </div>
-            
-            <div class="percentage-box-outer">
-                <div id="percentage-box" data-name="." class="percentage-box">
-                    <label for="percentage"></label>
-                    <input type="number" id="percentage" name="percentage" min="10" max="100"
-                        placeholder="Summary's length in percentages...">
-                </div>
-            </div>
 
-            
-            <div class="buttonSummarize-outer">
-                <div id="buttonSummarize" data-name="buttonSummarize" class="buttonSummarize">
-                    <label for="SummarizeButton"></label>
-                    <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!">
-                </div>
-            </div>
-        </form>
-    </div>-->
-    <!-- Text Summary Box -->
-    <!-- <div class="textsummary-outer">
-        <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
+    <!-- SHARE TO EMAIL -->
 
-            <div name='summary'>{{summary}}</div>
-            <p>{{error}}</p>
-            <p>{{name}}</p>
-            <p>{{ content }}</p>
-        </div>
-    </div> -->
-    <!-- Save Summary output -->
-
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
+    <!-- href="mailto:?subject=I wanted you to see this site&amp;body=Check out this Article Summarization by HiLo http://www.website.com." -->
+    <!-- href="https://www.linkedin.com/shareArticle?mini=true&url=http://chillyfacts.com/create-linkedin-share-button-on-website-webpages&title=Create LinkedIn Share button on Website Webpages&summary=chillyfacts.com&source=Chillyfacts" -->
+    <a id="mail" href="" title="Share by Email">
+        <img src="http://png-2.findicons.com/files/icons/573/must_have/48/mail.png">
+    </a>
+    <!-- SHARE TO LINKEDIN -->
+    <a id="linkedin" href=""
+        onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+        <img src="http://chillyfacts.com/wp-content/uploads/2017/06/LinkedIN.gif" alt="" width="54" height="20" />
+    </a>
 
     <script type="text/javascript" src="../static/index.js"></script>
 </body>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<!-- SHARING URL FUNCTIONALITY -->
+<script>
+    // Gets variable from URL
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+
+    function getUrlParam(parameter) {
+        var urlparameter;
+        if (window.location.href.indexOf(parameter) > -1) {
+            urlparameter = getUrlVars()[parameter];
+        }
+        return urlparameter;
+    }
+
+    // CREATE ENCODED URL
+    function buildUrl(url, parameters) {
+        var qs = "";
+        for (var key in parameters) {
+            var value = parameters[key];
+            qs += encodeURIComponent(key) + "=" + encodeURIComponent(value) + "&";
+        }
+        if (qs.length > 0) {
+            qs = qs.substring(0, qs.length - 1); //chop off last "&"
+            url = url + "?" + qs;
+        }
+        return url;
+
+    }
+
+    serialize = function (obj) {
+        var str = [];
+        for (var p in obj)
+            if (obj.hasOwnProperty(p)) {
+                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+            }
+        return str.join("&");
+    }
+
+    function myFunction(text) {
+        alert(text);
+    }
+    // Loading that parameter if present
+    window.onload = function () {
+        var mytext = getUrlParam('Summary');
+        document.getElementById('Summary').innerHTML = decodeURIComponent(mytext);
+
+        // var url = "http://127.0.0.1:5000/index";
+        var url = "http://mywebsite.com/index";
+
+        var summary_for_url = document.getElementById('temp').innerHTML
+        //method 1
+        var parameters = {
+            Summary: String(summary_for_url)
+        }
+        var myurl = buildUrl(url, parameters);
+        // method 2
+        var temp = serialize({ Summary: String(summary_for_url) });
+        myFunction(temp);
+        // var myurl = "http://mywebsite.com/index";
+
+        var p1 = "mailto:?body=Check out this Article Summarization by HiLo";
+        var p2 = "&subject=HiLo's Summarization Tool&url=www.google.com";
+        var p3 = ""
+
+        var mail = p1 + encodeURIComponent(temp) + p2 + p3;
+        var linkedin = "https://www.linkedin.com/shareArticle?mini=true&url=" + myurl + "&title=Temporary Title&source=Chillyfacts";
+
+        var a = document.getElementById('mail');
+        a.href = mail;
+        var b = document.getElementById('linkedin');
+        b.href = linkedin;
+
+    };
+
+</script>
 
 </html>
