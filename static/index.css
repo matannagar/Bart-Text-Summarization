@@ -191,6 +191,7 @@ h2 {
   width: 750px;
   height: 450px;
   background-color: #f7f9ff;
+  /* border: solid; */
 }
 
 .textsummary-outer {
@@ -203,6 +204,29 @@ h2 {
   /* border: solid; */
   padding-left: 0.2em;
   padding-right: 0.2em;
+}
+/* SHARING AND SAVING */
+.sharing_buttons {
+  position: relative;
+  text-align: right;
+  content: center;
+  /* border: solid; */
+  /* width: 30%; */
+  right: 12.7%;
+  float: right;
+}
+
+.fa {
+  padding: 20px;
+  margin: 5px 2px;
+  width: 30px;
+  text-align: center;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
 }
 
 /* SAVE BUTTON OPTION */
@@ -217,7 +241,7 @@ h2 {
 .download-summary-outer {
   position: relative;
   float: right;
-  border: solid;
+  /* border: solid; */
   /* padding-left: 10%;
   padding-right: 20%; */
 }
@@ -235,23 +259,43 @@ textarea[name="text"] * {
   visibility: hidden;
 }
 
-.ShareOptions input[type="submit"] {
-  width: 100%;
-  background-color: #4caf50;
+.sharing_buttons input[type="submit"] {
+  /* width: 100%; */
   color: white;
-  padding: 14px 40px;
-  margin: 30px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  padding: 8px 80px;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 10px;
   font-weight: bold;
   background-color: #020681;
+  padding: 20px;
+  margin: 5px 2px;
+  width: 100px;
+  text-align: center;
+  visibility: hidden;
 }
 
-.ShareOptions input[type="submit"]:hover {
+#register {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  background-color: #020681;
+  padding: 20px;
+  margin: 5px 2px;
+  width: 100px;
+  text-align: center;
+}
+
+#register:hover {
+  background-color: #000358;
+}
+
+.sharing_buttons input[type="submit"]:hover {
   background-color: #000358;
 }
 

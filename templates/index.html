@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>HiLo's Summarizer</title>
     <meta name="description" content="bart summarizer Description">
     <meta property="og:title" content="bart summarizer">
@@ -43,7 +43,6 @@
                 <!-- <p id="textInside"></p>-->
                 <label class="button" id="btndd" for="fileElem">Drag a file here</label>
                 <input type="file" name="file2" id="fileElem">
-
             </div>
         </div>
         <br>
@@ -88,41 +87,61 @@
             </div>
         </div>
     </div>
-    <!-- SAVE FUNCTION -->
-    <div class="download-summary-outer">
-        <form onsubmit="download(this['name'].value, this['text'].value)">
-            <label>
-                <input type="text" name="name" value="test.txt">
-            </label>
-            <label>
-                <textarea name="text" style="display:none;">{{summary}}</textarea>
-            </label>
-            <input type="submit" value="Download">
-        </form>
+
+    <!-- BOTTOM RIGHT BUTTONS SECTION -->
+    <div class="sharing_buttons">
+        <br>
+        <!-- SAVE FUNCTION -->
+        <div class="download-summary-outer">
+            <form onsubmit="download(this['name'].value, this['text'].value)">
+                <label>
+                    <input type="text" name="name" value="test.txt">
+                </label>
+                <label>
+                    <textarea name="text" style="display:none;">{{summary}}</textarea>
+                </label>
+                <input type="submit" id="outer_download_button" value="Download">
+            </form>
+        </div>
+        <img src="../static/assets/images/Union.png">
+        <!-- SHARE TO EMAIL -->
+        <a class="fa fa-google" id="mail" href="" title="Share by Email" style="background: #dd4b39;
+        color: white;">
+            <!-- <img src="http://png-2.findicons.com/files/icons/573/must_have/48/mail.png"> -->
+        </a>
+        <!-- SHARE TO LINKEDIN -->
+        <a class="fa fa-linkedin" id="linkedin" href="" style="background: #007bb5;
+        color: white;"
+            onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+            <!-- <img src="http://chillyfacts.com/wp-content/uploads/2017/06/LinkedIN.gif" alt="" width="54" height="20" /> -->
+        </a>
+        <a class="fa fa-twitter" id="twitter" href="" style="  background: #55ACEE;
+        color: white;" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0');
+             return false;"></a>>
+        <input type=button id="register" value='SAVE' onClick=to_open()>
     </div>
 
 
-
-
-
-    <!-- SHARE TO EMAIL -->
-
-    <!-- href="mailto:?subject=I wanted you to see this site&amp;body=Check out this Article Summarization by HiLo http://www.website.com." -->
-    <!-- href="https://www.linkedin.com/shareArticle?mini=true&url=http://chillyfacts.com/create-linkedin-share-button-on-website-webpages&title=Create LinkedIn Share button on Website Webpages&summary=chillyfacts.com&source=Chillyfacts" -->
-    <a id="mail" href="" title="Share by Email">
-        <img src="http://png-2.findicons.com/files/icons/573/must_have/48/mail.png">
-    </a>
-    <!-- SHARE TO LINKEDIN -->
-    <a id="linkedin" href=""
-        onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
-        <img src="http://chillyfacts.com/wp-content/uploads/2017/06/LinkedIN.gif" alt="" width="54" height="20" />
-    </a>
-
     <script type="text/javascript" src="../static/index.js"></script>
 </body>
+
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <!-- SHARING URL FUNCTIONALITY -->
 <script>
+    //open registration window 
+    function to_open() {
+        const openWindow = window.open("http://localhost/test/form.html", 'rating', "width=400,height=170,left=150,top=200");
+        const timer = setInterval(() => {
+            if (openWindow.closed) {
+                clearInterval(timer);
+                // alert('"Secure Payment" window closed!');
+                document.getElementById('outer_download_button').click();
+            }
+        }, 500);
+
+
+    }
     // Gets variable from URL
     function getUrlVars() {
         var vars = [], hash;
@@ -167,42 +186,46 @@
         return str.join("&");
     }
 
-    function myFunction(text) {
-        alert(text);
-    }
     // Loading that parameter if present
     window.onload = function () {
         var mytext = getUrlParam('Summary');
-        document.getElementById('Summary').innerHTML = decodeURIComponent(mytext);
+        if (mytext !== undefined)
+            document.getElementById('Summary').innerHTML = decodeURIComponent(mytext);
 
-        // var url = "http://127.0.0.1:5000/index";
-        var url = "http://mywebsite.com/index";
+        // var url = "http://127.0.0.1:5000/index?";
+        var url = "http://mywebsite.com/index?";
 
+        //get summary from previously loaded file
         var summary_for_url = document.getElementById('temp').innerHTML
-        //method 1
-        var parameters = {
-            Summary: String(summary_for_url)
-        }
-        var myurl = buildUrl(url, parameters);
-        // method 2
+        //create encoded summary for URL
         var temp = serialize({ Summary: String(summary_for_url) });
-        myFunction(temp);
-        // var myurl = "http://mywebsite.com/index";
 
-        var p1 = "mailto:?body=Check out this Article Summarization by HiLo";
-        var p2 = "&subject=HiLo's Summarization Tool&url=www.google.com";
-        var p3 = ""
-
-        var mail = p1 + encodeURIComponent(temp) + p2 + p3;
-        var linkedin = "https://www.linkedin.com/shareArticle?mini=true&url=" + myurl + "&title=Temporary Title&source=Chillyfacts";
-
+        //MAIL CODE
+        var p1 = "mailto:?body=Check out this Article Summarization by HiLo \n" + url + "\n";
+        var p2 = "&subject=HiLo's Summarization Tool";
+        var mail = p1 + encodeURIComponent(temp) + p2 + "\n";
         var a = document.getElementById('mail');
         a.href = mail;
+
+        //LINKEDIN CODE
+        var linkedin = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + encodeURIComponent(temp) + "&title=Temporary Title&source=Chillyfacts";
         var b = document.getElementById('linkedin');
         b.href = linkedin;
 
+        //TWITTER CODE
+        var twitter = "https://twitter.com/intent/tweet?text=" + url + encodeURIComponent(temp);
+        var c = document.getElementById('twitter');
+        c.href = twitter;
     };
 
+</script>
+<script type="text/javascript">
+    jQuery("input#fileElem").change(function () {
+        alert("File Chosen")
+    });
+    jQuery("input#file1").change(function () {
+        alert("File Chosen")
+    });
 </script>
 
 </html>

@@ -1,0 +1,33 @@
+<?php
+    /* If you set this on every page the path will always be correct */
+    set_include_path( $_SERVER['DOCUMENT_ROOT'] . '/php/' );
+    include( 'functions.php' );
+
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Register Form</title>
+</head>
+<body>
+ <form action="insert.php" method="POST">
+  <table>
+   <tr>
+    <td>First Name :</td>
+    <td><input type="text" name="fname" required></td>
+   </tr>
+   <tr>
+    <td>Last Name :</td>
+    <td><input type="text" name="lname" required></td>
+   </tr>
+   <tr>
+    <td>Email :</td>
+    <td><input type="email" name="email" required></td>
+   </tr> 
+   <tr>
+    <td><input type="submit" value="Submit" name="submit"></td>
+   </tr>
+  </table>
+ </form>
+</body>
+</html>
