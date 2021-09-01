@@ -1,2 +1,4 @@
 venv/
 t5-base/
+.idea/
+__pycache__/

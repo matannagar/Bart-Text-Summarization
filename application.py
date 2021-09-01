@@ -8,9 +8,10 @@ from werkzeug.utils import secure_filename
 
 from summarize import summarize, summarize_from_web
 
-app = Flask(__name__)
+application = app = Flask(__name__)
 # enter here the path of the server
 app.config['UPLOAD_PATH'] = 'C:/Users/public'
+# app.config['UPLOAD_PATH'] = '/var/app/current'
 # allowed types
 app.config['UPLOAD_EXTENSIONS'] = ['.docx', '.doc', '.txt', '.pdf', '.html']
 
