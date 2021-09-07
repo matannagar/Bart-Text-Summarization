@@ -158,20 +158,6 @@
         return urlparameter;
     }
 
-    // CREATE ENCODED URL
-    function buildUrl(url, parameters) {
-        var qs = "";
-        for (var key in parameters) {
-            var value = parameters[key];
-            qs += encodeURIComponent(key) + "=" + encodeURIComponent(value) + "&";
-        }
-        if (qs.length > 0) {
-            qs = qs.substring(0, qs.length - 1); //chop off last "&"
-            url = url + "?" + qs;
-        }
-        return url;
-    }
-
     serialize = function (obj) {
         var str = [];
         for (var p in obj)
@@ -191,20 +177,17 @@
 
         //get summary from previously loaded file
         var summary_for_url = document.getElementById("temp").innerHTML;
-        alert(summary_for_url);
         if (summary_for_url != " ") {
             //create encoded summary for URL
             var temp = serialize({ Summary: String(summary_for_url) });
 
-            url = buildUrl(url, temp);
+            url = url + temp;
         }
-
         //SHORTEN URL//
-        alert(url);
         var shorturl;
         var data = {
             "domain": "1pie.short.gy",
-            "originalURL": url
+            "originalURL": decodeURIComponent(url)
         };
 
         fetch('https://api.short.io/links/public', {
@@ -243,7 +226,6 @@
             var c = document.getElementById("twitter");
             c.href = twitter;
         })
-
     };
 </script>
 <script type="text/javascript" src="../static/index.js"></script>
