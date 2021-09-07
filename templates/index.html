@@ -68,8 +68,8 @@
             <label for="SummarizeButton"></label>
             <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!" onclick="$('#loading').show();
                 document.getElementById('temp').innerHTML='';
-                document.getElementById('filename')=innerHTML='';
-                document.getElementById('err').innerHTML='';">
+                document.getElementById('nofile').innerHTML ='';
+                ">
         </div>
     </form>
     <!-- SUMMARIZATION TEXT BOX -->
@@ -80,15 +80,16 @@
                 <br>
                 <p id="Summary"></p>
                 <p id="temp">{{summary}} </p>
+                <p id='filename' style="opacity: 0;">{{name}}</p>
+                <p id="nofile">{{error}}</p>
+                <!-- <p>{{ content }}</p> -->
                 <div id="loading" style="display:none;">
                     <img src="../static/assets/images/loading.gif" alt="" />
                     <br>
                     <img src="../static/assets/images/bar1.gif" alt="" />
                     <p>Summarization in process...</p>
                 </div>
-                <p id='filename' style="opacity: 0;">{{name}}</p>
-                <p id='err'>{{error}}</p>
-                <p>{{ content }}</p>
+
             </div>
         </div>
     </div>

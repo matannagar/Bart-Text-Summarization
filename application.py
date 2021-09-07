@@ -35,10 +35,6 @@ def index(glob_var=""):
         if percentage != '':
             percentage = int(percentage)
 
-        # if request.files.get('file1', False):
-        #     f = request.files['file2']
-        # else:
-        #     f = request.files['file1']
         f = request.files['file1']
         if secure_filename(f.filename) == '':
             f = request.files['file2']
