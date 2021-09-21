@@ -1,0 +1,12 @@
+To FIX:
+1. buttons not on the right side
+2. when closing the registartion window, dont activate download file
+3. organize files
+
+To ADD:
+1. scan summary and find entities
+2. print entities definition
+3. create new summary, add span to each entity
+
+To DO:
+1. organize github folder
