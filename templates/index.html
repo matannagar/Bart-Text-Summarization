@@ -70,6 +70,19 @@
                 document.getElementById('temp').innerHTML='';
                 document.getElementById('nofile').innerHTML ='';
                 ">
+            <button type="button" id="entities" name="entities" value="Scan for terms!" onclick="
+            let dataFile = require('../named-entity-recognition/dictionary.json');
+            const obj = JSON.parse(dataFile);
+            const keys = Object.keys(obj);
+            summarize = document.getElementById('temp').innerHTML;
+
+            for (let i = 0; i < keys.length; i++) {
+            const key = keys[i];
+            if (summarizer.includes(key))
+            summarize = summarize.replace(key,'<b>'+key+'</b>');
+            }
+            
+            document.getElementById('temp').innerHTML=summarize;">
         </div>
     </form>
     <!-- SUMMARIZATION TEXT BOX -->

@@ -51,6 +51,8 @@ def summarize(filename, percentage, min_words):
     summary = tokenizer.decode(outputs[0])
     summary = summary[7:-4]
 
+    # if 'benjamin' in summary:
+    #     summary = summary.replace("benjamin", "<b>benjamin</b>")
     return summary
 
 
