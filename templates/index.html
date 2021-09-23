@@ -63,6 +63,30 @@
             </div>
         </div>
 
+
+        <!--  -->
+        <script type="text/javascript">
+
+            function myFunction() {
+                console.log("in function");
+                //get the dictionary that was sent from python (supposed to be inivisible)
+                // json_dict = document.getElementById('dictionary').innerHTML;
+                json_dict = { "abstract of title": "A written history of all the transactions related to the title for a specific tract of land. An abstract of title covers the period from the original source of title (often the original land grant from the United States government to an individual) to the present time and summarizes all subsequent documents that have been recorded against that tract.", "benjamin": "A buyer\u2019s or seller\u2019s agreement to enter into a contract and be bound by the terms of the offer." };
+                // json_dict = JSON.parse(json_dict);
+                console.log(json_dict);
+                console.log(typeof (json_dict));
+                summarize = document.getElementById('temp').innerHTML; // iterate over keys of json object 
+                for (index in json_dict) {
+                    // console.log(JSON.stringify(index));
+                    if (summarize.includes(index) === true) {
+                        summarize = summarize.replace(index, '<b>' + index + '</b>');
+                        console.log('yup');
+                    }
+                }
+                document.getElementById('temp').innerHTML = summarize;
+                console.log("done")
+            }
+        </script>
         <!-- Button summarizer -->
         <div class="buttonSummarize-outer">
             <label for="SummarizeButton"></label>
@@ -70,19 +94,7 @@
                 document.getElementById('temp').innerHTML='';
                 document.getElementById('nofile').innerHTML ='';
                 ">
-            <button type="button" id="entities" name="entities" value="Scan for terms!" onclick="
-            let dataFile = require('../named-entity-recognition/dictionary.json');
-            const obj = JSON.parse(dataFile);
-            const keys = Object.keys(obj);
-            summarize = document.getElementById('temp').innerHTML;
-
-            for (let i = 0; i < keys.length; i++) {
-            const key = keys[i];
-            if (summarizer.includes(key))
-            summarize = summarize.replace(key,'<b>'+key+'</b>');
-            }
-            
-            document.getElementById('temp').innerHTML=summarize;">
+            <button type="button" id="entities" name="entities" value="Scan for terms!" onclick="myFunction()">
         </div>
     </form>
     <!-- SUMMARIZATION TEXT BOX -->
@@ -93,13 +105,14 @@
                 <br>
                 <p id="Summary"></p>
                 <p id="temp">{{summary}} </p>
+                <p id="dictionary" style="visibility: none; display:none;"> {{dictionary}} </p>
                 <p id='filename' style="opacity: 0;">{{name}}</p>
                 <p id="nofile">{{error}}</p>
                 <!-- <p>{{ content }}</p> -->
                 <div id="loading" style="display:none;">
                     <img src="../static/assets/images/loading.gif" alt="" />
                     <br>
-                    <img src="../static/assets/images/bar1.gif" alt="" />
+                    <!-- <img src="../static/assets/images/bar1.gif" alt="" /> -->
                     <p>Summarization in process...</p>
                 </div>
 

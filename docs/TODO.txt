@@ -2,6 +2,7 @@ To FIX:
 1. buttons not on the right side
 2. when closing the registartion window, dont activate download file
 3. organize files
+4. summary background should not be a picture, but a color
 
 To ADD:
 1. scan summary and find entities

@@ -7,6 +7,7 @@ import os
 from werkzeug.utils import secure_filename
 
 from summarize import summarize, summarize_from_web
+from named_entity_recognition.dictionary import turn_into_dictionary
 
 application = app = Flask(__name__)
 # enter here the path of the server
@@ -23,11 +24,11 @@ def upload():
 
 
 @app.route('/index', methods=['POST', 'GET'])
-def index(glob_var=""):
+def index(glob_var="", dictionary=""):
     if request.method == 'POST':
         print("started flask")
-        max_words = request.form['max-words']
 
+        max_words = request.form['max-words']
         if max_words != '':
             max_words = int(max_words)
 
@@ -35,6 +36,7 @@ def index(glob_var=""):
         if percentage != '':
             percentage = int(percentage)
 
+        dictionary = turn_into_dictionary()
         f = request.files['file1']
         if secure_filename(f.filename) == '':
             f = request.files['file2']
@@ -52,7 +54,7 @@ def index(glob_var=""):
         else:  # if no file was chosen
             print("no file chosen")
             return render_template("index.html", error="You have to pick a file!")
-        return render_template("index.html", name=f.filename, summary=summary, status="file_uploaded successfully")
+        return render_template("index.html", name=f.filename, summary=summary, dictionary=dictionary)
     else:
         return render_template("index.html", summary=glob_var)
 
