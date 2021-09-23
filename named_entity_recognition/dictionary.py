@@ -20,7 +20,7 @@ def turn_into_dictionary():
     # with open("dictionary.json", "w") as outfile:
     #     json.dump(dictionary2, outfile)
 
-    return dictionary2
+    return json.dumps(dictionary2)
 
 
 # print keys

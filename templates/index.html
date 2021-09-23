@@ -70,9 +70,9 @@
             function myFunction() {
                 console.log("in function");
                 //get the dictionary that was sent from python (supposed to be inivisible)
-                // json_dict = document.getElementById('dictionary').innerHTML;
-                json_dict = { "abstract of title": "A written history of all the transactions related to the title for a specific tract of land. An abstract of title covers the period from the original source of title (often the original land grant from the United States government to an individual) to the present time and summarizes all subsequent documents that have been recorded against that tract.", "benjamin": "A buyer\u2019s or seller\u2019s agreement to enter into a contract and be bound by the terms of the offer." };
-                // json_dict = JSON.parse(json_dict);
+                json_dict = document.getElementById('dictionary').innerHTML;
+                // json_dict = { "abstract of title": "A written history of all the transactions related to the title for a specific tract of land. An abstract of title covers the period from the original source of title (often the original land grant from the United States government to an individual) to the present time and summarizes all subsequent documents that have been recorded against that tract.", "benjamin": "A buyer\u2019s or seller\u2019s agreement to enter into a contract and be bound by the terms of the offer." };
+                json_dict = JSON.parse(json_dict);
                 console.log(json_dict);
                 console.log(typeof (json_dict));
                 summarize = document.getElementById('temp').innerHTML; // iterate over keys of json object 
