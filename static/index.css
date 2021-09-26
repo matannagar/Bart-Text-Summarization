@@ -58,7 +58,7 @@ h2 {
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.10000000149011612));
 }
 .upldbtn:hover {
-  background-color: #45a049;
+  background-color: #0062ff;
 }
 #file1 {
   display: none;
@@ -167,7 +167,7 @@ h2 {
   background-color: #4caf50;
   color: white;
   padding: 14px 40px;
-  margin: 30px 0;
+  margin: 20px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -180,7 +180,29 @@ h2 {
 .buttonSummarize-outer input[type="submit"]:hover {
   background-color: #45a049;
 }
-
+/* ENTITIES BUTTON */
+.buttonEntities-outer {
+  position: relative;
+  display: flex;
+  width: 350px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.buttonEntities-outer button {
+  width: 100%;
+  background-color: #ff3e3e;
+  color: white;
+  margin: 4px 0;
+  border: none;
+  cursor: pointer;
+  padding: 8px 80px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.buttonEntities-outer button:hover {
+  background-color: #ff0404;
+}
 /* TEXT SUMMARIZATION BOX */
 .textsummary {
   padding-left: 10%;
@@ -363,4 +385,40 @@ div#loading {
 
 .outer {
   position: relative;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+/* tooltip hover: NER */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #bdccff;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

@@ -5,9 +5,22 @@ To FIX:
 4. summary background should not be a picture, but a color
 
 To ADD:
-1. scan summary and find entities
 2. print entities definition
 3. create new summary, add span to each entity
 
 To DO:
 1. organize github folder
+2. design the git page
+3. test additional docs
+
+***check scan entities with the url share link!
+** prettier popup message when file was selected
+
+HOW TO CREATE TREE
+- find entities within summarization
+- find entities within description of above entities 
+- perform step 2 over and over until no more terms are found
+
+** download summary from shared link
+** change variables names in index.html
+** long summaries variables via url ? need to check that url is not cut (maybe find a way to shorten)

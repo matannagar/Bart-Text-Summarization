@@ -67,24 +67,29 @@
         <!--  -->
         <script type="text/javascript">
 
-            function myFunction() {
-                console.log("in function");
+            function findEntities() {
+                var flag = false;
                 //get the dictionary that was sent from python (supposed to be inivisible)
                 json_dict = document.getElementById('dictionary').innerHTML;
                 // json_dict = { "abstract of title": "A written history of all the transactions related to the title for a specific tract of land. An abstract of title covers the period from the original source of title (often the original land grant from the United States government to an individual) to the present time and summarizes all subsequent documents that have been recorded against that tract.", "benjamin": "A buyer\u2019s or seller\u2019s agreement to enter into a contract and be bound by the terms of the offer." };
+
                 json_dict = JSON.parse(json_dict);
-                console.log(json_dict);
-                console.log(typeof (json_dict));
                 summarize = document.getElementById('temp').innerHTML; // iterate over keys of json object 
+                console.log(summarize);
+                if (summarize === " ") {
+                    summarize = document.getElementById('Summary').innerHTML;
+                    flag = true;
+                }
                 for (index in json_dict) {
                     // console.log(JSON.stringify(index));
                     if (summarize.includes(index) === true) {
-                        summarize = summarize.replace(index, '<b>' + index + '</b>');
-                        console.log('yup');
+                        // summarize = summarize.replace(index, '<b>' + index + '</b>');
+                        summarize = summarize.replace(index, '<div class="tooltip"><b>' + index + '</b><span class="tooltiptext">' + json_dict[index] + '</span></div >');
                     }
                 }
-                document.getElementById('temp').innerHTML = summarize;
-                console.log("done")
+                if (flag === true)
+                    document.getElementById('Summary').innerHTML = summarize;
+                else document.getElementById('temp').innerHTML = summarize;
             }
         </script>
         <!-- Button summarizer -->
@@ -94,9 +99,14 @@
                 document.getElementById('temp').innerHTML='';
                 document.getElementById('nofile').innerHTML ='';
                 ">
-            <button type="button" id="entities" name="entities" value="Scan for terms!" onclick="myFunction()">
+        </div>
+        <div class="buttonEntities-outer">
+            <label for="entities"></label>
+            <button type="button" id="entities" name="entities" value="Scan for terms!" onclick="findEntities()">Scan
+                for terms</button>
         </div>
     </form>
+    <br>
     <!-- SUMMARIZATION TEXT BOX -->
     <div class=" textsummary-outer">
         <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
@@ -196,19 +206,24 @@
     // Loading that parameter if present
     window.onload = function () {
         var mytext = getUrlParam("Summary");
-        if (mytext !== undefined)
+        var my_ready_dictionary = getUrlParam("Dictionary");
+        if (mytext !== undefined) {
             document.getElementById("Summary").innerHTML = decodeURIComponent(mytext);
+            document.getElementById("dictionary").innerHTML = decodeURIComponent(my_ready_dictionary);
+        }
 
         var url = "http://127.0.0.1:5000/index?";
         // var url = "http://mywebsite.com/index?";
 
-        //get summary from previously loaded file
+        //get summary&dictionary from previously loaded file
         var summary_for_url = document.getElementById("temp").innerHTML;
+        var dictionary_for_url = document.getElementById("dictionary").innerHTML;
         if (summary_for_url != " ") {
             //create encoded summary for URL
-            var temp = serialize({ Summary: String(summary_for_url) });
+            var url_variables = serialize({ Summary: String(summary_for_url), Dictionary: String(dictionary_for_url) });
 
-            url = url + temp;
+            url = url + url_variables;
+            console.log(url);
         }
         //SHORTEN URL//
         var shorturl;
@@ -230,7 +245,6 @@
         }).then(function (data) {
             shorturl = data.shortURL;
         }).then(function () {
-
 
             //MAIL CODE
             var p1 = "mailto:?body=Check out this Article Summarization by HiLo ";
