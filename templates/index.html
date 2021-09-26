@@ -36,7 +36,7 @@
             <input type="file" name="file1" id="file1" />
             <label class="upldbtn" for="file1">Upload a file</button>
         </div>
-
+        <!-- 'buttonSummarize-outer' -->
         <!-- Drag&Drop Box -->
         <div class="drag-drop-outer">
             <div class="dropzone" id="dropzone">
@@ -277,6 +277,18 @@
     });
     jQuery("input#file1").change(function () {
         alert("File Chosen")
+    });
+    jQuery("input#file1").change(function () {
+        $('html,body').animate({
+            scrollTop: $(".buttonSummarize-outer").offset().top
+        },
+            'slow');
+    });
+    jQuery("input#fileElem").change(function () {
+        $('html,body').animate({
+            scrollTop: $(".buttonSummarize-outer").offset().top
+        },
+            'slow');
     });
 </script>
 
