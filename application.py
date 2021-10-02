@@ -7,7 +7,8 @@ import os
 from werkzeug.utils import secure_filename
 
 from summarize import summarize, summarize_from_web
-from named_entity_recognition.dictionary import turn_into_dictionary
+from named_entity_recognition.create_dictionary import turn_into_dictionary
+from named_entity_recognition.ner_tree import create_entity_tree
 
 application = app = Flask(__name__)
 # enter here the path of the server
@@ -15,9 +16,11 @@ app.config['UPLOAD_PATH'] = 'C:/Users/public'
 # app.config['UPLOAD_PATH'] = '/var/app/current'
 # allowed types
 app.config['UPLOAD_EXTENSIONS'] = ['.docx', '.doc', '.txt', '.pdf', '.html']
-
+app.secret_key = "super secret key"
 
 # homepage
+
+
 @app.route('/')
 def upload():
     return render_template("index.html")
@@ -27,7 +30,6 @@ def upload():
 def index(glob_var="", dictionary=""):
     if request.method == 'POST':
         print("started flask")
-
         max_words = request.form['max-words']
         if max_words != '':
             max_words = int(max_words)
@@ -51,12 +53,27 @@ def index(glob_var="", dictionary=""):
             f.save(path)
             summary = summarize(path, percentage, max_words)
             glob_var = summary
+            session['my_var'] = summary
+            redirect(url_for('entity_tree'))
         else:  # if no file was chosen
             print("no file chosen")
             return render_template("index.html", error="You have to pick a file!")
         return render_template("index.html", name=f.filename, summary=summary, dictionary=dictionary)
     else:
         return render_template("index.html", summary=glob_var)
+
+
+@app.route('/entity_tree', methods=['POST', 'GET'])
+def entity_tree():
+    if request.method == 'POST':
+        print("here1")
+        pass
+    else:
+        # print(session.get('my_var', None))
+        create_entity_tree(session.get('my_var', None))
+        # create_entity_tree("benjamin")
+        print("here2")
+        return jsonify({'result': 'success'})
 
 
 # need to be erased

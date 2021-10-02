@@ -68,3 +68,17 @@ window.smoothScroll = function (target) {
   // start scrolling
   scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
+
+$(document).ready(function () {
+  $('.create_graph').on('click', function () {
+    summary = document.getElementById('temp').innerHTML;
+    req = $.ajax({
+      url: '/entity_tree',
+      type: 'GET',
+      data: { summary: summary },
+      success: function (data) {
+        window.open("http://127.0.0.1:8887/temp_graph.png", '_blank', "height=400,width=400");
+      }
+    })
+  });
+});
