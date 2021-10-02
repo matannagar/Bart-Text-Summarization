@@ -106,10 +106,14 @@
             <button type="button" id="entities" name="entities" value="Scan for terms!" onclick="findEntities()">Scan
                 for terms</button>
         </div>
+        <div class="create_ner_graph_button">
+            <label for="ner_graph"></label>
+            <button type="button" id="ner_graph" class='create_graph' value="Show graph">Show graph</button>
+        </div>
     </form>
     <br>
-    <!-- SUMMARIZATION TEXT BOX -->
     <div class=" textsummary-outer">
+        <!-- SUMMARIZATION TEXT BOX -->
         <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
             <div name='summary'>
                 <br>
@@ -126,7 +130,6 @@
                     <!-- <img src="../static/assets/images/bar1.gif" alt="" /> -->
                     <p>Summarization in process...</p>
                 </div>
-
             </div>
         </div>
     </div>
@@ -155,7 +158,7 @@
             onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"></a>
         <input type=button id="register" value='SAVE' onClick=to_open()>
     </div>
-    <input type="button" class='create_graph' value="Go to graph" />
+
     <!-- onclick="location.href='/entity_tree';" -->
     <!-- <a href="/entity_tree">PRESS ME</a> -->
 

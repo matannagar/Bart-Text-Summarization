@@ -203,6 +203,29 @@ h2 {
 .buttonEntities-outer button:hover {
   background-color: #ff0404;
 }
+/* NER GRAPH BUTTON */
+.create_ner_graph_button {
+  position: relative;
+  display: flex;
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.create_ner_graph_button button {
+  width: 100%;
+  background-color: #ff3e3e;
+  color: white;
+  margin: 4px 0;
+  border: none;
+  cursor: pointer;
+  padding: 8px 80px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.create_ner_graph_button button:hover {
+  background-color: #ff0404;
+}
 /* TEXT SUMMARIZATION BOX */
 .textsummary {
   padding-left: 10%;
