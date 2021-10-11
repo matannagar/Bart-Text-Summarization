@@ -5,12 +5,15 @@ To FIX:
 5. warnings deprications
 6. minimized venv
 7. ner detecting words without spaces (e.g: cap -- > handicap )
+8. allow ner from a shared link
+9. linkedin short url 
 
 To DO:
 1. organize github folder
 2. design the git page
 3. test additional docs
 4. "protect" entities action if no summary was loaded.
+5. 
 
 ***check scan entities with the url share link!
 ** prettier popup message when file was selected
@@ -24,6 +27,7 @@ To DO:
 1. path to save files from folder (in application.py)
 2. load graph from server (create_graph in index.js file (currently from widget server))
 3. path to fi_dictionary.xls (create_dictionary.py)
+4. registartion form : index.html http://localhost/test/form.html"
 
 functions to test:
 1. ner_graph (visualize, relatives)
