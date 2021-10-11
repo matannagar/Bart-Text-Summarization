@@ -66,13 +66,9 @@ def index(glob_var="", dictionary=""):
 @app.route('/entity_tree', methods=['POST', 'GET'])
 def entity_tree():
     if request.method == 'POST':
-        print("here1")
         pass
     else:
-        # print(session.get('my_var', None))
         create_entity_tree(session.get('my_var', None))
-        # create_entity_tree("benjamin")
-        print("here2")
         return jsonify({'result': 'success'})
 
 

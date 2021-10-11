@@ -9,7 +9,7 @@ import json
 def turn_into_dictionary():
     # turn dictionary excel into python dictionary
     dictionary = pd.read_excel(
-        'C:/Users/matan/Dropbox/My PC (DESKTOP-RLTMVS3)/Desktop/myGit/Text-Summarization-python/named_entity_recognition/fi_dictionary.xls', index_col=0).to_dict()
+        'C:/Users/matan/Dropbox/myGit/Text-Summarization-python/named_entity_recognition/fi_dictionary.xls', index_col=0).to_dict()
 
     # iterate over keys and remove special keys
     dictionary2 = {}

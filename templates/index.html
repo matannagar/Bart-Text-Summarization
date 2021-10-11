@@ -66,38 +66,12 @@
 
 
         <!--  -->
-        <script type="text/javascript">
 
-            function findEntities() {
-                var flag = false;
-                //get the dictionary that was sent from python (supposed to be inivisible)
-                json_dict = document.getElementById('dictionary').innerHTML;
-                // json_dict = { "abstract of title": "A written history of all the transactions related to the title for a specific tract of land. An abstract of title covers the period from the original source of title (often the original land grant from the United States government to an individual) to the present time and summarizes all subsequent documents that have been recorded against that tract.", "benjamin": "A buyer\u2019s or seller\u2019s agreement to enter into a contract and be bound by the terms of the offer." };
-
-                json_dict = JSON.parse(json_dict);
-                summarize = document.getElementById('temp').innerHTML; // iterate over keys of json object 
-                console.log(summarize);
-                if (summarize === " ") {
-                    summarize = document.getElementById('Summary').innerHTML;
-                    flag = true;
-                }
-                for (index in json_dict) {
-                    // console.log(JSON.stringify(index));
-                    if (summarize.includes(index) === true) {
-                        // summarize = summarize.replace(index, '<b>' + index + '</b>');
-                        summarize = summarize.replace(index, '<div class="tooltip"><b>' + index + '</b><span class="tooltiptext">' + json_dict[index] + '</span></div >');
-                    }
-                }
-                if (flag === true)
-                    document.getElementById('Summary').innerHTML = summarize;
-                else document.getElementById('temp').innerHTML = summarize;
-            }
-        </script>
         <!-- Button summarizer -->
         <div class="buttonSummarize-outer">
             <label for="SummarizeButton"></label>
             <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!" onclick="$('#loading').show();
-                document.getElementById('temp').innerHTML='';
+                document.getElementById('bart_summary').innerHTML='';
                 document.getElementById('nofile').innerHTML ='';
                 ">
         </div>
@@ -119,7 +93,7 @@
                 <br>
                 <br>
                 <p id="Summary"></p>
-                <p id="temp">{{summary}} </p>
+                <p id="bart_summary">{{summary}} </p>
                 <p id="dictionary" style="visibility: none; display:none;"> {{dictionary}} </p>
                 <p id='filename' style="opacity: 0;">{{name}}</p>
                 <p id="nofile">{{error}}</p>
@@ -140,7 +114,7 @@
         <!-- SAVE FUNCTION -->
         <div class="download-summary-outer">
             <input type="submit" id="outer_download_button" value="Download"
-                onClick="download(document.getElementById('filename').innerHTML,document.getElementById('temp').textContent)">
+                onClick="download(document.getElementById('filename').innerHTML,document.getElementById('bart_summary').textContent)">
             <!-- </form> -->
         </div>
         <!-- EMAIL -->
@@ -158,10 +132,6 @@
             onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"></a>
         <input type=button id="register" value='SAVE' onClick=to_open()>
     </div>
-
-    <!-- onclick="location.href='/entity_tree';" -->
-    <!-- <a href="/entity_tree">PRESS ME</a> -->
-
 </body>
 
 <script type="text/javascript">
@@ -224,7 +194,7 @@
         // var url = "http://mywebsite.com/index?";
 
         //get summary&dictionary from previously loaded file
-        var summary_for_url = document.getElementById("temp").innerHTML;
+        var summary_for_url = document.getElementById("bart_summary").innerHTML;
         var dictionary_for_url = document.getElementById("dictionary").innerHTML;
         if (summary_for_url != " ") {
             //create encoded summary for URL
