@@ -1,7 +1,6 @@
-# T5-summarization
-Summarization Task using T5 models from [HugginFace Transformers](https://github.com/huggingface/transformers)
+# Bart-Summarization
+Summarization Task using BART models from [HugginFace Transformers](https://github.com/huggingface/transformers)
 
-You can try this yourself on [this Site](https://benbenjamin.pythonanywhere.com)
 
 ## Install requeriments
 ```
@@ -14,8 +13,8 @@ Werkzeug==2.0.1
 
 ## Run
 ```
-python server.py
+python application.py
 ```
 
-### T5 Summarization
+### BART Summarization
 ![Bart Summarization](https://media.giphy.com/media/TJUqC8MKERQhnBcPKN/giphy.gif)
