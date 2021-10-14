@@ -17,4 +17,4 @@ python application.py
 ```
 
 ### BART Summarization
-![Bart Summarization](https://media.giphy.com/media/TJUqC8MKERQhnBcPKN/giphy.gif)
+![Bart Summarization](https://ibb.co/qDntmTK)
