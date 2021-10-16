@@ -1,28 +1,31 @@
 To FIX:
-1. buttons not on the right side
 2. when closing the registartion window, dont activate download file
-4. summary background should not be a picture, but a color
 5. warnings deprications
-6. minimized venv
 7. ner detecting words without spaces (e.g: cap -- > handicap )
 8. allow ner from a shared link
-9. linkedin short url 
-10. multiple clicks on scan for terms
+9. linkedin short url
+10. multiple clicks on scan for terms after summary found
 
 To DO:
-1. organize github folder
-2. design the git page
+1. minimized venv
+2. prettier popup message when file was selected
 3. test additional docs
 4. "protect" entities action if no summary was loaded.
-5. 
+5. Documentation 
+6. graph to tree . 
 
-***check scan entities with the url share link!
-** prettier popup message when file was selected
+GOALS:
+1. Phone adjustments
+2. Fine-Tuning BART with scientific data-base 
+3. UPLOAD ONLINE
+4. save to PDF file
+5. add option to summarize link
 
-
-** download summary from shared link
-** change variables names in index.html
-** long summaries variables via url ? need to check that url is not cut (maybe find a way to shorten)
+TESTS:
+1. check scan entities with the url share link!
+2. download summary from shared link
+3. ner_graph (visualize, relatives)
+4. long summaries variables via url ? need to check that url is not cut (maybe find a way to shorten)
 
 ** things that should be modified:
 1. path to save files from folder (in application.py)
@@ -30,6 +33,3 @@ To DO:
 3. path to fi_dictionary.xls (create_dictionary.py)
 4. registartion form : index.html http://localhost/test/form.html"
 
-functions to test:
-1. ner_graph (visualize, relatives)
-2. 

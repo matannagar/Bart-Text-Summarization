@@ -69,6 +69,10 @@ window.smoothScroll = function (target) {
 $(document).ready(function () {
   $('.create_graph').on('click', function () {
     summary = document.getElementById('bart_summary').innerHTML;
+    if (summary === " ") {
+      document.getElementById('bart_summary').innerHTML = "Please pick a file and click on summary!";
+      return;
+    }
     req = $.ajax({
       url: '/entity_tree',
       type: 'GET',
