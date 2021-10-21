@@ -1,0 +1,5 @@
+
+window[window["TiktokAnalyticsObject"]].instance("BS8RQ734J692HOFL0J10").setAdvancedMatchingAvailableProperties({"email":false,"phone_number":false});
+window[window["TiktokAnalyticsObject"]].instance("BS8RQ734J692HOFL0J10").setPixelInfo && window[window["TiktokAnalyticsObject"]].instance("BS8RQ734J692HOFL0J10").setPixelInfo({status: 0, name: "Sinclair", advertiserID: "6850462796883165190", setupMode: 0, partner: "", is_onsite: false});
+window[window["TiktokAnalyticsObject"]].setPCMDomain && window[window["TiktokAnalyticsObject"]].setPCMDomain("sinclair.edu");
+window[window["TiktokAnalyticsObject"]].setPCMConfig && window[window["TiktokAnalyticsObject"]].setPCMConfig([]);

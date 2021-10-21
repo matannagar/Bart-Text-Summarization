@@ -1,0 +1,440 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?tls6wa');
+    src:    url('fonts/icomoon.eot?tls6wa#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?tls6wa') format('truetype'),
+        url('fonts/icomoon.woff?tls6wa') format('woff'),
+        url('fonts/icomoon.svg?tls6wa#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mysinclair-icons_left-arrow-in-circle:before {
+    content: "\e905";
+}
+.icon-mysinclair-icons_right-arrow-in-circle:before {
+    content: "\e906";
+}
+.icon-mysinclair-icons_left-arrow:before {
+    content: "\e907";
+}
+.icon-mysinclair-icons_up-arrow:before {
+    content: "\e908";
+}
+.icon-mysinclair-icons_right-arrow:before {
+    content: "\e909";
+}
+.icon-mysinclair-icons_down-arrow:before {
+    content: "\e90a";
+}
+.icon-mysinclair-icons_minus-in-circle:before {
+    content: "\e90b";
+}
+.icon-mysinclair-icons_plus-in-circle:before {
+    content: "\e90c";
+}
+.icon-mysinclair-icons_close-in-circle:before {
+    content: "\e90d";
+}
+.icon-mysinclair-icons_check:before {
+    content: "\e90e";
+}
+.icon-mysinclair-icons_left-triangle-arrow:before {
+    content: "\e90f";
+}
+.icon-mysinclair-icons_megaphone:before {
+    content: "\e910";
+}
+.icon-mysinclair-icons_calendar:before {
+    content: "\e911";
+}
+.icon-mysinclair-icons_syllabus:before {
+    content: "\e912";
+}
+.icon-mysinclair-icons_chat:before {
+    content: "\e913";
+}
+.icon-mysinclair-icons_mobile:before {
+    content: "\e914";
+}
+.icon-mysinclair-icons_accessibility:before {
+    content: "\e915";
+}
+.icon-mysinclair-icons_facebook-2:before {
+    content: "\e916";
+}
+.icon-mysinclair-icons_twitter-2:before {
+    content: "\e917";
+}
+.icon-mysinclair-icons_instagram-2:before {
+    content: "\e918";
+}
+.icon-mysinclair-icons_flickr-logo:before {
+    content: "\e919";
+}
+.icon-mysinclair-icons_facebook:before {
+    content: "\e91a";
+}
+.icon-mysinclair-icons_twitter:before {
+    content: "\e91b";
+}
+.icon-mysinclair-icons_instagram:before {
+    content: "\e91c";
+}
+.icon-mysinclair-icons_youtube:before {
+    content: "\e91d";
+}
+.icon-mysinclair-icons_flickr:before {
+    content: "\e91e";
+}
+.icon-mysinclair-icons_linkedin:before {
+    content: "\e91f";
+}
+.icon-mysinclair-icons_pinterest:before {
+    content: "\e920";
+}
+.icon-mysinclair-icons_google-plus:before {
+    content: "\e921";
+}
+.icon-mysinclair-icons_left-carrot:before {
+    content: "\e902";
+}
+.icon-mysinclair-icons_right-carrot:before {
+    content: "\e904";
+}
+.icon-mysinclair-icons_down-carrot:before {
+    content: "\e922";
+}
+.icon-mysinclair-icons_up-carrot:before {
+    content: "\e923";
+}
+.icon-mysinclair-icons_collapsed:before {
+    content: "\e924";
+}
+.icon-mysinclair-icons_expanded:before {
+    content: "\e925";
+}
+.icon-mysinclair-icons_menu:before {
+    content: "\e926";
+}
+.icon-mysinclair-icons_search:before {
+    content: "\e927";
+}
+.icon-mysinclair-icons_close:before {
+    content: "\e900";
+}
+.icon-mysinclair-icons_account:before {
+    content: "\e901";
+}
+.icon-mysinclair-icons_notification:before {
+    content: "\e903";
+}
+.icon-mysinclair-icons_plus:before {
+    content: "\e928";
+}
+.icon-mysinclair-icons_bullet:before {
+    content: "\e929";
+}
+.icon-mysinclair-icons_menu2:before {
+    content: "\e92a";
+}
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+/* =======================================================================================
+Example showing how to change the color/size of the icons:
+.icon-name {
+	font-size: 32px; // works because "width" & "height" were set using em units
+	color: red; // works for single-colored icons, because "fill" was set to "currentColor"
+}
+======================================================================================== */
+
+.icon-sinclair-logo-white {
+	width: 100%;
+}
+#icon-sinclair-logo-white .path1, #icon-sinclair-logo-white .path2, #icon-sinclair-logo-white .path3, #icon-sinclair-logo-white .path4, #icon-sinclair-logo-white .path5, #icon-sinclair-logo-white .path6, #icon-sinclair-logo-white .path7, #icon-sinclair-logo-white .path8, #icon-sinclair-logo-white .path9, #icon-sinclair-logo-white .path10, #icon-sinclair-logo-white .path11, #icon-sinclair-logo-white .path12, #icon-sinclair-logo-white .path13, #icon-sinclair-logo-white .path14, #icon-sinclair-logo-white .path15, #icon-sinclair-logo-white .path16 {
+	fill: #fff;
+}
+
+.icon-sinclair-logo {
+	width: 4.046875em;
+}
+#icon-sinclair-logo .path1, #icon-sinclair-logo .path2, #icon-sinclair-logo .path3, #icon-sinclair-logo .path4, #icon-sinclair-logo .path5, #icon-sinclair-logo .path6, #icon-sinclair-logo .path7, #icon-sinclair-logo .path8, #icon-sinclair-logo .path9, #icon-sinclair-logo .path10, #icon-sinclair-logo .path11, #icon-sinclair-logo .path12, #icon-sinclair-logo .path13, #icon-sinclair-logo .path14, #icon-sinclair-logo .path15 {
+	fill: #231f20;
+}
+#icon-sinclair-logo .path16 {
+	fill: #ac1f30;
+}
+#icon-sinclair-logo .path17, #icon-sinclair-logo .path18 {
+	fill: #fff;
+}
+
+#icon-wwwsinclair-icons_cta-information .path1, #icon-wwwsinclair-icons_cta-information .path3, #icon-wwwsinclair-icons_cta-information .path4 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_cta-information .path2 {
+	fill: #864e85;
+}
+
+#icon-wwwsinclair-icons_cta-compass .path1, #icon-wwwsinclair-icons_cta-compass .path3, #icon-wwwsinclair-icons_cta-compass .path6 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_cta-compass .path2 {
+	fill: #b0e1ce;
+}
+#icon-wwwsinclair-icons_cta-compass .path4 {
+	fill: #469d7a;
+}
+#icon-wwwsinclair-icons_cta-compass .path5 {
+	fill: #175039;
+}
+
+#icon-wwwsinclair-icons_cta-checkbox .path1 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_cta-checkbox .path2 {
+	fill: #7f7fcc;
+}
+
+#icon-wwwsinclair-icons_www-associate-degrees .path1, #icon-wwwsinclair-icons_www-associate-degrees .path5, #icon-wwwsinclair-icons_www-associate-degrees .path9 {
+	fill: #aa1a2f;
+}
+#icon-wwwsinclair-icons_www-associate-degrees .path2, #icon-wwwsinclair-icons_www-associate-degrees .path4, #icon-wwwsinclair-icons_www-associate-degrees .path8 {
+	fill: #231f20;
+}
+#icon-wwwsinclair-icons_www-associate-degrees .path3, #icon-wwwsinclair-icons_www-associate-degrees .path6, #icon-wwwsinclair-icons_www-associate-degrees .path7, #icon-wwwsinclair-icons_www-associate-degrees .path10 {
+	fill: #fff;
+}
+
+#icon-wwwsinclair-icons_www-certificate-options .path1 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-certificate-options .path2, #icon-wwwsinclair-icons_www-certificate-options .path3, #icon-wwwsinclair-icons_www-certificate-options .path4, #icon-wwwsinclair-icons_www-certificate-options .path7, #icon-wwwsinclair-icons_www-certificate-options .path8, #icon-wwwsinclair-icons_www-certificate-options .path9 {
+	fill: #231f20;
+}
+#icon-wwwsinclair-icons_www-certificate-options .path5, #icon-wwwsinclair-icons_www-certificate-options .path6 {
+	fill: #aa1a2f;
+}
+
+#icon-wwwsinclair-icons_www-online-programs .path1 {
+	fill: #aa1a2f;
+}
+#icon-wwwsinclair-icons_www-online-programs .path2, #icon-wwwsinclair-icons_www-online-programs .path7, #icon-wwwsinclair-icons_www-online-programs .path8 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-online-programs .path3, #icon-wwwsinclair-icons_www-online-programs .path4, #icon-wwwsinclair-icons_www-online-programs .path5, #icon-wwwsinclair-icons_www-online-programs .path6 {
+	fill: #231f20;
+}
+
+#icon-wwwsinclair-icons_www-academic-support .path1 {
+	fill: #aa1a2f;
+}
+#icon-wwwsinclair-icons_www-academic-support .path2 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-academic-support .path3, #icon-wwwsinclair-icons_www-academic-support .path4, #icon-wwwsinclair-icons_www-academic-support .path5, #icon-wwwsinclair-icons_www-academic-support .path6, #icon-wwwsinclair-icons_www-academic-support .path7, #icon-wwwsinclair-icons_www-academic-support .path8, #icon-wwwsinclair-icons_www-academic-support .path9, #icon-wwwsinclair-icons_www-academic-support .path10, #icon-wwwsinclair-icons_www-academic-support .path11, #icon-wwwsinclair-icons_www-academic-support .path12, #icon-wwwsinclair-icons_www-academic-support .path13 {
+	fill: #231f20;
+}
+
+#icon-wwwsinclair-icons_www-support-services .path1, #icon-wwwsinclair-icons_www-support-services .path2 {
+	fill: #aa1a2f;
+}
+#icon-wwwsinclair-icons_www-support-services .path3 {
+	fill: #1a1818;
+}
+#icon-wwwsinclair-icons_www-support-services .path4 {
+	fill: #fff;
+}
+
+#icon-wwwsinclair-icons_www-graduation-career .path1 {
+	fill: #1a1818;
+}
+#icon-wwwsinclair-icons_www-graduation-career .path2 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-graduation-career .path3 {
+	fill: #aa1a2f;
+}
+
+#icon-wwwsinclair-icons_www-enrollment-services .path1, #icon-wwwsinclair-icons_www-enrollment-services .path2, #icon-wwwsinclair-icons_www-enrollment-services .path3, #icon-wwwsinclair-icons_www-enrollment-services .path4, #icon-wwwsinclair-icons_www-enrollment-services .path5, #icon-wwwsinclair-icons_www-enrollment-services .path6 {
+	fill: #000;
+}
+#icon-wwwsinclair-icons_www-enrollment-services .path7 {
+	fill: #aa1a2f;
+}
+#icon-wwwsinclair-icons_www-enrollment-services .path8 {
+	fill: #fff;
+}
+
+#icon-wwwsinclair-icons_www-online-tools .path1 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-online-tools .path2 {
+	fill: #231f20;
+}
+#icon-wwwsinclair-icons_www-online-tools .path3 {
+	fill: #aa1a2f;
+}
+
+#icon-wwwsinclair-icons_www-conduct-safety .path1, #icon-wwwsinclair-icons_www-conduct-safety .path12, #icon-wwwsinclair-icons_www-conduct-safety .path13 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-conduct-safety .path2, #icon-wwwsinclair-icons_www-conduct-safety .path3, #icon-wwwsinclair-icons_www-conduct-safety .path4, #icon-wwwsinclair-icons_www-conduct-safety .path5, #icon-wwwsinclair-icons_www-conduct-safety .path11 {
+	fill: #aa1a2f;
+}
+#icon-wwwsinclair-icons_www-conduct-safety .path6, #icon-wwwsinclair-icons_www-conduct-safety .path7, #icon-wwwsinclair-icons_www-conduct-safety .path8, #icon-wwwsinclair-icons_www-conduct-safety .path9, #icon-wwwsinclair-icons_www-conduct-safety .path10 {
+	fill: #231f20;
+}
+
+#icon-wwwsinclair-icons_www-directories-help .path1 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-directories-help .path2, #icon-wwwsinclair-icons_www-directories-help .path3, #icon-wwwsinclair-icons_www-directories-help .path4, #icon-wwwsinclair-icons_www-directories-help .path5 {
+	fill: #aa1a2f;
+}
+#icon-wwwsinclair-icons_www-directories-help .path6 {
+	fill: #1a1818;
+}
+
+#icon-wwwsinclair-icons_www-phone-number .path1 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-phone-number .path2, #icon-wwwsinclair-icons_www-phone-number .path3 {
+	fill: #231f20;
+}
+#icon-wwwsinclair-icons_www-phone-number .path4 {
+	fill: #aa1a2f;
+}
+
+#icon-wwwsinclair-icons_www-mailing-address .path1 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-mailing-address .path2 {
+	fill: #aa1a2f;
+}
+#icon-wwwsinclair-icons_www-mailing-address .path3 {
+	fill: #231f20;
+}
+
+#icon-wwwsinclair-icons_www-email .path1 {
+	fill: #231f20;
+}
+#icon-wwwsinclair-icons_www-email .path2 {
+	fill: #aa1a2f;
+}
+#icon-wwwsinclair-icons_www-email .path3, #icon-wwwsinclair-icons_www-email .path4, #icon-wwwsinclair-icons_www-email .path5 {
+	fill: #fff;
+}
+
+#icon-wwwsinclair-icons_www-locations .path1, #icon-wwwsinclair-icons_www-locations .path6, #icon-wwwsinclair-icons_www-locations .path8, #icon-wwwsinclair-icons_www-locations .path13 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-locations .path2, #icon-wwwsinclair-icons_www-locations .path3, #icon-wwwsinclair-icons_www-locations .path4, #icon-wwwsinclair-icons_www-locations .path5, #icon-wwwsinclair-icons_www-locations .path7, #icon-wwwsinclair-icons_www-locations .path9, #icon-wwwsinclair-icons_www-locations .path10, #icon-wwwsinclair-icons_www-locations .path11, #icon-wwwsinclair-icons_www-locations .path12, #icon-wwwsinclair-icons_www-locations .path14 {
+	fill: #231f20;
+}
+#icon-wwwsinclair-icons_www-locations .path15 {
+	fill: #aa1a2f;
+}
+
+#icon-wwwsinclair-icons_www-other-info .path1 {
+	fill: #231f20;
+}
+#icon-wwwsinclair-icons_www-other-info .path2 {
+	fill: #aa1a2f;
+}
+#icon-wwwsinclair-icons_www-other-info .path3, #icon-wwwsinclair-icons_www-other-info .path4, #icon-wwwsinclair-icons_www-other-info .path5, #icon-wwwsinclair-icons_www-other-info .path6, #icon-wwwsinclair-icons_www-other-info .path7 {
+	fill: #fff;
+}
+
+#icon-wwwsinclair-icons_www-people-directory .path1, #icon-wwwsinclair-icons_www-people-directory .path2, #icon-wwwsinclair-icons_www-people-directory .path3, #icon-wwwsinclair-icons_www-people-directory .path4, #icon-wwwsinclair-icons_www-people-directory .path10 {
+	fill: #000;
+}
+#icon-wwwsinclair-icons_www-people-directory .path5, #icon-wwwsinclair-icons_www-people-directory .path6, #icon-wwwsinclair-icons_www-people-directory .path9 {
+	fill: #fff;
+}
+#icon-wwwsinclair-icons_www-people-directory .path7, #icon-wwwsinclair-icons_www-people-directory .path8 {
+	fill: #aa1a2f;
+}
+
+#icon-mysinclair-icons_left-arrow-carousel .path1 {
+	fill: #fff;
+}
+#icon-mysinclair-icons_left-arrow-carousel .path2 {
+	fill: #ac1a2f;
+}
+
+#icon-mysinclair-icons_right-arrow-carousel .path1 {
+	fill: #fff;
+}
+#icon-mysinclair-icons_right-arrow-carousel .path2 {
+	fill: #ac1a2f;
+}
+
+#icon-mysinclair-icons_dropdown-default .path1 {
+	fill: #616366;
+}
+#icon-mysinclair-icons_dropdown-default .path2 {
+	fill: #fff;
+}
+
+#icon-mysinclair-icons_dropdown-selected .path1 {
+	fill: #ac1a2f;
+}
+#icon-mysinclair-icons_dropdown-selected .path2 {
+	fill: #fff;
+}
+
+#icon-mysinclair-icons_checkbox-empty .path1 {
+	fill: #d3d7dc;
+}
+#icon-mysinclair-icons_checkbox-empty .path2 {
+	fill: #fff;
+}
+
+#icon-mysinclair-icons_checkbox-checked .path1 {
+	fill: #ac1a2f;
+}
+#icon-mysinclair-icons_checkbox-checked .path2 {
+	fill: #fff;
+}
+
+#icon-mysinclair-icons_paying-for-college .path1, #icon-mysinclair-icons_paying-for-college .path2 {
+	fill: #fff;
+}
+#icon-mysinclair-icons_paying-for-college .path3, #icon-mysinclair-icons_paying-for-college .path4, #icon-mysinclair-icons_paying-for-college .path5 {
+	fill: #1a1718;
+}
+
+#icon-mysinclair-icons_academic-testing .path1 {
+	fill: #fff;
+}
+#icon-mysinclair-icons_academic-testing .path2, #icon-mysinclair-icons_academic-testing .path3, #icon-mysinclair-icons_academic-testing .path4, #icon-mysinclair-icons_academic-testing .path5, #icon-mysinclair-icons_academic-testing .path6, #icon-mysinclair-icons_academic-testing .path7 {
+	fill: #1a1718;
+}
+
+#icon-mysinclair-icons_course-schedule .path1 {
+	fill: #fff;
+}
+#icon-mysinclair-icons_course-schedule .path2, #icon-mysinclair-icons_course-schedule .path3, #icon-mysinclair-icons_course-schedule .path4, #icon-mysinclair-icons_course-schedule .path5, #icon-mysinclair-icons_course-schedule .path6, #icon-mysinclair-icons_course-schedule .path7, #icon-mysinclair-icons_course-schedule .path8, #icon-mysinclair-icons_course-schedule .path9 {
+	fill: #1a1718;
+}

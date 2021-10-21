@@ -93,10 +93,7 @@ h2 {
   border-color: #ccc;
   color: #ccc;
   pointer-events: all;
-  /* line-height: 300px; */
-
   margin: 0;
-  /* background-image: url("../static/assets/images/drag_drop.png"); */
 }
 
 .dropzone.dragover {
@@ -108,7 +105,6 @@ h2 {
   height: 270px;
   width: 450px;
   line-height: 300px;
-  /* margin: 0; */
   opacity: 0;
   border-style: dashed;
 }
@@ -246,19 +242,15 @@ h2 {
   overflow: auto;
   justify-content: center;
   align-items: center;
-  /* border: solid; */
+  background-color: #f7f9ff;
   padding-left: 0.2em;
   padding-right: 0.2em;
 }
 /* SHARING AND SAVING */
 .sharing_buttons {
   position: relative;
-  text-align: right;
+  text-align: center;
   content: center;
-  /* border: solid; */
-  /* width: 30%; */
-  right: 12.7%;
-  float: right;
 }
 
 .fa {

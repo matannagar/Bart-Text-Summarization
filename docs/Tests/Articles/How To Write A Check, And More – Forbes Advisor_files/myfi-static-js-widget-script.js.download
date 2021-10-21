@@ -1,0 +1,23 @@
+(function () {
+    if (typeof tidDomElementConfig === 'object' && tidDomElementConfig.hasOwnProperty('config')) {
+        var tidElementSelector = tidDomElementConfig.config.selector;
+        var tidElementSelectorName = tidDomElementConfig.config.selectorName;
+        var tidDataAttribute = tidDomElementConfig.config.attribute;
+
+        switch (tidElementSelector) {
+            case 'class':
+                var classElements = document.getElementsByClassName(tidElementSelectorName);
+                var tid = __linkTrackingController.USER_ID_HASH || '';
+                var getUniqueIdDefined = typeof __linkTrackingController.getUniqueId === 'function';
+
+                for (var i = 0; i < classElements.length; i++) {
+                    var el = classElements[i];
+                    if (tid && getUniqueIdDefined) {
+                        var tidLid = tid + '_' + __linkTrackingController.getUniqueId();
+                        el.setAttribute(tidDataAttribute, tidLid);
+                    }
+                }
+                break;
+        }
+    }
+})();
