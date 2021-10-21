@@ -6,13 +6,18 @@ To FIX:
 9. linkedin short url
 10. multiple clicks on scan for terms: after summary found
 
+
+
 To DO:
 1. minimized venv
 2. prettier popup message when file was selected
 3. test additional docs
+<<<<<<< HEAD
 5. Documentation 
 6. summary try and catch 
 7. graph window should be size fixed, title
+5. Documentation 
+
 
 GOALS:
 1. Phone adjustments
