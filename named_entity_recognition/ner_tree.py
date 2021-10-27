@@ -76,19 +76,27 @@ def hierarchy_pos(G, root=None, width=1., vert_gap=0.2, vert_loc=0, xcenter=0.5)
 
 
 def create_entity_tree(summary):
+
     print("creating entity tree")
     dictionary = json.loads(turn_into_dictionary())
     # plt.figure(figsize=(18, 15))
+
     mylist = []
     G = nx.DiGraph()
     G.add_node("source")
+
+    tree_table = "summarization"
+
     for index in dictionary:
         if index in summary:
             G.add_node(index)
             G.add_edge("source", index)
             mylist.append(index)
-            print("added "+index + " to list")
+
     mylist = list(dict.fromkeys(mylist))  # no duplicates
+
+    for unique in mylist:
+        tree_table += "\n   ·"+unique
 
     # while mylist:
     #     print("in while loop")
@@ -105,12 +113,14 @@ def create_entity_tree(summary):
     #         mylist.remove(node)
     print("finishing tree")
     plt.switch_backend('agg')
-    pos = nx.spring_layout(G)
-    # pos = hierarchy_pos(G, "source")
+    # pos = nx.spring_layout(G)
+    pos = hierarchy_pos(G, "source")
     nx.draw_networkx_nodes(G, pos, node_size=500)
     nx.draw_networkx_edges(G, pos, edgelist=G.edges(), edge_color='black')
     nx.draw_networkx_labels(G, pos)
     plt.savefig("temp_graph.png", format="PNG")
+    print(tree_table)
+    return tree_table
 
 
 if __name__ == '__main__':

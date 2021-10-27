@@ -66,6 +66,8 @@ window.smoothScroll = function (target) {
   scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
 
+
+// LOAD GRAPH PICTURE
 $(document).ready(function () {
   $('.create_graph').on('click', function () {
     summary = document.getElementById('bart_summary').innerHTML;
@@ -78,7 +80,14 @@ $(document).ready(function () {
       type: 'GET',
       data: { summary: summary },
       success: function (data) {
-        window.open("http://127.0.0.1:8887/temp_graph.png", 'entity tree', "height=640,width=480");
+        // $("#ner_data").html(data);
+        document.getElementById("ner_data").innerHTML = '<div>' + data + '</div>';
+        // window.open("http://127.0.0.1:8887/temp_graph.png", 'entity tree', "height=480,width=640");
+
+        graph_pic = document.getElementById('ner_tree_pic');
+        graph_pic.style = "";
+        graph_pic.src = "http://127.0.0.1:8887/temp_graph.png";
+
       }
     })
   });
@@ -98,17 +107,23 @@ function findEntities() {
     summarize = document.getElementById('Summary').innerHTML;
     flag = true;
   }
+  var ner_table = "<b>Summarization</b>";
 
   json_dict = JSON.parse(json_dict);
   var res = summarize;
   for (index in json_dict) {
     if (summarize.includes(index) === true) {
+
+      // ner_table += '<br>   ·' + '<div class="tooltip"><b>' + index + '</b><span class="tooltiptext">' + json_dict[index] + '</span></div >';
+      ner_table += '<br><div class="entity">' + ' ·' + index + '</div> <div class="meaning">' + json_dict[index] + '</div>';
       res = res.replace(index, '<div class="tooltip"><b>' + index + '</b><span class="tooltiptext">' + json_dict[index] + '</span></div >');
     }
   }
   if (flag === true)
     document.getElementById('Summary').innerHTML = res;
   else document.getElementById('bart_summary').innerHTML = res;
+
+  document.getElementById("ner_data").innerHTML = ner_table;
 }
 
 

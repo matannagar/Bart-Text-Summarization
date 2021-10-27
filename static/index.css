@@ -223,18 +223,6 @@ h2 {
   background-color: #ff0404;
 }
 /* TEXT SUMMARIZATION BOX */
-.textsummary {
-  padding-left: 10%;
-  padding-right: 10%;
-  font-family: "Courier New", Courier, monospace;
-  text-align: left;
-  pointer-events: all;
-  width: 750px;
-  height: 450px;
-  background-color: #f7f9ff;
-  /* border: solid; */
-}
-
 .textsummary-outer {
   position: relative;
   display: flex;
@@ -245,6 +233,58 @@ h2 {
   background-color: #f7f9ff;
   padding-left: 0.2em;
   padding-right: 0.2em;
+}
+
+.textsummary {
+  float: left;
+  width: 500px;
+  height: 450px;
+
+  padding: 25px;
+
+  text-align: left;
+  font-size: 16;
+  font-family: "Work Ans", sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 1.2;
+  color: #000358;
+
+  pointer-events: all;
+
+  border: solid;
+  border-color: #bbc8dd;
+  border-width: 2px;
+  border-radius: 15px;
+  margin: 20px top, 20px right, 20px left, 10px bottom;
+  background-color: white;
+}
+
+.ner_tree {
+  padding: 25px;
+
+  pointer-events: all;
+
+  float: left;
+  text-align: left;
+  font-size: 16;
+  font-family: "Work Ans", sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 1.2;
+  color: #000358;
+
+  width: 500px;
+  height: 450px;
+
+  border: solid;
+  border-color: #bbc8dd;
+  border-width: 2px;
+  border-radius: 15px;
+  margin: 20px top, 20px right, 20px left, 20px bottom;
+  background-color: white;
+
+  overflow: auto;
 }
 /* SHARING AND SAVING */
 .sharing_buttons {
@@ -394,8 +434,8 @@ input[type="number"] {
 div#loading {
   background-color: #f7f9ff;
   text-align: center;
-  width: 700px;
-  height: 240px;
+  /* width: 700px;
+  height: 240px; */
 }
 
 .outer {
@@ -417,16 +457,26 @@ div#loading {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 350px;
-  background-color: #bdccff;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
   padding: 5px 0;
+  margin-left: -60px;
   position: absolute;
   z-index: 1;
   top: 150%;
   left: 50%;
-  margin-left: -60px;
+
+  background-color: #98b6f0;
+  border-color: #679ef8;
+  border-width: 2px;
+  border-radius: 10px;
+
+  color: #000358;
+  text-align: center;
+  font-size: 15;
+  font-family: "Work Sans", sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1.2;
+  font-weight: 600;
+  /* margin: 5px 5px 5px; */
 
   /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
   opacity: 0;
@@ -436,4 +486,30 @@ div#loading {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.entity {
+  font-size: 18px;
+  font: "work sans";
+  font-weight: 800;
+  line-height: 2;
+  letter-spacing: 1;
+  color: #000358;
+  margin: 20px top, 15px left;
+  background-color: white;
+}
+.meaning {
+  background-color: #f6f9ff;
+  font-size: 14px;
+  font: "work sans";
+  line-height: 1.8;
+  letter-spacing: 1.2;
+  color: #000358;
+
+  border: solid;
+  border-radius: 15px;
+  border-color: #505175;
+  border-width: 2px;
+
+  padding: 2%;
 }

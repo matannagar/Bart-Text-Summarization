@@ -68,8 +68,8 @@ def entity_tree():
     if request.method == 'POST':
         pass
     else:
-        create_entity_tree(session.get('my_var', None))
-        return jsonify({'result': 'success'})
+        ner_data = create_entity_tree(session.get('my_var', None))
+        return render_template('entity_tree.html', ner_data=ner_data)
 
 
 # need to be erased

@@ -81,24 +81,26 @@
         </div>
     </form>
     <br>
-    <div class=" textsummary-outer">
+    <div class="textsummary-outer">
         <!-- SUMMARIZATION TEXT BOX -->
         <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
-            <div name='summary'>
+            <p id="Summary"></p>
+            <p id="bart_summary">{{summary}} </p>
+            <p id="dictionary" style="visibility: none; display:none;"> {{dictionary}} </p>
+            <p id='filename' style="opacity: 0;">{{name}}</p>
+            <p id="nofile">{{error}}</p>
+
+            <div id="loading" style="display:none;">
+                <img src="../static/assets/images/loading.gif" alt="" />
                 <br>
-                <br>
-                <p id="Summary"></p>
-                <p id="bart_summary">{{summary}} </p>
-                <p id="dictionary" style="visibility: none; display:none;"> {{dictionary}} </p>
-                <p id='filename' style="opacity: 0;">{{name}}</p>
-                <p id="nofile">{{error}}</p>
-                <!-- <p>{{ content }}</p> -->
-                <div id="loading" style="display:none;">
-                    <img src="../static/assets/images/loading.gif" alt="" />
-                    <br>
-                    <p>Summarization in process...</p>
-                </div>
+                <p>Summarization in process...</p>
             </div>
+            <!-- </div> -->
+        </div>
+
+        <div class="ner_tree">
+            <img src="" id="ner_tree_pic" style="display:none;" alt="Girl in a jacket">
+            <div id="ner_data"></div>
         </div>
     </div>
 
