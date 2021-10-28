@@ -54,7 +54,7 @@ def index(glob_var="", dictionary=""):
             summary = summarize(path, percentage, max_words)
             glob_var = summary
             session['my_var'] = summary
-            redirect(url_for('entity_tree'))
+            # redirect(url_for('entity_tree'))
         else:  # if no file was chosen
             print("no file chosen")
             return render_template("index.html", error="You have to pick a file!")
@@ -63,13 +63,15 @@ def index(glob_var="", dictionary=""):
         return render_template("index.html", summary=glob_var)
 
 
-@app.route('/entity_tree', methods=['POST', 'GET'])
-def entity_tree():
-    if request.method == 'POST':
-        pass
-    else:
-        ner_data = create_entity_tree(session.get('my_var', None))
-        return render_template('entity_tree.html', ner_data=ner_data)
+# currently not needed
+
+# @app.route('/entity_tree', methods=['POST', 'GET'])
+# def entity_tree():
+#     if request.method == 'POST':
+#         pass
+#     else:
+#         ner_data = create_entity_tree(session.get('my_var', None))
+#         return render_template('entity_tree.html', ner_data=ner_data)
 
 
 # need to be erased

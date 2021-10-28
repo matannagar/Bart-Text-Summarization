@@ -200,7 +200,7 @@ h2 {
   background-color: #ff0404;
 }
 /* NER GRAPH BUTTON */
-.create_ner_graph_button {
+/* .create_ner_graph_button {
   position: relative;
   display: flex;
   width: 300px;
@@ -221,7 +221,7 @@ h2 {
 }
 .create_ner_graph_button button:hover {
   background-color: #ff0404;
-}
+} */
 /* TEXT SUMMARIZATION BOX */
 .textsummary-outer {
   position: relative;
@@ -245,7 +245,7 @@ h2 {
   text-align: left;
   font-size: 16;
   font-family: "Work Ans", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.4;
   letter-spacing: 1.2;
   color: #000358;
@@ -258,6 +258,8 @@ h2 {
   border-radius: 15px;
   margin: 20px top, 20px right, 20px left, 10px bottom;
   background-color: white;
+
+  overflow: auto;
 }
 
 .ner_tree {

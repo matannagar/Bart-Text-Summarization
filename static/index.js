@@ -68,30 +68,30 @@ window.smoothScroll = function (target) {
 
 
 // LOAD GRAPH PICTURE
-$(document).ready(function () {
-  $('.create_graph').on('click', function () {
-    summary = document.getElementById('bart_summary').innerHTML;
-    if (summary === " ") {
-      document.getElementById('bart_summary').innerHTML = "Please pick a file and click on summary!";
-      return;
-    }
-    req = $.ajax({
-      url: '/entity_tree',
-      type: 'GET',
-      data: { summary: summary },
-      success: function (data) {
-        // $("#ner_data").html(data);
-        document.getElementById("ner_data").innerHTML = '<div>' + data + '</div>';
-        // window.open("http://127.0.0.1:8887/temp_graph.png", 'entity tree', "height=480,width=640");
+// $(document).ready(function () {
+//   $('.create_graph').on('click', function () {
+//     summary = document.getElementById('bart_summary').innerHTML;
+//     if (summary === " ") {
+//       document.getElementById('bart_summary').innerHTML = "Please pick a file and click on summary!";
+//       return;
+//     }
+//     req = $.ajax({
+//       url: '/entity_tree',
+//       type: 'GET',
+//       data: { summary: summary },
+//       success: function (data) {
+//         // $("#ner_data").html(data);
+//         document.getElementById("ner_data").innerHTML = '<div>' + data + '</div>';
+//         // window.open("http://127.0.0.1:8887/temp_graph.png", 'entity tree', "height=480,width=640");
 
-        graph_pic = document.getElementById('ner_tree_pic');
-        graph_pic.style = "";
-        graph_pic.src = "http://127.0.0.1:8887/temp_graph.png";
+//         graph_pic = document.getElementById('ner_tree_pic');
+//         graph_pic.style = "";
+//         graph_pic.src = "http://127.0.0.1:8887/temp_graph.png";
 
-      }
-    })
-  });
-});
+//       }
+//     })
+//   });
+// });
 
 // find entities
 function findEntities() {
