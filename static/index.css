@@ -120,14 +120,23 @@ h2 {
   height: auto;
   pointer-events: auto;
 }
+/* URL LINK BOX */
+.url_link-box {
+  position: relative;
+  pointer-events: all;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.10000000149011612));
+}
 
+.url_link-outer {
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* MAX WORDS */
 .max-words-box {
   position: relative;
   z-index: 48;
   pointer-events: all;
-  /* height: 0px; */
-  /* min-height: 50px; */
-  /* width: 500px; */
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.10000000149011612));
 }
 
@@ -137,9 +146,9 @@ h2 {
   margin-left: auto;
 }
 
+/* PERCENTAGE */
 .percentage-box {
   pointer-events: all;
-  /* width: 500px; */
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.10000000149011612));
   text-align: center;
 }
@@ -150,7 +159,7 @@ h2 {
   margin-right: auto;
   margin-left: auto;
 }
-
+/* SUMMARIZE BUTTON */
 .buttonSummarize-outer {
   position: relative;
   display: flex;
@@ -314,15 +323,11 @@ h2 {
   pointer-events: all;
   width: 130px;
   height: 33px;
-  /* min-height: 33px; */
 }
 
 .download-summary-outer {
   position: relative;
   float: right;
-  /* border: solid; */
-  /* padding-left: 10%;
-  padding-right: 20%; */
 }
 
 form * {
@@ -334,7 +339,6 @@ input[type="text"] {
 }
 
 textarea[name="text"] * {
-  /* display: none; */
   visibility: hidden;
 }
 
@@ -399,7 +403,8 @@ textarea[name="text"] * {
 }
 
 .input[type="file"],
-input[type="number"] {
+input[type="number"],
+input[type="url"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;

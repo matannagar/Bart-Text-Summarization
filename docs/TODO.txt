@@ -7,7 +7,6 @@ To FIX:
 10. multiple clicks on scan for terms: after summary found
 
 
-
 To DO:
 1. minimized venv
 2. prettier popup message when file was selected
@@ -24,7 +23,6 @@ GOALS:
 2. Fine-Tuning BART with scientific data-base 
 3. UPLOAD ONLINE
 4. save summary to PDF file
-5. add option to summarize article from link
 
 TESTS:
 1. check scan entities with the url share link!

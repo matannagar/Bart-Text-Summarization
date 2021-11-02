@@ -39,26 +39,38 @@ def index(glob_var="", dictionary=""):
             percentage = int(percentage)
 
         dictionary = turn_into_dictionary()
+
+        # attempt to get file1
         f = request.files['file1']
         if secure_filename(f.filename) == '':
+            # attempt to get file2
             f = request.files['file2']
-        # possible method of reading file directly : input_data = f.stream.read().decode("utf-8"), not working with docx
-        filename = secure_filename(f.filename)
-        if filename != '':
-            file_ext = os.path.splitext(filename)[1]
-            # verify type of file
-            if file_ext not in app.config['UPLOAD_EXTENSIONS']:
-                return render_template("index.html", error="Only .docx or .txt allowed!")
-            path = os.path.join(app.config['UPLOAD_PATH'], filename)
-            f.save(path)
-            summary = summarize(path, percentage, max_words)
-            glob_var = summary
-            session['my_var'] = summary
+            if secure_filename(f.filename) != '':
+                # possible method of reading file directly : input_data = f.stream.read().decode("utf-8"), not working with docx
+                filename = secure_filename(f.filename)
+                if filename != '':
+                    file_ext = os.path.splitext(filename)[1]
+                    # verify type of file
+                    if file_ext not in app.config['UPLOAD_EXTENSIONS']:
+                        return render_template("index.html", error="Only .docx or .txt allowed!")
+                    path = os.path.join(app.config['UPLOAD_PATH'], filename)
+                    f.save(path)
+
+                    summary = summarize(path, percentage, max_words)
+                    glob_var = summary
+
+                    return render_template("index.html", name=f.filename, summary=summary, dictionary=dictionary)
+            # attempt to get URL
+            else:
+                f = request.form['input_url']
+                if f != '':
+                    summary = summarize_from_web(f, percentage, max_words)
+                    return render_template("index.html", name="web", summary=summary, dictionary=dictionary)
+                else:  # if no file was chosen
+                    print("no file chosen")
+                    return render_template("index.html", error="You have to pick a file!")
+            # session['my_var'] = summary
             # redirect(url_for('entity_tree'))
-        else:  # if no file was chosen
-            print("no file chosen")
-            return render_template("index.html", error="You have to pick a file!")
-        return render_template("index.html", name=f.filename, summary=summary, dictionary=dictionary)
     else:
         return render_template("index.html", summary=glob_var)
 
@@ -75,5 +87,6 @@ def index(glob_var="", dictionary=""):
 
 
 # need to be erased
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
