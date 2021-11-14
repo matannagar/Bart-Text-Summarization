@@ -59,7 +59,8 @@ def bart_model(text, words_in_summary):
         summary = summary[7:-4]
 
         return summary
-    except:
+    except Exception as e:
+        print(e)
         return "A problem occured while summarizing."
 
 
