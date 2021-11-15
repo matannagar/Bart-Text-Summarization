@@ -17,6 +17,7 @@ import re
 from open_files.clean_html import open_html
 from open_files.clean_pdf import open_pdf
 from open_files.clean_text import clean_text
+import tensorflow as tf
 
 
 def summary_length(text, percentage=15):
@@ -54,6 +55,7 @@ def bart_model(text, words_in_summary):
                                  min_length=words_in_summary,
                                  max_length=words_in_summary + 50,
                                  no_repeat_ngram_size=3)
+        print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
 
         summary = tokenizer.decode(outputs[0])
         summary = summary[7:-4]
