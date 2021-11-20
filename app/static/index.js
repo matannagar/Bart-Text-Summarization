@@ -66,33 +66,6 @@ window.smoothScroll = function (target) {
   scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
 
-
-// LOAD GRAPH PICTURE
-// $(document).ready(function () {
-//   $('.create_graph').on('click', function () {
-//     summary = document.getElementById('bart_summary').innerHTML;
-//     if (summary === " ") {
-//       document.getElementById('bart_summary').innerHTML = "Please pick a file and click on summary!";
-//       return;
-//     }
-//     req = $.ajax({
-//       url: '/entity_tree',
-//       type: 'GET',
-//       data: { summary: summary },
-//       success: function (data) {
-//         // $("#ner_data").html(data);
-//         document.getElementById("ner_data").innerHTML = '<div>' + data + '</div>';
-//         // window.open("http://127.0.0.1:8887/temp_graph.png", 'entity tree', "height=480,width=640");
-
-//         graph_pic = document.getElementById('ner_tree_pic');
-//         graph_pic.style = "";
-//         graph_pic.src = "http://127.0.0.1:8887/temp_graph.png";
-
-//       }
-//     })
-//   });
-// });
-
 // find entities
 function findEntities() {
   var flag = false;
@@ -113,8 +86,6 @@ function findEntities() {
   var res = summarize;
   for (index in json_dict) {
     if (summarize.includes(index) === true) {
-
-      // ner_table += '<br>   ·' + '<div class="tooltip"><b>' + index + '</b><span class="tooltiptext">' + json_dict[index] + '</span></div >';
       ner_table += '<br><div class="entity">' + ' ·' + index + '</div> <div class="meaning">' + json_dict[index] + '</div>';
       res = res.replace(index, '<div class="tooltip"><b>' + index + '</b><span class="tooltiptext">' + json_dict[index] + '</span></div >');
     }
@@ -126,7 +97,11 @@ function findEntities() {
   document.getElementById("ner_data").innerHTML = ner_table;
 }
 
-
+// Cleans the windows while summarizing new file
+function set_clean() {
+  document.getElementById('bart_summary').innerHTML = '';
+  document.getElementById('nofile').innerHTML = '';
+}
 // sharing options (linkedin twitter gmail)
 //open registration window
 function to_open() {

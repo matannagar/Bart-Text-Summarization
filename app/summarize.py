@@ -55,7 +55,8 @@ def bart_model(text, words_in_summary):
                                  min_length=words_in_summary,
                                  max_length=words_in_summary + 50,
                                  no_repeat_ngram_size=3)
-        print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+        print("Num GPUs Available: ", len(
+            tf.config.list_physical_devices('GPU')))
 
         summary = tokenizer.decode(outputs[0])
         summary = summary[7:-4]
@@ -84,7 +85,7 @@ def summarize(filename, percentage, min_words):
     # calculate how many words user want's in his summary
     words_in_summary = word_in_summary_fun(percentage, min_words, text)
     print("working")
-    return bart_model(text, words_in_summary)
+    return bart_model(text, words_in_summary), text
 
 
 def summarize_from_web(url, percentage, min_words):
@@ -94,4 +95,4 @@ def summarize_from_web(url, percentage, min_words):
     # calculate how many words user want's in his summary
     words_in_summary = word_in_summary_fun(percentage, min_words, text)
 
-    return bart_model(text, words_in_summary)
+    return bart_model(text, words_in_summary), text

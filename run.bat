@@ -1,2 +1,2 @@
-CALL venv\Scripts\activate.bat
-python application.py runserver
+CALL .\venv\Scripts\activate.bat
+python .\app\application.py runserver

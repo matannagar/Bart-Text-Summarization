@@ -208,31 +208,75 @@ h2 {
 .buttonEntities-outer button:hover {
   background-color: #ff0404;
 }
-/* NER GRAPH BUTTON */
-/* .create_ner_graph_button {
+
+.top-outer {
   position: relative;
   display: flex;
-  width: 300px;
-  margin-right: auto;
-  margin-left: auto;
+  pointer-events: all;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f9ff;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
 }
-.create_ner_graph_button button {
-  width: 100%;
-  background-color: #ff3e3e;
-  color: white;
-  margin: 4px 0;
-  border: none;
-  cursor: pointer;
-  padding: 8px 80px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
+
+.right {
+  padding: 25px;
+
+  pointer-events: all;
+
+  float: right;
+  text-align: left;
+  font-size: 16;
+  font-family: "Work Ans", sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 1.2;
+  color: #000358;
+
+  width: 500px;
+  height: 700px;
+
+  border: solid;
+  border-color: #bbc8dd;
+  border-width: 2px;
+  border-radius: 15px;
+  margin: 20px top, 20px right, 20px left, 20px bottom;
+  background-color: white;
+
+  overflow: auto;
 }
-.create_ner_graph_button button:hover {
-  background-color: #ff0404;
-} */
+.article_outer {
+  float: left;
+  width: 500px;
+  height: 700px;
+
+  padding: 25px;
+
+  text-align: left;
+  font-size: 16;
+  font-family: "Work Ans", sans-serif;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 1.2;
+  color: #000358;
+
+  pointer-events: all;
+
+  border: solid;
+  border-color: #bbc8dd;
+  border-width: 2px;
+  border-radius: 15px;
+  margin: 20px top, 20px right, 20px left, 10px bottom;
+  background-color: white;
+
+  overflow: auto;
+}
+
 /* TEXT SUMMARIZATION BOX */
 .textsummary-outer {
+  clear: both;
   position: relative;
   display: flex;
   pointer-events: all;
@@ -272,6 +316,7 @@ h2 {
 }
 
 .ner_tree {
+  clear: both;
   padding: 25px;
 
   pointer-events: all;

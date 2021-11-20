@@ -13,8 +13,10 @@
     <meta property="og:title" content="bart summarizer">
     <meta property="og:description" content="bart summarizer Description">
     <meta name="generator" content="Quest">
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,500,600,700,800">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />>
+
+    <link type="text/css" rel=" stylesheet"
+        href="https://fonts.googleapis.com/css?family=Work+Sans:300,500,600,700,800">
     <link rel="icon" sizes="57x57" href="../static/assets/images/hilogo.png" />
 </head>
 
@@ -29,66 +31,66 @@
             <br>
         </h2>
     </div>
+    <div class="top-outer">
+        <!--  -->
+        <div class="article_outer">
+            <p id="article">{{article}}</p>
+        </div>
+        <!--  -->
+        <div class="right">
+            <form action="/index" method="POST" enctype="multipart/form-data">
+                <!-- Load File Button -->
+                <div class="upldbtn-out">
+                    <input type="file" name="file1" id="file1" />
+                    <label class="upldbtn" for="file1">Upload a file</button>
+                </div>
+                <!-- Summarize from Link -->
+                <div class="url_link-outer">
+                    <div id="url_link-box" class="url_link-box">
+                        <label for="input_url" for="input_url"></label>
+                        <input type="url" id="input_url" name="input_url" placeholder="Enter URL Here">
+                    </div>
+                </div>
+                <br>
+                <!-- Drag&Drop Box -->
+                <div class="drag-drop-outer">
+                    <div class="dropzone" id="dropzone">
+                        <label class="button" id="btndd" for="fileElem">Drag a file here</label>
+                        <input type="file" name="file2" id="fileElem">
+                    </div>
+                </div>
+                <br>
+                <!-- max words box -->
+                <div class="max-words-outer">
+                    <div id="max-words-box" class="max-words-box">
+                        <label for="max-words"></label>
+                        <input type="number" id="max-words" name="max-words" defaultValue="100" min="100" step="10"
+                            placeholder="Summary's max words...">
+                    </div>
+                </div>
+                <!-- percentage box -->
+                <div class="percentage-box-outer">
+                    <div id="percentage-box" class="percentage-box">
+                        <label for="percentage"></label>
+                        <input type="number" id="percentage" name="percentage" min="10" max="100"
+                            placeholder="Summary's length in percentages...">
+                    </div>
+                </div>
 
-    <form action="/index" method="POST" enctype="multipart/form-data">
-        <!-- Load File Button -->
-        <div class="upldbtn-out">
-            <input type="file" name="file1" id="file1" />
-            <label class="upldbtn" for="file1">Upload a file</button>
+                <!-- Button summarizer -->
+                <div class="buttonSummarize-outer">
+                    <label for="SummarizeButton"></label>
+                    <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!" onclick="set_clean();
+                $('#loading').show(); ">
+                </div>
+                <div class="buttonEntities-outer">
+                    <button type="button" id="entities" name="entities" value="Scan for terms!"
+                        onclick="this.disabled=true;findEntities()">Scan
+                        for terms</button>
+                </div>
+            </form>
         </div>
-        <!-- Summarize from Link -->
-        <div class="url_link-outer">
-            <div id="url_link-box" class="url_link-box">
-                <label for="input_url" for="input_url"></label>
-                <input type="url" id="input_url" name="input_url" placeholder="Enter URL Here">
-            </div>
-        </div>
-        <br>
-        <!-- Drag&Drop Box -->
-        <div class="drag-drop-outer">
-            <div class="dropzone" id="dropzone">
-                <label class="button" id="btndd" for="fileElem">Drag a file here</label>
-                <input type="file" name="file2" id="fileElem">
-            </div>
-        </div>
-        <br>
-        <!-- max words box -->
-        <div class="max-words-outer">
-            <div id="max-words-box" class="max-words-box">
-                <label for="max-words"></label>
-                <input type="number" id="max-words" name="max-words" defaultValue="100" min="100" step="10"
-                    placeholder="Summary's max words...">
-            </div>
-        </div>
-        <!-- percentage box -->
-        <div class="percentage-box-outer">
-            <div id="percentage-box" class="percentage-box">
-                <label for="percentage"></label>
-                <input type="number" id="percentage" name="percentage" min="10" max="100"
-                    placeholder="Summary's length in percentages...">
-            </div>
-        </div>
-
-        <!-- Button summarizer -->
-        <div class="buttonSummarize-outer">
-            <label for="SummarizeButton"></label>
-            <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!" onclick="$('#loading').show();
-                document.getElementById('bart_summary').innerHTML='';
-                document.getElementById('nofile').innerHTML ='';
-                ">
-        </div>
-        <div class="buttonEntities-outer">
-            <label for="entities"></label>
-            <button type="button" id="entities" name="entities" value="Scan for terms!" onclick="findEntities()">Scan
-                for terms</button>
-        </div>
-
-        <!-- <div class="create_ner_graph_button">
-            <label for="ner_graph"></label>
-            <button type="button" id="ner_graph" class='create_graph' value="Show graph">Show graph</button>
-        </div> -->
-
-    </form>
+    </div>
     <br>
     <div class="textsummary-outer">
         <!-- SUMMARIZATION TEXT BOX -->
@@ -104,11 +106,9 @@
                 <br>
                 <p>Summarization in process...</p>
             </div>
-            <!-- </div> -->
         </div>
 
-        <div class="ner_tree">
-            <img src="" id="ner_tree_pic" style="display:none;" alt="Girl in a jacket">
+        <div id='ner_tree' class="ner_tree">
             <div id="ner_data"></div>
         </div>
     </div>
@@ -120,7 +120,6 @@
         <div class="download-summary-outer">
             <input type="submit" id="outer_download_button" value="Download"
                 onClick="download(document.getElementById('filename').innerHTML,document.getElementById('bart_summary').textContent)">
-            <!-- </form> -->
         </div>
         <!-- EMAIL -->
         <a class="fa fa-google" id="mail" href="" title="Share by Email" style="background: #dd4b39;
@@ -139,6 +138,6 @@
     </div>
 </body>
 
-<script type="text/javascript" src="../static/index.js"></script>
+<script type="text/javascript" src="../static/index.js" defer></script>
 
 </html>

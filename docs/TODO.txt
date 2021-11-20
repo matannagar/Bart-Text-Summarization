@@ -1,10 +1,9 @@
 To FIX:
 2. when closing the registartion window, dont activate download file
-5. warnings deprications
 7. ner detecting words without spaces (e.g: cap -- > handicap )
 8. allow ner from a shared link
 9. linkedin short url
-10. multiple clicks on scan for terms: after summary found
+10. scan for entities & no file
 
 
 To DO:
@@ -15,12 +14,6 @@ To DO:
 7. graph window should be size fixed, title
 5. Documentation 
 
-
-GOALS:
-1. Phone adjustments
-2. Fine-Tuning BART with scientific data-base 
-3. UPLOAD ONLINE
-4. save summary to PDF file
 
 TESTS:
 1. check scan entities with the url share link!
@@ -33,4 +26,5 @@ TESTS:
 2. load graph from server (create_graph in index.js file (currently from widget server))
 3. path to fi_dictionary.xls (create_dictionary.py)
 4. registartion form : index.html http://localhost/test/form.html"
+5. index.js : var url = "local host address"
 

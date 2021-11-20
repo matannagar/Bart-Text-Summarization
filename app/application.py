@@ -59,22 +59,22 @@ def index(glob_var="", dictionary=""):
         f = request.files['file1']
         if secure_filename(f.filename) != '':
             path = process_file(f, percentage, max_words)
-            summary = summarize(path, percentage, max_words)
+            summary, article = summarize(path, percentage, max_words)
             glob_var = summary
-            return render_template("index.html", name=f.filename, summary=summary, dictionary=dictionary)
+            return render_template("index.html", name=f.filename, summary=summary, article=article, dictionary=dictionary)
             # attempt to get file2
         elif secure_filename(request.files['file2'].filename) != '':
             f = request.files['file2']
             path = process_file(f, percentage, max_words)
-            summary = summarize(path, percentage, max_words)
+            summary, article = summarize(path, percentage, max_words)
             glob_var = summary
-            return render_template("index.html", name=f.filename, summary=summary, dictionary=dictionary)
+            return render_template("index.html", name=f.filename, summary=summary, article=article, dictionary=dictionary)
         # attempt to get URL
         else:
             f = request.form['input_url']
             if f != '':
-                summary = summarize_from_web(f, percentage, max_words)
-                return render_template("index.html", name="web", summary=summary, dictionary=dictionary)
+                summary, article = summarize_from_web(f, percentage, max_words)
+                return render_template("index.html", name="web", summary=summary, article=article, dictionary=dictionary)
             else:  # if no file was chosen
                 print("no file chosen")
                 return render_template("index.html", error="You have to pick a file!")
