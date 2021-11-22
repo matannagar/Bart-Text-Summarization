@@ -101,6 +101,8 @@ function findEntities() {
 function set_clean() {
   document.getElementById('bart_summary').innerHTML = '';
   document.getElementById('nofile').innerHTML = '';
+  document.getElementById("ner_data").innerHTML = '';
+  document.getElementById('article').innerHTML = '';
 }
 // sharing options (linkedin twitter gmail)
 //open registration window

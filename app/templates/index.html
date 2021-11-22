@@ -17,6 +17,7 @@
 
     <link type="text/css" rel=" stylesheet"
         href="https://fonts.googleapis.com/css?family=Work+Sans:300,500,600,700,800">
+    <!-- Tab Logo -->
     <link rel="icon" sizes="57x57" href="../static/assets/images/hilogo.png" />
 </head>
 
@@ -33,9 +34,22 @@
     </div>
     <div class="top-outer">
         <!--  -->
-        <div class="article_outer">
-            <p id="article">{{article}}</p>
+
+        <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
+            <h1>Summary</h1>
+            <p id="Summary"></p>
+            <p id="bart_summary">{{summary}} </p>
+            <p id="dictionary" style="visibility: none; display:none;"> {{dictionary}} </p>
+            <p id='filename' style="opacity: 0;">{{name}}</p>
+            <p id="nofile">{{error}}</p>
+
+            <div id="loading" style="display:none;">
+                <img src="../static/assets/images/loading.gif" alt="" />
+                <br>
+                <p>Summarization in process...</p>
+            </div>
         </div>
+
         <!--  -->
         <div class="right">
             <form action="/index" method="POST" enctype="multipart/form-data">
@@ -93,22 +107,15 @@
     </div>
     <br>
     <div class="textsummary-outer">
-        <!-- SUMMARIZATION TEXT BOX -->
-        <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
-            <p id="Summary"></p>
-            <p id="bart_summary">{{summary}} </p>
-            <p id="dictionary" style="visibility: none; display:none;"> {{dictionary}} </p>
-            <p id='filename' style="opacity: 0;">{{name}}</p>
-            <p id="nofile">{{error}}</p>
-
-            <div id="loading" style="display:none;">
-                <img src="../static/assets/images/loading.gif" alt="" />
-                <br>
-                <p>Summarization in process...</p>
-            </div>
+        <div class="article_outer">
+            <h1>Article</h1>
+            <p id="article">{{article}}</p>
         </div>
+        <!-- SUMMARIZATION TEXT BOX -->
+
 
         <div id='ner_tree' class="ner_tree">
+            <h1>Entities</h1>
             <div id="ner_data"></div>
         </div>
     </div>
