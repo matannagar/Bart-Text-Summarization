@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-
+    <link rel="icon" sizes="57x57" href="../static/assets/images/hilogo.png" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>HiLo's Summarizer</title>
@@ -18,7 +18,7 @@
     <link type="text/css" rel=" stylesheet"
         href="https://fonts.googleapis.com/css?family=Work+Sans:300,500,600,700,800">
     <!-- Tab Logo -->
-    <link rel="icon" sizes="57x57" href="../static/assets/images/hilogo.png" />
+
 </head>
 
 <body class="websiteBody">
@@ -33,8 +33,6 @@
         </h2>
     </div>
     <div class="top-outer">
-        <!--  -->
-
         <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
             <h1>Summary</h1>
             <p id="Summary"></p>
@@ -51,7 +49,7 @@
         </div>
 
         <!--  -->
-        <div class="right">
+        <div class="file_handling">
             <form action="/index" method="POST" enctype="multipart/form-data">
                 <!-- Load File Button -->
                 <div class="upldbtn-out">
@@ -106,16 +104,15 @@
         </div>
     </div>
     <br>
-    <div class="textsummary-outer">
+    <div class="bottom-outer">
         <div class="article_outer">
             <h1>Article</h1>
             <p id="article">{{article}}</p>
         </div>
         <!-- SUMMARIZATION TEXT BOX -->
 
-
         <div id='ner_tree' class="ner_tree">
-            <h1>Entities</h1>
+            <h1>Data Dictionary</h1>
             <div id="ner_data"></div>
         </div>
     </div>

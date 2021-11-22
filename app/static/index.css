@@ -221,7 +221,7 @@ h2 {
   padding-right: 0.2em;
 }
 
-.right {
+.file_handling {
   padding: 25px;
 
   pointer-events: all;
@@ -275,7 +275,7 @@ h2 {
 }
 
 /* TEXT SUMMARIZATION BOX */
-.textsummary-outer {
+.bottom-outer {
   clear: both;
   position: relative;
   display: flex;
