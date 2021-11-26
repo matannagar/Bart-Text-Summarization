@@ -4,6 +4,8 @@ To FIX:
 8. allow ner from a shared link
 9. linkedin short url
 10. scan for entities & no file
+11. api.short - not working
+12. save original text
 
 
 To DO:

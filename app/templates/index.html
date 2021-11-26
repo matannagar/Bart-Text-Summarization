@@ -25,11 +25,9 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <div class="WebHeadlines">
         <h1>HiLo Summarize Tool</h1>
-        <h2>Why not leveraging technology to save
+        <h2>Leveraging technology to save
             <br>your time and allow you to utilize it for
-            <br>focusing on what really matters?
-            <br>
-            <br>
+            <br>focusing on what really matters.
         </h2>
     </div>
     <div class="top-outer">
@@ -63,7 +61,6 @@
                         <input type="url" id="input_url" name="input_url" placeholder="Enter URL Here">
                     </div>
                 </div>
-                <br>
                 <!-- Drag&Drop Box -->
                 <div class="drag-drop-outer">
                     <div class="dropzone" id="dropzone">
@@ -71,24 +68,26 @@
                         <input type="file" name="file2" id="fileElem">
                     </div>
                 </div>
-                <br>
-                <!-- max words box -->
-                <div class="max-words-outer">
-                    <div id="max-words-box" class="max-words-box">
-                        <label for="max-words"></label>
-                        <input type="number" id="max-words" name="max-words" defaultValue="100" min="100" step="10"
-                            placeholder="Summary's max words...">
-                    </div>
-                </div>
-                <!-- percentage box -->
-                <div class="percentage-box-outer">
-                    <div id="percentage-box" class="percentage-box">
-                        <label for="percentage"></label>
-                        <input type="number" id="percentage" name="percentage" min="10" max="100"
-                            placeholder="Summary's length in percentages...">
-                    </div>
-                </div>
 
+                <div class='choose_length'>
+                    <!-- max words box -->
+                    <div class="max-words-outer">
+                        <div id="max-words-box" class="max-words-box">
+                            <label for="max-words"></label>
+                            <input type="number" id="max-words" name="max-words" defaultValue="100" min="100" step="10"
+                                placeholder="Summary's max words...">
+                        </div>
+                    </div>
+                    <p> or </p>
+                    <!-- percentage box -->
+                    <div class="percentage-box-outer">
+                        <div id="percentage-box" class="percentage-box">
+                            <label for="percentage"></label>
+                            <input type="number" id="percentage" name="percentage" min="10" max="100"
+                                placeholder="Summary's length in percentages...">
+                        </div>
+                    </div>
+                </div>
                 <!-- Button summarizer -->
                 <div class="buttonSummarize-outer">
                     <label for="SummarizeButton"></label>
