@@ -44,7 +44,7 @@ h2 {
   border: 2px solid white;
   color: white;
   background-color: #458cfe;
-  width: 100px;
+  width: 150px;
   padding: 8px 80px;
   border-radius: 8px;
   font-size: 18px;
@@ -69,8 +69,8 @@ h2 {
   display: flex;
   background-color: #f7f9ff;
   /* border-style: dotted; */
-  width: 500px;
-  height: 280px;
+  width: 300px;
+  height: 200px;
   margin-left: auto;
   margin-right: auto;
   filter: drop-shadow(
@@ -86,8 +86,8 @@ h2 {
 .dropzone {
   text-align: center;
   /*display: block; */
-  width: 500px;
-  height: 280px;
+  width: 300px;
+  height: 200px;
   border: 2px;
   border-style: dashed;
   border-color: #ccc;
@@ -102,9 +102,9 @@ h2 {
 }
 
 #fileElem {
-  height: 270px;
-  width: 450px;
-  line-height: 300px;
+  height: 200px;
+  width: 300px;
+  /* line-height: 300px; */
   opacity: 0;
   border-style: dashed;
 }
@@ -236,7 +236,7 @@ h2 {
   color: #000358;
 
   width: 500px;
-  height: 700px;
+  height: 450;
 
   border: solid;
   border-color: #bbc8dd;
@@ -291,7 +291,7 @@ h2 {
 .textsummary {
   float: left;
   width: 500px;
-  height: 700px;
+  height: 450px;
 
   padding: 25px;
 
@@ -510,11 +510,16 @@ div#loading {
   visibility: hidden;
   width: 350px;
   padding: 5px 0;
-  margin-left: -60px;
+  /* margin-left: -60px; */
   position: absolute;
   z-index: 1;
-  top: 150%;
+  /* top: 150%; */
+  /* left: 50%; */
+
+  width: 250px;
+  top: 100%;
   left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
 
   background-color: #98b6f0;
   border-color: #679ef8;
@@ -522,7 +527,7 @@ div#loading {
   border-radius: 10px;
 
   color: #000358;
-  text-align: center;
+  text-align: left;
   font-size: 15;
   font-family: "Work Sans", sans-serif;
   line-height: 1.7;

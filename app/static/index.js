@@ -108,7 +108,7 @@ function set_clean() {
 //open registration window
 function to_open() {
   const openWindow = window.open(
-    "http://localhost/test/form.html",
+    "http://localhost/hilo_sum/form.html",
     "rating",
     "width=400,height=520,left=150,top=200"
   );

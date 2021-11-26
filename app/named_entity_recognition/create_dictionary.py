@@ -1,6 +1,14 @@
 """
 this function is responsible for creating a database from excel file (dictionary)
 """
+import tensorflow.compat.v1 as tf
+import warnings
+from scipy import stats
+from sklearn.preprocessing import StandardScaler
+from scipy.stats import norm
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import re
 import json
