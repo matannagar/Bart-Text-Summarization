@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.App, .dragndrop{
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.item{
+flex:1;
+border:solid;
+margin: 10px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  text-align: center;
+
+  background-color: #f7f9ff;
+  color: rgba(0, 3, 88, 1);
+  font-weight: 800;
+  font-size: 47.95005416870117px;
+  letter-spacing: 0.09580032109223169px;
+  line-height: 60px;
+}
+
+h2 {
+  text-align: center;
+
+  background-color: #f7f9ff;
+  color: rgba(69, 69, 69, 1);
+  font-weight: 300;
+  font-size: 23.975027084350586px;
+  letter-spacing: 0.247900160546115844px;
+  line-height: 30.638917922973633px;
+}
+
+/* first upload button */
+.uploadButton button {
+  text-align: center;
+  
+  font-size: 18px;
+  font-weight: bold;
+
+  border: 2px solid white;
+  background-color: #458cfe;
+  color: white;
+  
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.uploadButton button:hover {
+  background-color: #0062ff;
+}
+
+/* Drag & Drop */
+
+.dragndrop{
+  text-align: center;
+  background-color: #f7f9ff;
+
+  width: 35%;
+
+  border: 2px;
+  border-style: dashed;
+  border-color: #ccc;
+  color: #ccc;
+}
+
+.dragndrop:hover {
+  border-color: #000;
+  color: #000;
+}
+
+.dragndrop input[type="file"]{
+  height:200px;
+}
+
+.limitwords input[type="number"]{
+  text-align: center;
+  font-size: 20px;
+  width: 400px;
+  height: 30px;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.10000000149011612));
+}
+
+.summarizeButton button{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.summarizeButton button:hover{
+  background-color: #049909;
+}
+
+.summarization{
+  width: 50%;
+}
+
+.shareButtons{
+  display:flex;
+  justify-content: space-between; 
+  align-items: center;
+  width:25%;
+}
+
+.fa {
+  text-align: center;
+  padding: 20px;
+  width:60px;
+  margin: 5px ;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.shareButtons button{
+  background-color: #020681;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.shareButtons button:hover{
+  opacity:0.7;
+}
