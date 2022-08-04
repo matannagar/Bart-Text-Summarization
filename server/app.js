@@ -1,11 +1,10 @@
 const express = require('express')
 const cors = require("cors");
 const apiRouter = require('./routes/apiRoutes')
-// For getting the environment variables from .env file
-require('dotenv').config();
 
 const app = express();
-
+// ?
+app.use(express.urlencoded());
 /* Here you put all the middlewares. for example:*/
 app.use(cors());
 app.use(express.json());
