@@ -3,3 +3,4 @@ t5-base/
 .idea/
 __pycache__/
 app/__pycache__/
+node_modules/

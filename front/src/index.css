@@ -33,6 +33,10 @@ code {
   width: 100%;
 }
 
+.header h1:hover{
+  background-color: #7d87a5;
+}
+
 h1 {
   padding:30px;
 
@@ -51,7 +55,7 @@ h1 {
 }
 h2 {
   text-align: center;
-
+  padding: 10px;
   background-color: #f7f9ff;
   color: rgba(69, 69, 69, 1);
   font-weight: 300;
@@ -59,7 +63,9 @@ h2 {
   letter-spacing: 0.247900160546115844px;
   line-height: 30.638917922973633px;
 }
-
+.introduction h2:hover{
+  background-color: #7d87a5;
+}
 /* first upload button */
 .uploadButton button {
   text-align: center;
@@ -86,7 +92,7 @@ h2 {
   text-align: center;
   background-color: #f7f9ff;
 
-  width: 35%;
+  width: 40%;
 
   border: 2px;
   border-style: dashed;
@@ -100,7 +106,7 @@ h2 {
 }
 
 .dragndrop input[type="file"]{
-  height:200px;
+  height:300px;
 }
 
 .limitwords input[type="number"]{
@@ -115,6 +121,7 @@ h2 {
   background-color: #4CAF50;
   border: none;
   color: white;
+  width: 200px;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -135,11 +142,20 @@ h2 {
   width: 50%;
 }
 
+.summarization .output{
+  height: 300px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.summarization .output:hover{
+  border:solid #7d87a5;
+}
+
 .shareButtons{
   display:flex;
   justify-content: space-between; 
   align-items: center;
-  width:20%;
 }
 
 .fa {

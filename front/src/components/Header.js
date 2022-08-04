@@ -4,7 +4,7 @@ function Header() {
     return (
         <div className="item header">
             <h1>
-                HiLo's Summarization Tool
+                Bart's Summarization Tool
             </h1>
         </div>
     )

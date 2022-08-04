@@ -1,0 +1,20 @@
+{
+  "name": "summarizer",
+  "version": "1.0.0",
+  "description": "Bart summarizer server application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matan Ben Nagar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "install": "^0.13.0",
+    "node-fetch": "^3.2.10",
+    "nodemon": "^2.0.15"
+  }
+}

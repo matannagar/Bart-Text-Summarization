@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Summarization() {
+function Summarization({ result }) {
     return (
         <div className="item summarization">
-            Summarization
+            <div className="output">{result}</div>
         </div>
 
     )
