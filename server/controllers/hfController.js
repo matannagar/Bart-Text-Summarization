@@ -7,29 +7,12 @@ const api = {
 }
 
 async function huggingfaceAPI(data) {
-    // console.log(data);
-    // const response = await axios(
-    //     api.base,
-    //     {
-    //         headers: { Authorization: "Bearer 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" },
-    //         method: "POST",
-    //         body: JSON.stringify(data),
-    //     }
-    // ).then((res) => {
-    //     console.log((res.data));
-    //     return res.data;
-    // });
-
-    axios({
+    return axios({
         method: 'post',
         url: api.base,
         headers: { Authorization: "Bearer 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" },
         data: data,
-    }).then((resp => {
-        console.log(resp.data);
-        return resp.data;
-    }))
-
+    })
 }
 
 module.exports = {
