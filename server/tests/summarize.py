@@ -1,4 +1,9 @@
-import requests
+import requests 
+
+# with open('requirements.txt', 'rb') as f:
+# 	resp = requests.post("https://flask-text-parser.herokuapp.com/plaintext", files={'file': f})
+
+# 	print(resp.text)
 
 # https://your-heroku-app-name.herokuapp.com/predict
 # http://127.0.0.1:5000

@@ -4,16 +4,18 @@
   "description": "Bart summarizer server application",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Matan Ben Nagar",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.1.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "install": "^0.13.0",
+    "multer": "^1.4.5-lts.1",
     "node-fetch": "^3.2.10",
     "nodemon": "^2.0.15"
   }

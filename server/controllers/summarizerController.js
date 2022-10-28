@@ -3,6 +3,7 @@ const huggingface = require('./hfController');
 var qs = require('querystring');
 
 const getSummary = async (req, res) => {
+  console.log("Sending request to Hugging Face API.")
   const text = req.body.text;
 
   let result;
