@@ -98,6 +98,8 @@ h2 {
   border-style: dashed;
   border-color: #ccc;
   color: #ccc;
+  height:300px;
+  width:600px;
 }
 
 .dragndrop:hover {
@@ -105,9 +107,7 @@ h2 {
   color: #000;
 }
 
-.dragndrop input[type="file"]{
-  height:300px;
-}
+
 
 .limitwords input[type="number"]{
   text-align: center;
