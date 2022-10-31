@@ -11,7 +11,12 @@ const getSummary = async (req, res) => {
     result = await huggingface.huggingfaceAPI({ "inputs": text });
     res.json(result.data[0]["summary_text"]);
   } catch (err) {
-    console.error(`failed summary api due to ${err.message}`)
+    const message = `failed summary api due to ${err.message}`
+    console.error(message)
+
+    return res.status(400).send({
+      message: message
+    });
   }
 }
 
