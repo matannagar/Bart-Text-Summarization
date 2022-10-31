@@ -39,7 +39,7 @@ function App() {
       }
     }
     try {
-      const response = await axios.post(api.parser, formData, config)
+      await axios.post(api.parser, formData, config)
         .then(async (res) => {
           formData.delete("file")
           formData.append("text", res.data)
@@ -66,8 +66,11 @@ function App() {
       <Dragndrop setFile={setFile} setSummary={setSummary} />
       <LimitWords />
       <Summarize handleOnSubmit={handleOnSubmit} />
-      <Summarization fetchInProgress={fetchInProgress} result={summary} error={error} />
-      <ShareButtons />
+      <Summarization
+        fetchInProgress={fetchInProgress}
+        result={summary}
+        error={error} />
+      <ShareButtons text={summary} />
     </div>
   );
 }

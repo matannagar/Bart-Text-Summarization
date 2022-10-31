@@ -1,6 +1,7 @@
 import React from 'react'
+import SaveButton from './SaveButton'
 
-function ShareButtons() {
+function ShareButtons({ text }) {
     return (
         <div className="item shareButtons">
             <i className="fa fa-google" id="mail" title="Share by Google"
@@ -23,7 +24,8 @@ function ShareButtons() {
                     color: "white"
                 }}>
             </i>
-            <button>Save</button>
+
+            <SaveButton text={text} />
         </div>
     )
 }
