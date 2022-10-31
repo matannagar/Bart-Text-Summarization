@@ -10,12 +10,15 @@ import { useState } from "react";
 import axios from 'axios';
 
 function App() {
-  const api = "http://localhost:3000/api/parser"
+  const api = {
+    parser: "http://localhost:3000/api/parser",
+    summarizer: "http://localhost:3000/api/summarize"
+  }
   // const api = "http://localhost:3000/upload"
 
 
   const [file, setFile] = useState(null)
-  const [text, setText] = useState('')
+  const [summary, setSummary] = useState('')
 
   const handleChange = event => {
     console.log("File loaded via file button")
@@ -33,10 +36,14 @@ function App() {
       }
     }
     try {
-      // axios.post("https://httpbin.org/anything", formData).then(res => console.log(res)).catch(err => console.log(err))
-      const response = await axios.post(api, formData, config)
-        .then(res => setText(res.data))
-      console.log(text)
+      const response = await axios.post(api.parser, formData, config)
+        .then(async (res) => {
+          formData.delete("file")
+          formData.append("text", res.data)
+          return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
+        })
+        .then(res => setSummary(res.data))
+      console.log(summary)
     } catch (error) {
       console.log(error)
     }
@@ -50,7 +57,7 @@ function App() {
       <Dragndrop setFile={setFile} />
       <LimitWords />
       <Summarize handleOnSubmit={handleOnSubmit} />
-      <Summarization />
+      <Summarization result={summary} />
       <ShareButtons />
     </div>
   );
