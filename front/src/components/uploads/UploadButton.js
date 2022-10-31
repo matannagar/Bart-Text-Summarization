@@ -1,10 +1,11 @@
 import React, { useRef } from 'react'
 
-function UploadButton({ handleChange }) {
+function UploadButton({ handleChange, setSummary }) {
 
     const hiddenFileInput = useRef(null)
 
     const handleClick = event => {
+        setSummary('')
         hiddenFileInput.current.click()
     };
 

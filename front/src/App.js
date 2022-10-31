@@ -14,7 +14,8 @@ function App() {
     parser: "http://localhost:3000/api/parser",
     summarizer: "http://localhost:3000/api/summarize"
   }
-
+  const [error, setError] = useState(false)
+  const [fetchInProgress, setFetchInProgress] = useState(false)
   const [file, setFile] = useState(null)
   const [summary, setSummary] = useState('')
 
@@ -27,6 +28,9 @@ function App() {
 
   const handleOnSubmit = async (event) => {
     event.preventDefault()
+    setFetchInProgress(true)
+    setSummary('')
+    setError(false)
     const formData = new FormData()
     formData.append("file", file)
     const config = {
@@ -42,10 +46,14 @@ function App() {
           return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
         })
         .then(res => {
+          setFetchInProgress(false)
           setSummary(res.data)
           setFile(null)
         })
     } catch (error) {
+      setFetchInProgress(false)
+      setError(true)
+      console.log("An error has occurred!")
       console.log(error)
     }
   }
@@ -54,11 +62,11 @@ function App() {
     <div className="App">
       <Header />
       <Introduction />
-      <UploadButton handleChange={handleChange} />
+      <UploadButton handleChange={handleChange} setSummary={setSummary} />
       <Dragndrop setFile={setFile} setSummary={setSummary} />
       <LimitWords />
       <Summarize handleOnSubmit={handleOnSubmit} />
-      <Summarization result={summary} />
+      <Summarization fetchInProgress={fetchInProgress} result={summary} error={error} />
       <ShareButtons />
     </div>
   );
