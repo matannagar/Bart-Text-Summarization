@@ -24,6 +24,7 @@ function App() {
     console.log("File loaded via file button")
     const fileUploaded = event.target.files[0]
     setFile(fileUploaded)
+    setSummary('')
   }
 
   const handleOnSubmit = async (event) => {
@@ -42,8 +43,10 @@ function App() {
           formData.append("text", res.data)
           return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
         })
-        .then(res => setSummary(res.data))
-      console.log(summary)
+        .then(res => {
+          setSummary(res.data)
+          setFile(null)
+        })
     } catch (error) {
       console.log(error)
     }
@@ -54,7 +57,7 @@ function App() {
       <Header />
       <Introduction />
       <UploadButton handleChange={handleChange} />
-      <Dragndrop setFile={setFile} />
+      <Dragndrop setFile={setFile} setSummary={setSummary} />
       <LimitWords />
       <Summarize handleOnSubmit={handleOnSubmit} />
       <Summarization result={summary} />
