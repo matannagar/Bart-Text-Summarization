@@ -139,18 +139,19 @@ h2 {
 .summarization{
   text-align: center;
   background-color: #f7f9ff;
-  width: 50%;
+  width: 60%;
 }
 
 .summarization .output{
+  overflow:scroll;
   height: 300px;
   padding: 20px;
   margin: 20px;
 }
 
-.summarization .output:hover{
+/* .summarization .output:hover{
   border:solid #7d87a5;
-}
+} */
 
 .shareButtons{
   display:flex;
