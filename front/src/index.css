@@ -143,11 +143,21 @@ h2 {
 }
 
 .summarization .output{
-  overflow:scroll;
+  overflow-y:scroll;
   height: 300px;
   padding: 20px;
   margin: 20px;
 }
+
+.output::-webkit-scrollbar {
+  display: none;
+}
+
+.output {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 
 /* .summarization .output:hover{
   border:solid #7d87a5;
