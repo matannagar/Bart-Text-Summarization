@@ -26,7 +26,7 @@ const parse = (async (req, res) => {
                 unlinkAsync(pathToFile)
             })
     } catch (error) {
-        const message = `failed parser api due to ${err.message}`
+        const message = `failed parser api due to ${error}`
         console.error(message)
 
         return res.status(400).send({
