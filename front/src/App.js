@@ -18,12 +18,9 @@ function App() {
   const [text, setText] = useState('')
 
   const handleChange = event => {
+    console.log("File loaded via file button")
     const fileUploaded = event.target.files[0]
     setFile(fileUploaded)
-  }
-
-  const handleDragChange = file => {
-    setFile(file)
   }
 
   const handleOnSubmit = async (event) => {
@@ -49,11 +46,8 @@ function App() {
     <div className="App">
       <Header />
       <Introduction />
-      <UploadButton
-        handleChange={handleChange} />
-      {/* <Dragndrop
-        setFile={setFile}
-        handleChange={handleDragChange} /> */}
+      <UploadButton handleChange={handleChange} />
+      <Dragndrop setFile={setFile} />
       <LimitWords />
       <Summarize handleOnSubmit={handleOnSubmit} />
       <Summarization />

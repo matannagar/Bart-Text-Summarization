@@ -1,11 +1,12 @@
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
 
-function Dragndrop({ handleChange }) {
+function Dragndrop({ setFile }) {
     const { getRootProps, getInputProps } = useDropzone({
         accept: "pdf/*",
-        onDrop: (file) => {
-            handleChange(file)
+        onDrop: (filesArray) => {
+            console.log("File loaded via dropzone")
+            setFile(filesArray[0])
         }
     })
 
