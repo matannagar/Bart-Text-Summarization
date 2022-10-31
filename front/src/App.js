@@ -14,8 +14,6 @@ function App() {
     parser: "http://localhost:3000/api/parser",
     summarizer: "http://localhost:3000/api/summarize"
   }
-  // const api = "http://localhost:3000/upload"
-
 
   const [file, setFile] = useState(null)
   const [summary, setSummary] = useState('')
