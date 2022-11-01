@@ -4,7 +4,7 @@ function Summarization({ result, fetchInProgress, error }) {
     return (
         <div className="item summarization">
             <div className="output">
-                {error ? 'Please refresh the page and try again' : ''}
+                {error ? error : ''}
                 {fetchInProgress ? <Spinner /> : result}
             </div>
 

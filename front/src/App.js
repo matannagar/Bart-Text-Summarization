@@ -14,7 +14,7 @@ function App() {
     parser: "http://localhost:3000/api/parser",
     summarizer: "http://localhost:3000/api/summarize"
   }
-  const [error, setError] = useState(false)
+  const [error, setError] = useState('')
   const [fetchInProgress, setFetchInProgress] = useState(false)
   const [file, setFile] = useState(null)
   const [summary, setSummary] = useState('')
@@ -28,33 +28,38 @@ function App() {
 
   const handleOnSubmit = async (event) => {
     event.preventDefault()
-    setFetchInProgress(true)
-    setSummary('')
-    setError(false)
-    const formData = new FormData()
-    formData.append("file", file)
-    const config = {
-      headers: {
-        'Content-Type': 'multipart/form-data'
+    if (file) {
+
+      setFetchInProgress(true)
+      setSummary('')
+      setError(false)
+      const formData = new FormData()
+      formData.append("file", file)
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
       }
-    }
-    try {
-      await axios.post(api.parser, formData, config)
-        .then(async (res) => {
-          formData.delete("file")
-          formData.append("text", res.data)
-          return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
-        })
-        .then(res => {
-          setFetchInProgress(false)
-          setSummary(res.data)
-          setFile(null)
-        })
-    } catch (error) {
-      setFetchInProgress(false)
-      setError(true)
-      console.log("An error has occurred!")
-      console.log(error)
+      try {
+        await axios.post(api.parser, formData, config)
+          .then(async (res) => {
+            formData.delete("file")
+            formData.append("text", res.data)
+            return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
+          })
+          .then(res => {
+            setFetchInProgress(false)
+            setSummary(res.data)
+            setFile(null)
+          })
+      } catch (error) {
+        setFetchInProgress(false)
+        setError(true)
+        console.log("An error has occurred!")
+        console.log(error)
+      }
+    } else {
+      setError('Please select a file!')
     }
   }
 
