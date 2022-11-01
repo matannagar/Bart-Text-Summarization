@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 import SaveButton from './SaveButton'
 
 function ShareButtons({ text }) {
-    const [active, setActive] = useState(false)
     const twitter = 'https://twitter.com/intent/tweet?text='
     const linkedin = "https://www.linkedin.com/shareArticle?mini=true&title=TemporaryTitle&summary=hello"
     const data = encodeURIComponent(text)
     const gmail = "let url = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=lala&body='msgbody'&ui=2&tf=1&pli=1';"
     const title = "Bart Summary"
     return (
-        <div className="item shareButtons">
+        <div className={"item shareButtons " + (text ? '' : 'disabled')}>
             <a className="fa fa-google" id="mail" title="Share with Google"
                 href={`mailto:?subject=${title}&body=${text}`}
                 target="_blank"
