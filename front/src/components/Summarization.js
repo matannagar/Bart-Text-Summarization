@@ -1,11 +1,11 @@
 import React from 'react'
 import Spinner from './Spinner'
-function Summarization({ result, fetchInProgress, error }) {
+function Summarization({ summary, fetchInProgress, error }) {
     return (
         <div className="item summarization">
             <div className="output">
                 {error ? error : ''}
-                {fetchInProgress ? <Spinner /> : result}
+                {fetchInProgress ? <Spinner /> : summary}
             </div>
 
         </div>
