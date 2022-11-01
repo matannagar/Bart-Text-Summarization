@@ -14,7 +14,7 @@ function App() {
     parser: "http://localhost:3000/api/parser",
     summarizer: "http://localhost:3000/api/summarize"
   }
-  const [error, setError] = useState('')
+  const [error, setMessage] = useState('')
   const [fetchInProgress, setFetchInProgress] = useState(false)
   const [file, setFile] = useState(null)
   const [summary, setSummary] = useState('')
@@ -24,15 +24,15 @@ function App() {
     const fileUploaded = event.target.files[0]
     setFile(fileUploaded)
     setSummary('')
+    setMessage('A file has been chosen!')
   }
 
   const handleOnSubmit = async (event) => {
     event.preventDefault()
     if (file) {
-
       setFetchInProgress(true)
       setSummary('')
-      setError(false)
+      setMessage('')
       const formData = new FormData()
       formData.append("file", file)
       const config = {
@@ -54,12 +54,12 @@ function App() {
           })
       } catch (error) {
         setFetchInProgress(false)
-        setError(true)
+        setMessage(true)
         console.log("An error has occurred!")
         console.log(error)
       }
     } else {
-      setError('Please select a file!')
+      setMessage('Please select a file!')
     }
   }
 
@@ -68,7 +68,7 @@ function App() {
       <Header />
       <Introduction />
       <UploadButton handleChange={handleChange} setSummary={setSummary} />
-      <Dragndrop setFile={setFile} setSummary={setSummary} />
+      <Dragndrop setMessage={setMessage} setFile={setFile} setSummary={setSummary} />
       <LimitWords />
       <Summarize handleOnSubmit={handleOnSubmit} />
       <Summarization
