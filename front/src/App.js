@@ -1,3 +1,4 @@
+import React from "react";
 import Dragndrop from "./components/uploads/Dragndrop";
 import UploadButton from "./components/uploads/UploadButton";
 import Header from "./components/Header";
@@ -16,11 +17,11 @@ function App() {
     webParser: "http://localhost:3000/api/webparser",
     summarizer: "http://localhost:3000/api/summarize"
   }
-  const [error, setMessage] = useState('')
-  const [fetchInProgress, setFetchInProgress] = useState(false)
   const [file, setFile] = useState(null)
   const [url, setUrl] = useState('')
+  const [message, setMessage] = useState('')
   const [summary, setSummary] = useState('')
+  const [fetchInProgress, setFetchInProgress] = useState(false)
 
   const handleChange = event => {
     console.log("File loaded via file button")
@@ -34,7 +35,7 @@ function App() {
     event.preventDefault()
     setFetchInProgress(true)
     setSummary('')
-    setError(false)
+    setMessage(false)
     const formData = new FormData()
 
     if (file) {
@@ -58,7 +59,7 @@ function App() {
           })
       } catch (error) {
         setFetchInProgress(false)
-        setError(true)
+        setMessage(true)
         console.log("An error has occurred!")
         console.log(error)
       }
@@ -85,7 +86,7 @@ function App() {
           })
       } catch (error) {
         setFetchInProgress(false)
-        setError(true)
+        setMessage(true)
         console.log("An error has occurred!")
         console.log(error)
       }
@@ -101,11 +102,11 @@ function App() {
       <UrlBar setUrl={setUrl} />
       <Dragndrop setFile={setFile} setSummary={setSummary} />
       <LimitWords />
-      <Summarize handleOnSubmit={handleOnSubmit} file={file} />
+      <Summarize handleOnSubmit={handleOnSubmit} />
       <Summarization
         fetchInProgress={fetchInProgress}
         result={summary}
-        error={error} />
+        message={message} />
       <ShareButtons text={summary} />
     </div>
   );
