@@ -16,7 +16,7 @@ function App() {
     webParser: "http://localhost:3000/api/webparser",
     summarizer: "http://localhost:3000/api/summarize"
   }
-  const [error, setError] = useState(false)
+  const [error, setMessage] = useState('')
   const [fetchInProgress, setFetchInProgress] = useState(false)
   const [file, setFile] = useState(null)
   const [url, setUrl] = useState('')
@@ -27,6 +27,7 @@ function App() {
     const fileUploaded = event.target.files[0]
     setFile(fileUploaded)
     setSummary('')
+    setMessage('A file has been chosen!')
   }
 
   const handleOnSubmit = async (event) => {

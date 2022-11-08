@@ -1,15 +1,9 @@
-import React, { useState } from 'react'
-import SaveButton from './SaveButton'
+import React from 'react'
 
-function ShareButtons({ text }) {
-    const twitter = 'https://twitter.com/intent/tweet?text='
-    const linkedin = "https://www.linkedin.com/shareArticle?mini=true&title=TemporaryTitle&summary=hello"
-    const data = encodeURIComponent(text)
-    const gmail = "let url = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=lala&body='msgbody'&ui=2&tf=1&pli=1';"
-    const title = "Bart Summary"
+function ShareButton({ app, title, text, url }) {
     return (
-        <div className={"item shareButtons " + (text ? '' : 'disabled')}>
-            <a className="fa fa-google" id="mail" title="Share with Google"
+        <div>
+            <a className={`fa fa-${app}`} id={`${app}`} title={`Share with ${app}`}
                 href={`mailto:?subject=${title}&body=${text}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -20,7 +14,7 @@ function ShareButtons({ text }) {
             </a>
 
             <a className="fa fa-twitter" id="mail" title="Share with Twitter"
-                href={`${twitter}${data}`}
+                href={`${url}${text}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -30,7 +24,7 @@ function ShareButtons({ text }) {
             </a>
 
             <a disabled className="fa fa-linkedin" id="linkedin" title="Share with Linkedin"
-                href={`${linkedin}`}
+                href={`${url}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -38,9 +32,8 @@ function ShareButtons({ text }) {
                     color: "white"
                 }}>
             </a>
-            <SaveButton text={text} />
-        </div >
+        </div>
     )
 }
 
-export default ShareButtons
+export default ShareButton
