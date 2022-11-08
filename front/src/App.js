@@ -8,15 +8,18 @@ import Summarization from "./components/Summarization";
 import Summarize from "./components/Summarize";
 import { useState } from "react";
 import axios from 'axios';
+import UrlBar from "./components/UrlBar";
 
 function App() {
   const api = {
     parser: "http://localhost:3000/api/parser",
+    webParser: "http://localhost:3000/api/webparser",
     summarizer: "http://localhost:3000/api/summarize"
   }
   const [error, setMessage] = useState('')
   const [fetchInProgress, setFetchInProgress] = useState(false)
   const [file, setFile] = useState(null)
+  const [url, setUrl] = useState('')
   const [summary, setSummary] = useState('')
 
   const handleChange = event => {
@@ -29,11 +32,12 @@ function App() {
 
   const handleOnSubmit = async (event) => {
     event.preventDefault()
+    setFetchInProgress(true)
+    setSummary('')
+    setError(false)
+    const formData = new FormData()
+
     if (file) {
-      setFetchInProgress(true)
-      setSummary('')
-      setMessage('')
-      const formData = new FormData()
       formData.append("file", file)
       const config = {
         headers: {
@@ -54,23 +58,50 @@ function App() {
           })
       } catch (error) {
         setFetchInProgress(false)
-        setMessage(true)
+        setError(true)
         console.log("An error has occurred!")
         console.log(error)
       }
     } else {
-      setMessage('Please select a file!')
+      console.log("in url")
+      console.log(url)
+      formData.append("url", url)
+      const config = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      try {
+        await axios.post(api.webParser, formData, config)
+          .then(async (res) => {
+            formData.delete("url")
+            formData.append("text", res.data)
+            return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
+          })
+          .then(res => {
+            setFetchInProgress(false)
+            setSummary(res.data)
+            setUrl('')
+          })
+      } catch (error) {
+        setFetchInProgress(false)
+        setError(true)
+        console.log("An error has occurred!")
+        console.log(error)
+      }
     }
   }
+
 
   return (
     <div className="App">
       <Header />
       <Introduction />
       <UploadButton handleChange={handleChange} setSummary={setSummary} />
-      <Dragndrop setMessage={setMessage} setFile={setFile} setSummary={setSummary} />
+      <UrlBar setUrl={setUrl} />
+      <Dragndrop setFile={setFile} setSummary={setSummary} />
       <LimitWords />
-      <Summarize handleOnSubmit={handleOnSubmit} />
+      <Summarize handleOnSubmit={handleOnSubmit} file={file} />
       <Summarization
         fetchInProgress={fetchInProgress}
         result={summary}

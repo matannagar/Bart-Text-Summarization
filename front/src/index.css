@@ -19,8 +19,7 @@ justify-content: center;
 
 .item{
 flex:1;
-/* border:solid; */
-margin: 10px;
+margin: 5px;
 }
 
 code {
@@ -29,7 +28,7 @@ code {
 }
 
 .header{
-  margin-top: 3%;
+  /* margin-top: 3%; */
   width: 100%;
 }
 
@@ -38,8 +37,7 @@ code {
 }
 
 h1 {
-  padding:30px;
-
+  padding:20px;
   text-align: center;
   background-color: #f7f9ff;
   color: rgba(0, 3, 88, 1);
@@ -51,11 +49,9 @@ h1 {
 
 .introduction {
   width:100%;
-  border-radius: 4440px;
 }
 h2 {
   text-align: center;
-  padding: 10px;
   background-color: #f7f9ff;
   color: rgba(69, 69, 69, 1);
   font-weight: 300;
@@ -87,18 +83,14 @@ h2 {
 }
 
 /* Drag & Drop */
-
 .dragndrop{
   text-align: center;
   background-color: #f7f9ff;
-
-  width: 40%;
-
   border: 2px;
   border-style: dashed;
   border-color: #ccc;
   color: #ccc;
-  height:300px;
+  height:150px;
   width:600px;
 }
 
@@ -107,9 +99,7 @@ h2 {
   color: #000;
 }
 
-
-
-.limitwords input[type="number"]{
+.limitwords input[type="number"],input[type="text"]{
   text-align: center;
   font-size: 20px;
   width: 400px;
@@ -144,7 +134,7 @@ h2 {
 
 .summarization .output{
   overflow-y:scroll;
-  height: 300px;
+  height: 200px;
   padding: 20px;
   margin: 20px;
 }

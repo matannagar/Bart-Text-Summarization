@@ -8,6 +8,7 @@ require('dotenv').config()
 const unlinkAsync = promisify(fs.unlink)
 const api = {
     base: 'http://127.0.0.1:5000/plaintext',
+    web: 'http://127.0.0.1:5000/webtext',
 }
 
 const parse = (async (req, res) => {
@@ -35,6 +36,31 @@ const parse = (async (req, res) => {
     }
 })
 
+const webParser = (async (req, res) => {
+    console.log(req.body.url)
+    const form = new FormData()
+    const request_config = {
+        headers: {
+            ...form.getHeaders(),
+        },
+    }
+    try {
+        form.append('url', req.body.url)
+        return await axios.post(api.web, form, request_config)
+            .then(resp => {
+                res.send(resp.data)
+            })
+    } catch (error) {
+        const message = `failed parser api due to ${error}`
+        console.error(message)
+
+        return res.status(400).send({
+            message: message
+        });
+    }
+})
+
 module.exports = {
     parse,
+    webParser
 }
