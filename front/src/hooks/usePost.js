@@ -5,23 +5,32 @@ function usePost({ file, url, api }) {
     const [summary, setSummary] = useState('')
     const [fetchInProgress, setFetchInProgress] = useState(false)
 
+    const formData = new FormData()
+    let config
     useEffect(async () => {
         setFetchInProgress(true)
         setSummary('')
         setMessage(false)
-        const formData = new FormData()
 
-        // if (file) {
-        formData.append("file", file)
-        const config = {
-            headers: {
-                'Content-Type': 'multipart/form-data'
+        if (file) {
+            formData.append('file', file)
+            config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }
+        } else {
+            formData.append('url', url)
+            config = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             }
         }
-        await axios.post(api.parser, formData, config)
+        await axios.post(file ? api.parser : api.webParser, formData, config)
             .then(async (res) => {
-                formData.delete("file")
-                formData.append("text", res.data)
+                formData.delete(file ? 'file' : 'url')
+                formData.append('text', res.data)
                 return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
             })
             .then(res => {
@@ -29,40 +38,13 @@ function usePost({ file, url, api }) {
                 setSummary(res.data)
             }).catch((error) => {
                 setMessage(true)
-                console.log("An error has occurred!")
+                console.log('An error has occurred!')
                 console.log(error)
             })
             .finally(() => {
                 setFetchInProgress(false)
             })
-        // } else {
-        //     console.log("in url")
-        //     console.log(url)
-        //     formData.append("url", url)
-        //     const config = {
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         }
-        //     }
-        //     await axios.post(api.webParser, formData, config)
-        //         .then(async (res) => {
-        //             formData.delete("url")
-        //             formData.append("text", res.data)
-        //             return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
-        //         })
-        //         .then(res => {
-        //             setFetchInProgress(false)
-        //             setSummary(res.data)
-        //         }).catch((error) => {
-        //             setMessage(true)
-        //             console.log("An error has occurred!")
-        //             console.log(error)
-        //         })
-        //         .finally(() => {
-        //             setFetchInProgress(false)
-        //         })
-        // }
-    }, [api])
+    }, [file, url])
 
     return [message, setMessage, summary, setSummary, fetchInProgress, setFetchInProgress]
 }
