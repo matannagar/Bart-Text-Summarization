@@ -3,9 +3,9 @@ import { useDropzone } from 'react-dropzone'
 
 function Dragndrop({ setFile, setSummary, setMessage }) {
     const { getRootProps, getInputProps } = useDropzone({
-        accept: "pdf/*",
+        accept: 'pdf/*',
         onDrop: (filesArray) => {
-            console.log("File loaded via dropzone")
+            console.log('File loaded via dropzone')
             setFile(filesArray[0])
             setSummary('')
             setMessage('A file has been selected!')

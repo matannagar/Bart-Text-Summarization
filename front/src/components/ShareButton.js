@@ -8,8 +8,8 @@ function ShareButton({ app, title, text, url }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                    background: "#dd4b39",
-                    color: "white"
+                    background: '#dd4b39',
+                    color: 'white'
                 }}>
             </a>
 
@@ -18,8 +18,8 @@ function ShareButton({ app, title, text, url }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                    background: "#55ACEE",
-                    color: "white"
+                    background: '#55ACEE',
+                    color: 'white'
                 }}>
             </a>
 
@@ -28,8 +28,8 @@ function ShareButton({ app, title, text, url }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                    background: "#007bb5",
-                    color: "white"
+                    background: '#007bb5',
+                    color: 'white'
                 }}>
             </a>
         </div>

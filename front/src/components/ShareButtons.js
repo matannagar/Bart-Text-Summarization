@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import SaveButton from './SaveButton'
 
 function ShareButtons({ text }) {
     const twitter = 'https://twitter.com/intent/tweet?text='
-    const linkedin = "https://www.linkedin.com/shareArticle?mini=true&title=TemporaryTitle&summary=hello"
+    const linkedin = 'https://www.linkedin.com/shareArticle?mini=true&title=TemporaryTitle&summary=hello'
     const data = encodeURIComponent(text)
-    const gmail = "let url = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=lala&body='msgbody'&ui=2&tf=1&pli=1';"
-    const title = "Bart Summary"
+    // const gmail = "let url = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=lala&body='msgbody'&ui=2&tf=1&pli=1';"
+    const title = 'Bart Summary'
     return (
-        <div className={"item shareButtons " + (text ? '' : 'disabled')}>
+        <div className={'item shareButtons ' + (text ? '' : 'disabled')}>
             <a className="fa fa-google" id="mail" title="Share with Google"
                 href={`mailto:?subject=${title}&body=${text}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                    background: "#dd4b39",
-                    color: "white"
+                    background: '#dd4b39',
+                    color: 'white'
                 }}>
             </a>
 
@@ -24,8 +24,8 @@ function ShareButtons({ text }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                    background: "#55ACEE",
-                    color: "white"
+                    background: '#55ACEE',
+                    color: 'white'
                 }}>
             </a>
 
@@ -34,8 +34,8 @@ function ShareButtons({ text }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                    background: "#007bb5",
-                    color: "white"
+                    background: '#007bb5',
+                    color: 'white'
                 }}>
             </a>
             <SaveButton text={text} />
