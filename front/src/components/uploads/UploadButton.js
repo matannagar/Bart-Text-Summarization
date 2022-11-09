@@ -4,7 +4,7 @@ function UploadButton({ handleChange, setSummary }) {
 
     const hiddenFileInput = useRef(null)
 
-    const handleClick = event => {
+    const handleClick = () => {
         setSummary('')
         hiddenFileInput.current.click()
     };

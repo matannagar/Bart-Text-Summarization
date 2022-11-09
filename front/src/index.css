@@ -159,6 +159,10 @@ h2 {
   align-items: center;
 }
 
+.disabled a{
+  pointer-events: none;
+}
+
 .fa {
   text-align: center;
   padding: 20px;

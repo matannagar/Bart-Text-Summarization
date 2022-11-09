@@ -1,3 +1,4 @@
+import React from "react";
 import Dragndrop from "./components/uploads/Dragndrop";
 import UploadButton from "./components/uploads/UploadButton";
 import Header from "./components/Header";
@@ -27,13 +28,14 @@ function App() {
     const fileUploaded = event.target.files[0]
     setFile(fileUploaded)
     setSummary('')
+    setMessage('A file has been chosen!')
   }
 
   const handleOnSubmit = async (event) => {
     event.preventDefault()
     setFetchInProgress(true)
     setSummary('')
-    setError(false)
+    setMessage(false)
     const formData = new FormData()
 
     if (file) {
@@ -62,7 +64,7 @@ function App() {
           })
       } catch (error) {
         setFetchInProgress(false)
-        setError(true)
+        setMessage(true)
         console.log("An error has occurred!")
         console.log(error)
       }
@@ -89,7 +91,7 @@ function App() {
           })
       } catch (error) {
         setFetchInProgress(false)
-        setError(true)
+        setMessage(true)
         console.log("An error has occurred!")
         console.log(error)
       }
@@ -105,11 +107,11 @@ function App() {
       <UrlBar setUrl={setUrl} />
       <Dragndrop setFile={setFile} setSummary={setSummary} />
       <LimitWords />
-      <Summarize handleOnSubmit={handleOnSubmit} file={file} />
+      <Summarize handleOnSubmit={handleOnSubmit} />
       <Summarization
         fetchInProgress={fetchInProgress}
         result={summary}
-        error={error} />
+        message={message} />
       <ShareButtons text={summary} />
     </div>
   );
