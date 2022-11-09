@@ -18,9 +18,9 @@ function App() {
   }
   const [error, setError] = useState(false)
   const [fetchInProgress, setFetchInProgress] = useState(false)
+  const [summary, setSummary] = useState('')
   const [file, setFile] = useState(null)
   const [url, setUrl] = useState('')
-  const [summary, setSummary] = useState('')
 
   const handleChange = event => {
     console.log("File loaded via file button")
@@ -51,9 +51,14 @@ function App() {
             return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
           })
           .then(res => {
-            setFetchInProgress(false)
             setSummary(res.data)
             setFile(null)
+          }).catch((err) => {
+            setError(true)
+            console.log("An error has occurred!")
+            console.log(error)
+          }).finally(() => {
+            setFetchInProgress(false)
           })
       } catch (error) {
         setFetchInProgress(false)
