@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Summarize({ handleOnSubmit }) {
+function Summarize({ post }) {
     return (
         <div className="item summarizeButton">
-            <button onClick={handleOnSubmit}>Summarize</button>
+            <button onClick={post}>Summarize</button>
         </div>
     )
 }

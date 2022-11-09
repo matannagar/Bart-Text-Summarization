@@ -1,11 +1,10 @@
 import React, { useRef } from 'react'
 
-function UploadButton({ handleChange, setSummary }) {
+function UploadButton({ setFile }) {
 
     const hiddenFileInput = useRef(null)
 
     const handleClick = () => {
-        setSummary('')
         hiddenFileInput.current.click()
     };
 
@@ -14,7 +13,10 @@ function UploadButton({ handleChange, setSummary }) {
         <div className="item uploadButton">
             <button onClick={handleClick}>Upload File</button>
             <input type="file" name="file"
-                onChange={handleChange}
+                onChange={(e) => {
+                    console.log(e.target.files[0])
+                    setFile(e.target.files[0])
+                }}
                 ref={hiddenFileInput}
                 style={{ display: 'none' }} />
         </div>
