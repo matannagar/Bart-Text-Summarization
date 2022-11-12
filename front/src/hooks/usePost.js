@@ -1,17 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { api } from './data/api';
+import { api } from '../data/api';
 
-function usePost({ file, url }) {
+function usePost() {
+    const [file, setFile] = useState(null)
+    const [url, setUrl] = useState('')
+
     const [message, setMessage] = useState('')
     const [fetchInProgress, setFetchInProgress] = useState(false)
     const [summary, setSummary] = useState('')
 
-    const post = async function () {
-        console.log('in here')
+    useEffect(() => {
+        if (file) setMessage('A file has been chosen!')
+    }, [file])
+
+    const post = async () => {
         setFetchInProgress(true)
         setSummary('')
-        setMessage(false)
         const formData = new FormData()
         let config
         if (file) {
@@ -36,11 +41,9 @@ function usePost({ file, url }) {
                 return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
             })
             .then(res => {
-                setFetchInProgress(false)
                 setSummary(res.data)
             }).catch((error) => {
-                setMessage(true)
-                console.log('An error has occurred!')
+                setMessage('An error has occurred!')
                 console.log(error)
             })
             .finally(() => {
@@ -48,9 +51,13 @@ function usePost({ file, url }) {
             })
     }
 
-    return [message, setMessage,
+    return {
+        file, setFile,
+        url, setUrl,
+        message, setMessage,
         fetchInProgress, setFetchInProgress,
-        summary, setSummary, post]
+        summary, setSummary, post
+    }
 }
 
 export default usePost
