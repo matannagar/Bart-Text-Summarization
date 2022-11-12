@@ -4,8 +4,8 @@ function Summarization({ summary, fetchInProgress, message }) {
     return (
         <div className="item summarization">
             <div className="output">
-                {message ? message : ''}
                 {fetchInProgress ? <Spinner /> : summary}
+                {message ? message : ''}
             </div>
 
         </div>

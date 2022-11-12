@@ -15,40 +15,46 @@ function usePost() {
     }, [file])
 
     const post = async () => {
-        setFetchInProgress(true)
         setSummary('')
-        const formData = new FormData()
-        let config
-        if (file) {
-            formData.append('file', file)
-            config = {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
+        if (file || url) {
+            setFetchInProgress(true)
+            const formData = new FormData()
+            let config
+            if (file) {
+                formData.append('file', file)
+                config = {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }
+            } else {
+                formData.append('url', url)
+                config = {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
                 }
             }
+            await axios.post(file ? api.parser : api.webParser, formData, config)
+                .then(async (res) => {
+                    formData.delete(file ? 'file' : 'url')
+                    formData.append('text', res.data)
+                    return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
+                })
+                .then(res => {
+                    setSummary(res.data)
+                }).catch((error) => {
+                    setMessage('An error has occurred!')
+                    console.log(error)
+                })
+                .finally(() => {
+                    setFile(null)
+                    setUrl('')
+                    setFetchInProgress(false)
+                })
         } else {
-            formData.append('url', url)
-            config = {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }
+            setMessage('Please pick a file or url!')
         }
-        await axios.post(file ? api.parser : api.webParser, formData, config)
-            .then(async (res) => {
-                formData.delete(file ? 'file' : 'url')
-                formData.append('text', res.data)
-                return await axios.post(api.summarizer, formData, { ...config, headers: { 'Content-Type': 'application/json' } })
-            })
-            .then(res => {
-                setSummary(res.data)
-            }).catch((error) => {
-                setMessage('An error has occurred!')
-                console.log(error)
-            })
-            .finally(() => {
-                setFetchInProgress(false)
-            })
     }
 
     return {

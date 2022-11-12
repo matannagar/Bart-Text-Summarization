@@ -11,10 +11,10 @@ import UrlBar from './components/UrlBar';
 import usePost from './hooks/usePost';
 function App() {
 
-  const { file, setFile,
-    url, setUrl, message, setMessage,
+  const { setFile,
+    setUrl, message,
     fetchInProgress, setFetchInProgress,
-    summary, setSummary, post } = usePost()
+    summary, post } = usePost()
 
   return (
     <div className="App">
