@@ -1,13 +1,14 @@
 import React from 'react';
-import Dragndrop from './components/uploads/Dragndrop';
 import UploadButton from './components/uploads/UploadButton';
-import Header from './components/Header';
+import UrlBar from './components/uploads/UrlBar';
+import Dragndrop from './components/uploads/Dragndrop';
+
+import Header from './components/static/Header';
 import Introduction from './components/Introduction';
 import LimitWords from './components/LimitWords';
 import ShareButtons from './components/ShareButtons';
 import Summarization from './components/Summarization';
 import Summarize from './components/Summarize';
-import UrlBar from './components/UrlBar';
 import usePost from './hooks/usePost';
 function App() {
 
