@@ -13,10 +13,7 @@ function UploadButton({ setFile }) {
         <div className="item uploadButton">
             <button onClick={handleClick}>Upload File</button>
             <input type="file" name="file"
-                onChange={(e) => {
-                    console.log(e.target.files[0])
-                    setFile(e.target.files[0])
-                }}
+                onChange={(e) => setFile(e.target.files[0])}
                 ref={hiddenFileInput}
                 style={{ display: 'none' }} />
         </div>
