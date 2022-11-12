@@ -24,8 +24,8 @@ const parse = (async (req, res) => {
         return await axios.post(api.base, form, request_config)
             .then(resp => {
                 res.send(resp.data)
-                unlinkAsync(pathToFile)
             })
+            .finally(() => unlinkAsync(pathToFile))
     } catch (error) {
         const message = `failed parser api due to ${error}`
         console.error(message)
