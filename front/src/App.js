@@ -14,12 +14,11 @@ function App() {
 
   const { setFile,
     setUrl, message,
-    fetchInProgress, setFetchInProgress,
+    fetchInProgress,
     summary, post } = usePost()
 
   return (
     <div className="App">
-      <p>{setFetchInProgress}</p>
       <Header />
       <Introduction />
       <UploadButton setFile={setFile} />

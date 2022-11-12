@@ -38,6 +38,7 @@ function ShareBar({ text }) {
                     color: 'white'
                 }}>
             </a>
+
             <SaveButton text={text} />
         </div >
     )
