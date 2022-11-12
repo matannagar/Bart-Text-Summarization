@@ -153,7 +153,7 @@ h2 {
   border:solid #7d87a5;
 } */
 
-.shareButtons{
+.shareBar{
   display:flex;
   justify-content: space-between; 
   align-items: center;
@@ -174,7 +174,7 @@ h2 {
   opacity: 0.7;
 }
 
-.shareButtons button{
+.shareBar button{
   background-color: #020681;
   border: none;
   color: white;
@@ -188,6 +188,6 @@ h2 {
   /* border-radius: 10px; */
 }
 
-.shareButtons button:hover{
+.shareBar button:hover{
   opacity:0.7;
 }

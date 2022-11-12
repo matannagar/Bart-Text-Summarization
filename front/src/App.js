@@ -4,9 +4,9 @@ import UrlBar from './components/uploads/UrlBar';
 import Dragndrop from './components/uploads/Dragndrop';
 
 import Header from './components/static/Header';
-import Introduction from './components/Introduction';
+import Introduction from './components/static/Introduction';
 import LimitWords from './components/LimitWords';
-import ShareButtons from './components/ShareButtons';
+import ShareBar from './components/ShareBar';
 import Summarization from './components/Summarization';
 import Summarize from './components/Summarize';
 import usePost from './hooks/usePost';
@@ -31,7 +31,7 @@ function App() {
         fetchInProgress={fetchInProgress}
         summary={summary}
         message={message} />
-      <ShareButtons text={summary} />
+      <ShareBar text={summary} />
     </div>
   );
 }
