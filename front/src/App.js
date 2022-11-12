@@ -7,26 +7,25 @@ import LimitWords from './components/LimitWords';
 import ShareButtons from './components/ShareButtons';
 import Summarization from './components/Summarization';
 import Summarize from './components/Summarize';
-import { useState } from 'react';
 import UrlBar from './components/UrlBar';
-
+import usePost from './hooks/usePost';
 function App() {
-  const [file, setFile] = useState(null)
-  const [url, setUrl] = useState('')
 
-  const [message, setMessage,
+  const { file, setFile,
+    url, setUrl, message, setMessage,
     fetchInProgress, setFetchInProgress,
-    summary, setSummary, post] = useState(file, url)
+    summary, setSummary, post } = usePost()
 
   return (
     <div className="App">
+      <p>{setFetchInProgress}</p>
       <Header />
       <Introduction />
-      <UploadButton setFile={setFile} setSummary={setSummary} setMessage={setMessage} />
+      <UploadButton setFile={setFile} />
       <UrlBar setUrl={setUrl} />
-      <Dragndrop setFile={setFile} setSummary={setSummary} setMessage={setMessage} />
+      <Dragndrop setFile={setFile} />
       <LimitWords />
-      <Summarize onClick={console.log(1)} post={post} />
+      <Summarize handleSubmit={post} />
       <Summarization
         fetchInProgress={fetchInProgress}
         summary={summary}
