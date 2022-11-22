@@ -191,3 +191,61 @@ h2 {
 .shareBar button:hover{
   opacity:0.7;
 }
+
+.container{
+  padding: 5px;
+  display: flex;
+  /* border: solid; */
+  align-items: center;
+}
+
+.left, .right{
+  flex: 1;
+}
+
+.left *, .right *{
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.left{
+  overflow-y: auto;
+  /* border: solid; */
+  height: 356px;
+  width: 669px;
+}
+
+
+li:hover{
+  background-color: #7d87a5;
+}
+
+/* width */
+.left::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.left::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.left::-webkit-scrollbar-thumb {
+  background: #7d87a5; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.left::-webkit-scrollbar-thumb:hover {
+  background: #747f9e; 
+}
+
+#top-padding {
+  background: blue; 
+  height: 30px;
+  width: 100%;
+}

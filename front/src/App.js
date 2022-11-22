@@ -10,6 +10,8 @@ import ShareBar from './components/ShareBar';
 import Summarization from './components/Summarization';
 import Summarize from './components/Summarize';
 import usePost from './hooks/usePost';
+import History from './components/History';
+
 function App() {
 
   const { setFile,
@@ -21,11 +23,19 @@ function App() {
     <div className="App">
       <Header />
       <Introduction />
-      <UploadButton setFile={setFile} />
-      <UrlBar setUrl={setUrl} />
-      <Dragndrop setFile={setFile} />
-      <LimitWords />
-      <Summarize handleSubmit={post} />
+      <div className='container'>
+        <div className='right'>
+          <UploadButton setFile={setFile} />
+          <UrlBar setUrl={setUrl} />
+          <Dragndrop setFile={setFile} />
+          <LimitWords />
+          <Summarize handleSubmit={post} />
+        </div>
+        <div className='left'>
+          <div id="top-padding"></div>
+          <History summary={summary} />
+        </div>
+      </div>
       <Summarization
         fetchInProgress={fetchInProgress}
         summary={summary}

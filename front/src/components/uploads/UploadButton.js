@@ -10,7 +10,7 @@ function UploadButton({ setFile }) {
 
 
     return (
-        <div className="item uploadButton">
+        <div className="uploadButton">
             <button onClick={handleClick}>Upload File</button>
             <input type="file" name="file"
                 onChange={(e) => setFile(e.target.files[0])}

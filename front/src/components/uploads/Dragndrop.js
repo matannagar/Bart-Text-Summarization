@@ -11,12 +11,10 @@ function Dragndrop({ setFile }) {
     })
 
     return (
-        <div className="item">
-            <div className="dragndrop">
-                <div {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    <p>Drop file here</p>
-                </div>
+        <div className="dragndrop">
+            <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                <p>Drop file here</p>
             </div>
         </div>
     )
