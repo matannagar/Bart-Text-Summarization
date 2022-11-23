@@ -5,6 +5,10 @@ function History({ summary }) {
     const [item, setItem] = useState([])
     const { modal, setModal, data, setData, toggleModal } = useModal()
 
+    const truncate = function (str) {
+        return str.length > 10 ? str.substring(0, 70) + '...' : str;
+    }
+
     useEffect(() => {
         if (localStorage.getItem('items')) {
             const items = JSON.parse(localStorage.getItem('items'));
@@ -21,10 +25,10 @@ function History({ summary }) {
             <h2 id='top-padding'>History</h2>
             <div className='history'>
                 {item.map(function (sum, index) {
-                    if (sum !== '') return <li key={index} onClick={(event) => {
-                        setData(event.currentTarget.textContent)
+                    if (sum !== '') return <li key={index} data-sum={sum} onClick={(event) => {
+                        setData(event.target.getAttribute('data-sum'))
                         setModal(!modal)
-                    }}>{sum}</li>
+                    }}>{truncate(sum)}</li>
                 })}
             </div>
             {modal && (<Modal toggleModal={toggleModal} data={data} />)}
