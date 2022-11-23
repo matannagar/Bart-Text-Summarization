@@ -32,7 +32,6 @@ function App() {
           <Summarize handleSubmit={post} />
         </div>
         <div className='left'>
-          <div id="top-padding"></div>
           <History summary={summary} />
         </div>
       </div>

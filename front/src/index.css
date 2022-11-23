@@ -212,7 +212,7 @@ h2 {
 
 .left{
   overflow-y: auto;
-  /* border: solid; */
+  top:0;
   height: 356px;
   width: 669px;
 }
@@ -245,7 +245,11 @@ li:hover{
 }
 
 #top-padding {
-  background: blue; 
-  height: 30px;
-  width: 100%;
+  position: sticky;
+  top:0;
+  background: #adb5ce;  
+  height: 50px;
+  border-radius: 10px;
+  padding: 5px;
+  vertical-align: middle;
 }
