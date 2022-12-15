@@ -40,6 +40,7 @@ function App() {
         summary={summary}
         message={message} />
       <ShareBar text={summary} />
+
     </div>
   );
 }
