@@ -5,12 +5,12 @@ import Dragndrop from './components/uploads/Dragndrop';
 
 import Header from './components/static/Header';
 import Introduction from './components/static/Introduction';
-import LimitWords from './components/LimitWords';
-import ShareBar from './components/ShareBar';
-import Summarization from './components/Summarization';
-import Summarize from './components/Summarize';
+import { LimitWords } from './components/LimitWords/LimitWords';
+import { ShareBar } from './components/ShareBar';
+import { Summarization } from './components/Summarization';
+import Summarize from './components/Summarize/Summarize';
 import usePost from './hooks/usePost';
-import History from './components/History';
+import { History } from './components/History';
 
 function App() {
 

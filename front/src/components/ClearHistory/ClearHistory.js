@@ -8,7 +8,7 @@ import React from 'react'
  *   parent component's state.
  */
 
-function ClearHistory({ setItems }) {
+export function ClearHistory({ setItems }) {
     const clearLocalStorage = function () {
         // Clear the items in localStorage and the parent component's state
         localStorage.setItem('items', '')
@@ -20,5 +20,3 @@ function ClearHistory({ setItems }) {
         </div>
     )
 }
-
-export default ClearHistory

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Modal } from './Modal'
-import useModal from '../hooks/useModal';
-import ClearHistory from './ClearHistory';
-import { truncate } from '../utils/helper';
+import { Modal } from '../Modal'
+import useModal from '../../hooks/useModal';
+import { ClearHistory } from '../ClearHistory/ClearHistory';
+import { truncate } from '../../utils/helper';
 import './History.css'
 /**
  * History is a component that displays the history of summaries in a list,
@@ -11,7 +11,7 @@ import './History.css'
  * @param {string} summary - The summary to add to the history.
  */
 
-function History({ summary }) {
+export function History({ summary }) {
     const [items, setItems] = useState([])
     const { modal, setModal, data, setData, toggleModal } = useModal()
 
@@ -59,5 +59,3 @@ function History({ summary }) {
         </div>
     )
 }
-
-export default History
