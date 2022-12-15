@@ -2,14 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { Modal } from './Modal'
 import useModal from '../hooks/useModal';
 import ClearHistory from './ClearHistory';
+import { truncate } from '../utils/helper';
+/**
+ * History is a component that displays the history of summaries in a list,
+ * and allows the user to view the details of each summary in a modal.
+ *
+ * @param {string} summary - The summary to add to the history.
+ */
 
 function History({ summary }) {
     const [items, setItems] = useState([])
     const { modal, setModal, data, setData, toggleModal } = useModal()
-
-    const truncate = function (str) {
-        return str.length > 10 ? str.substring(0, 70) + '...' : str;
-    }
 
     useEffect(() => {
         if (localStorage.getItem('items')) {

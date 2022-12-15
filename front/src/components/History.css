@@ -1,0 +1,21 @@
+.title-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #adb5ce; 
+    border-radius: 10px;
+  }
+  
+  #top-padding {
+    position: sticky;
+    height: 40px;
+    flex: 0 0 80% ;
+    margin-left: 40px;
+    background-color: #adb5ce; 
+
+  }
+  
+  .push {
+    margin-left: auto;
+  }
