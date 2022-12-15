@@ -3,6 +3,7 @@ import { Modal } from './Modal'
 import useModal from '../hooks/useModal';
 import ClearHistory from './ClearHistory';
 import { truncate } from '../utils/helper';
+import './History.css'
 /**
  * History is a component that displays the history of summaries in a list,
  * and allows the user to view the details of each summary in a modal.
@@ -35,8 +36,12 @@ function History({ summary }) {
 
     return (
         <div className='item'>
-            <h2 id='top-padding'>History</h2>
-            <ClearHistory setItems={setItems} />
+            <div className='title-row'>
+                <h2 id='top-padding'>History</h2>
+                <div className='push'>
+                    <ClearHistory setItems={setItems} />
+                </div>
+            </div>
             <div className='history'>
                 {items.map(function (sum, index) {
                     if (sum !== '')
