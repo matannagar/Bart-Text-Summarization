@@ -1,5 +1,5 @@
 import React from 'react'
-import SaveButton from '../SaveButton/SaveButton'
+import { SaveButton } from '../SaveButton'
 import './Modal.css'
 
 export function Modal({ toggleModal, data }) {

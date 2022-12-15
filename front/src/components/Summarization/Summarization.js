@@ -16,8 +16,6 @@ export function Summarization({ summary, fetchInProgress, message }) {
                 {fetchInProgress ? <Spinner /> : summary}
                 {message ? message : ''}
             </div>
-
         </div>
-
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SaveButton({ text }) {
+export function SaveButton({ text }) {
     const handleClick = () => {
         if (text) {
             const element = document.createElement('a');
@@ -15,5 +15,3 @@ function SaveButton({ text }) {
         <button onClick={handleClick}>Save</button>
     )
 }
-
-export default SaveButton

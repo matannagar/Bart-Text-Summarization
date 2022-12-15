@@ -8,7 +8,7 @@ import Introduction from './components/static/Introduction';
 import { LimitWords } from './components/LimitWords/LimitWords';
 import { ShareBar } from './components/ShareBar';
 import { Summarization } from './components/Summarization';
-import Summarize from './components/Summarize/Summarize';
+import { Summarize } from './components/Summarize/Summarize';
 import usePost from './hooks/usePost';
 import { History } from './components/History';
 

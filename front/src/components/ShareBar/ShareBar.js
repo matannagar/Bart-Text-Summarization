@@ -1,7 +1,7 @@
 import React from 'react'
-import SaveButton from './SaveButton/SaveButton'
+import { SaveButton } from '../SaveButton'
 
-function ShareBar({ text }) {
+export function ShareBar({ text }) {
     const twitter = 'https://twitter.com/intent/tweet?text='
     const linkedin = 'https://www.linkedin.com/shareArticle?mini=true&title=TemporaryTitle&summary=hello'
     const data = encodeURIComponent(text)
@@ -42,5 +42,3 @@ function ShareBar({ text }) {
         </div >
     )
 }
-
-export default ShareBar
