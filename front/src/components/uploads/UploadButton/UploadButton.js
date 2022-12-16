@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import './UploadButton.css'
 
 export function UploadButton({ setFile }) {
     const hiddenFileInput = useRef(null)
@@ -8,7 +9,7 @@ export function UploadButton({ setFile }) {
     }
 
     return (
-        <div className="uploadButton">
+        <div className='uploadButton'>
             <button onClick={handleClick}>Upload File</button>
             <input type='file' name='file' accept='.pdf, .txt, .doc, .docx'
                 onChange={(e) => setFile(e.target.files[0])}
