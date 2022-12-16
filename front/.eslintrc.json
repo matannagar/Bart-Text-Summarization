@@ -18,6 +18,6 @@
     ],
     "rules": {
         "react/prop-types": "off",
-        "quotes": [2, "single", { "avoidEscape": true }]
+        "quotes": ["single", { "avoidEscape": true }]
       }
 }
