@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { api } from '../data/api';
 
@@ -14,8 +14,9 @@ function usePost() {
         if (file) setMessage('A file has been chosen!')
     }, [file])
 
-    const post = useCallback(async () => {
+    const post = async () => {
         setSummary('')
+        setMessage('')
         if (file || url) {
             setFetchInProgress(true)
             const formData = new FormData()
@@ -55,7 +56,7 @@ function usePost() {
         } else {
             setMessage('Please pick a file or url!')
         }
-    }, [])
+    }
 
     return {
         file, setFile,
