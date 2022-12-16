@@ -1,7 +1,7 @@
 import React from 'react';
 import UploadButton from './components/uploads/UploadButton';
 import UrlBar from './components/uploads/UrlBar';
-import Dragndrop from './components/uploads/Dragndrop';
+import { Dragndrop } from './components/uploads/Dragndrop';
 
 import Header from './components/static/Header';
 import Introduction from './components/static/Introduction';
@@ -15,7 +15,7 @@ import { History } from './components/History';
 function App() {
 
   const { setFile,
-    setUrl, message,
+    setUrl, message, setMessage,
     fetchInProgress,
     summary, post } = usePost()
 
@@ -27,7 +27,7 @@ function App() {
         <div className='right'>
           <UploadButton setFile={setFile} />
           <UrlBar setUrl={setUrl} />
-          <Dragndrop setFile={setFile} />
+          <Dragndrop setFile={setFile} setMessage={setMessage} />
           <LimitWords />
           <Summarize handleSubmit={post} />
         </div>
