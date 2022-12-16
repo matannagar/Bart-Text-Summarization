@@ -19,18 +19,20 @@ export function History({ summary }) {
         if (localStorage.getItem('items')) {
             // Check if localStorage.items is an array
             const itemsArray =
-                localStorage.getItem('items') instanceof Array
+                JSON.parse(localStorage.getItem('items')) instanceof Array
                     ? JSON.parse(localStorage.getItem('items'))
-                    : [localStorage.getItem('items')]
+                    : localStorage.getItem('items')
 
             // Add the new item to the array and save it to localStorage
             const newItems = JSON.stringify([...itemsArray, summary])
-            setItems([...itemsArray, summary])
             localStorage.setItem('items', newItems)
+            setItems([...itemsArray, summary])
         } else {
             // Set the initial item in localStorage and the component state
-            setItems([summary])
-            localStorage.setItem('items', summary)
+            if (summary) {
+                localStorage.setItem('items', JSON.stringify([summary]))
+                setItems([summary])
+            }
         }
     }, [summary]);
 
