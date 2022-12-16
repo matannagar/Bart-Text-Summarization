@@ -1,0 +1,33 @@
+.summarization .output {
+    overflow-y: scroll;
+    height: 200px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.summarization {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #f7f9ff;
+    width: 60%;
+}
+
+.output::-webkit-scrollbar {
+    display: none;
+}
+
+.output {
+    display: flex;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    align-items: center;
+    justify-content: center;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* .summarization .output:hover{
+  border:solid #7d87a5;
+} */

@@ -1,6 +1,6 @@
 import React from 'react'
 import Spinner from '../Spinner'
-
+import './Summarization.css'
 /**
  * Summarization component that displays a summary, optional message, and a loading spinner.
  *
