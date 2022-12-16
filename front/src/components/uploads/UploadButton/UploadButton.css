@@ -1,0 +1,19 @@
+/* first upload button */
+.uploadButton button {
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border: 2px solid white;
+    background-color: #458cfe;
+    color: white;
+
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.uploadButton button:hover {
+    background-color: #0062ff;
+}

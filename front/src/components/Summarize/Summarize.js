@@ -1,4 +1,5 @@
 import React from 'react'
+import './Summarize.css'
 
 export function Summarize({ handleSubmit }) {
     return (

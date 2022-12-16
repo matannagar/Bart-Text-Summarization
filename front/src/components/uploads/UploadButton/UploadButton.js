@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-function UploadButton({ setFile }) {
+export function UploadButton({ setFile }) {
     const hiddenFileInput = useRef(null)
 
     const handleClick = () => {
@@ -17,5 +17,3 @@ function UploadButton({ setFile }) {
         </div>
     )
 }
-
-export default UploadButton

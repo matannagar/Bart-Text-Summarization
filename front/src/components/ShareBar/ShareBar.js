@@ -1,5 +1,6 @@
 import React from 'react'
 import { SaveButton } from '../SaveButton'
+import './ShareBar.css'
 
 export function ShareBar({ text }) {
     const twitter = 'https://twitter.com/intent/tweet?text='

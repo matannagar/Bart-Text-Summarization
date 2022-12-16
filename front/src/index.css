@@ -70,43 +70,6 @@ h2 {
   background-color: #7d87a5;
 }
 
-/* first upload button */
-.uploadButton button {
-  text-align: center;
-
-  font-size: 18px;
-  font-weight: bold;
-
-  border: 2px solid white;
-  background-color: #458cfe;
-  color: white;
-
-  height: 50px;
-  width: 200px;
-  border-radius: 10px;
-}
-
-.uploadButton button:hover {
-  background-color: #0062ff;
-}
-
-/* Drag & Drop */
-.dragndrop {
-  text-align: center;
-  background-color: #f7f9ff;
-  border: 2px;
-  border-style: dashed;
-  border-color: #ccc;
-  color: #ccc;
-  height: 150px;
-  width: 600px;
-}
-
-.dragndrop:hover {
-  border-color: #000;
-  color: #000;
-}
-
 .limitwords input[type="number"],
 input[type="text"] {
   text-align: center;
@@ -114,64 +77,6 @@ input[type="text"] {
   width: 400px;
   height: 30px;
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.10000000149011612));
-}
-
-.summarizeButton button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  width: 200px;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-.summarizeButton button:hover {
-  background-color: #049909;
-}
-
-.shareBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.disabled a {
-  pointer-events: none;
-}
-
-.fa {
-  text-align: center;
-  padding: 20px;
-  width: 60px;
-  margin: 5px;
-}
-
-.fa:hover {
-  opacity: 0.7;
-}
-
-.shareBar button {
-  background-color: #020681;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  /* border-radius: 10px; */
-}
-
-.shareBar button:hover {
-  opacity: 0.7;
 }
 
 .container {

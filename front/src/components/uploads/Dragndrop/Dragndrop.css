@@ -1,0 +1,16 @@
+/* Drag & Drop */
+.dragndrop {
+    text-align: center;
+    background-color: #f7f9ff;
+    border: 2px;
+    border-style: dashed;
+    border-color: #ccc;
+    color: #ccc;
+    height: 150px;
+    width: 600px;
+}
+
+.dragndrop:hover {
+    border-color: #000;
+    color: #000;
+}

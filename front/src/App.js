@@ -1,5 +1,5 @@
 import React from 'react';
-import UploadButton from './components/uploads/UploadButton';
+import { UploadButton } from './components/uploads/UploadButton/UploadButton';
 import UrlBar from './components/uploads/UrlBar';
 import { Dragndrop } from './components/uploads/Dragndrop';
 
