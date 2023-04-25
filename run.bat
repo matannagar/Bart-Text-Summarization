@@ -1,2 +1,3 @@
-CALL .\venv\Scripts\activate.bat
-python .\app\application.py runserver
+start code server
+start code front
+start code parser
