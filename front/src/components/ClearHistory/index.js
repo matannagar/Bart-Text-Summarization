@@ -1,1 +1,0 @@
-export { ClearHistory } from './ClearHistory';
