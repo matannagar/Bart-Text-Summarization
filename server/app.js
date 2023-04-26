@@ -12,12 +12,12 @@ app.use(express.urlencoded())
 
 /* Routes */
 app.get('/', (req, res) => {
-  res.render('index.ejs')
+	res.send("Welcome to Matan-Ben Nagar's Summarization Tool Backend Server")
 })
 app.use('/api', apiRouter)
 
 /* Start the server */
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
-  console.log(`Express app listening at http://localhost:${PORT}`)
+	console.log(`Express app listening at http://localhost:${PORT}`)
 })
