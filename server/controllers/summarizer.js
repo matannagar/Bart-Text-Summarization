@@ -1,5 +1,4 @@
 const huggingface = require('./huggingFace')
-var qs = require('querystring')
 
 const getSummary = async (req, res) => {
 	console.log('Sending request to Hugging Face API.')
